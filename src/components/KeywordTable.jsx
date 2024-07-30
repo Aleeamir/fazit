@@ -18,7 +18,13 @@ const KeywordTable = () => {
         videos: 95477,
         websites: 47966
         },
-    { searchItem: "Roma Agrawal", type: "KW", pages: 8549, images: 844, videos: 26, websites: 1487 },
+    { searchItem: "Roma Agrawal",
+     type: "KW", 
+     pages: 8549,
+     images: 844, 
+     videos: 26,
+     websites: 1487
+    },
     { searchItem: "Troy Aikman", type: "KW", pages: 74852, images: 94401, videos: 25741, websites: 14871 },
     { searchItem: "Daniel Akaka", type: "KW", pages: 2401, images: 748, videos: 20, websites: 149 },
     { searchItem: "Charles Albanel", type: "KW", pages: 1904, images: 799, videos: 82, websites: 78 },
