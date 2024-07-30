@@ -56,14 +56,7 @@ const Table = () => {
 
     },
     {
-      website: "theepochtimes.com",
-      overallRank: 2,
-      popularityRank: 3,
-      relRank: 2,
-      pages: 1054,
-      images: 1035,
-      videos: 0,
-      Cfg: 3,
+      website: "theepochtimes.com", overallRank: 2, popularityRank: 3, relRank: 2, pages: 1054, images: 1035, videos: 0,Cfg: 3,
     },
     {
       website: "washingtonpost.com",
