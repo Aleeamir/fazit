@@ -1,6 +1,12 @@
-import React from "react";
-
+import React, { useState } from "react";
+import RowSettingsPopup from "./RowSettingsPopup ";
 const AfterHeader = ({ selectedTab, setSelectedTab }) => {
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
+
+  const togglePopup = () => {
+    setIsPopupOpen(!isPopupOpen);
+  };
+
   return (
     <div className="bg-bordercolor text-white shadow" style={{ height: 18 }}>
       <div className="flex justify-between items-center">
@@ -68,18 +74,27 @@ const AfterHeader = ({ selectedTab, setSelectedTab }) => {
               </select>
             </div>
             <div className="group text-xs">
-              <select className="text-white bg-bordercolor border-none">
+              <select
+                className={` text-white bg-bordercolor border-none ${
+                  selectedTab === "keywords" ? "underline" : ""
+                }  `}
+                onClick={() => setSelectedTab("keywords")}
+              >
                 <option value="all">Advanced</option>
               </select>
             </div>
           </div>
         </div>
         <div className="group text-xs">
-          <select className="text-white bg-bordercolor border-none">
-            <option value="all">Row Setting</option>
-          </select>
+          <button
+            className="text-white bg-bordercolor border-none"
+            onClick={togglePopup}
+          >
+            Row Setting
+          </button>
         </div>
       </div>
+      {isPopupOpen && <RowSettingsPopup togglePopup={togglePopup} />}
     </div>
   );
 };

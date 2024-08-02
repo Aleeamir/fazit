@@ -5,7 +5,7 @@ import AfterHeader from "./components/AfterHeader";
 import Articles from "./components/Articles";
 import Section from "./components/Section";
 import Table from "./components/Table";
-import KeywordTable from "./components/KeywordTable"; 
+import KeywordTable from "./components/KeywordTable";
 import KeyWords from "./components/KeyWords";
 import c1 from "./assets/icon-images.png";
 import c2 from "./assets/icon-pages.png";
@@ -164,6 +164,7 @@ function App() {
               <KeywordTable />
             </div>
           )}
+          {selectedTab === "advnace" && <App />}
         </div>
       </div>
     </div>
