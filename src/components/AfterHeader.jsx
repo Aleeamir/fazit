@@ -1,10 +1,16 @@
 import React, { useState } from "react";
 import RowSettingsPopup from "./RowSettingsPopup ";
+import DrilldownPopup from "./DrilldownPopup";
 const AfterHeader = ({ selectedTab, setSelectedTab }) => {
-  const [isPopupOpen, setIsPopupOpen] = useState(false);
+  const [isRowSettingsPopupOpen, setIsRowSettingsPopupOpen] = useState(false);
+  const [isDrilldownPopupOpen, setIsDrilldownPopupOpen] = useState(false);
 
-  const togglePopup = () => {
-    setIsPopupOpen(!isPopupOpen);
+  const toggleRowSettingsPopup = () => {
+    setIsRowSettingsPopupOpen(!isRowSettingsPopupOpen);
+  };
+
+  const toggleDrilldownPopup = () => {
+    setIsDrilldownPopupOpen(!isDrilldownPopupOpen);
   };
 
   return (
@@ -64,9 +70,12 @@ const AfterHeader = ({ selectedTab, setSelectedTab }) => {
               </select>
             </div>
             <div className="group relative text-xs">
-              <select className="text-white bg-bordercolor border-none">
-                <option value="all">Drilldown</option>
-              </select>
+              <button
+                className="text-white bg-bordercolor border-none"
+                onClick={toggleDrilldownPopup}
+              >
+                Drilldown
+              </button>
             </div>
             <div className="group text-xs">
               <select className="text-white bg-bordercolor border-none">
@@ -88,13 +97,18 @@ const AfterHeader = ({ selectedTab, setSelectedTab }) => {
         <div className="group text-xs">
           <button
             className="text-white bg-bordercolor border-none"
-            onClick={togglePopup}
+            onClick={toggleRowSettingsPopup}
           >
             Row Setting
           </button>
         </div>
       </div>
-      {isPopupOpen && <RowSettingsPopup togglePopup={togglePopup} />}
+      {isRowSettingsPopupOpen && (
+        <RowSettingsPopup togglePopup={toggleRowSettingsPopup} />
+      )}
+      {isDrilldownPopupOpen && (
+        <DrilldownPopup togglePopup={toggleDrilldownPopup} />
+      )}
     </div>
   );
 };
