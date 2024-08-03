@@ -1,5 +1,4 @@
 import React from "react";
-import SearchBar from "./SearchBar";
 import logo from "../assets/logo.png";
 const Header = () => {
   return (

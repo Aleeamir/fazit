@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import RowSettingsPopup from "./RowSettingsPopup ";
 import DrilldownPopup from "./DrilldownPopup";
+import CustomApp from "./CustomSearchRowSection/CustomApp";
 const AfterHeader = ({ selectedTab, setSelectedTab }) => {
   const [isRowSettingsPopupOpen, setIsRowSettingsPopupOpen] = useState(false);
   const [isDrilldownPopupOpen, setIsDrilldownPopupOpen] = useState(false);
+  const [isHeaderCustomRow, setIsHeaderCustomRow] = useState(false);
 
   const toggleRowSettingsPopup = () => {
     setIsRowSettingsPopupOpen(!isRowSettingsPopupOpen);
@@ -13,6 +15,9 @@ const AfterHeader = ({ selectedTab, setSelectedTab }) => {
     setIsDrilldownPopupOpen(!isDrilldownPopupOpen);
   };
 
+  function toogleHeaderCustomeRowPopup() {
+    setIsHeaderCustomRow(!isHeaderCustomRow);
+  }
   return (
     <div className="bg-bordercolor text-white shadow" style={{ height: 18 }}>
       <div className="flex justify-between items-center">
@@ -83,14 +88,12 @@ const AfterHeader = ({ selectedTab, setSelectedTab }) => {
               </select>
             </div>
             <div className="group text-xs">
-              <select
-                className={` text-white bg-bordercolor border-none ${
-                  selectedTab === "keywords" ? "underline" : ""
-                }  `}
-                onClick={() => setSelectedTab("keywords")}
+              <button
+                className="text-white bg-bordercolor border-none"
+                onClick={toogleHeaderCustomeRowPopup}
               >
-                <option value="all">Advanced</option>
-              </select>
+                Advance
+              </button>
             </div>
           </div>
         </div>
@@ -108,6 +111,9 @@ const AfterHeader = ({ selectedTab, setSelectedTab }) => {
       )}
       {isDrilldownPopupOpen && (
         <DrilldownPopup togglePopup={toggleDrilldownPopup} />
+      )}
+      {isHeaderCustomRow && (
+        <CustomApp togglePopup={toogleHeaderCustomeRowPopup} />
       )}
     </div>
   );
