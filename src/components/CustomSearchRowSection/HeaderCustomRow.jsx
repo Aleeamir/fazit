@@ -22,7 +22,7 @@ const HeaderCustomRow = ({ togglePopup }) => {
               CLOSE
             </button>
             <button className=" px-2  bg-popupcolor text-white rounded-lg">
-              RETURN DTAT
+              RETURN DATA
             </button>
           </div>
         </div>
