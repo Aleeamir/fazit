@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const CSRTable = () => {
+const MatrixTable = () => {
   const [tableData, setTableData] = useState([
     { row: 1, searchType: "Keyword", value: "Vaccine" },
     { row: 1, searchType: "Keyword", value: "Acquired Immunity" },
@@ -39,8 +39,9 @@ const CSRTable = () => {
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
           <div className="relative w-full max-w-4xl mx-auto my-5 p-6 border-4 border-yellow-600 shadow-lg bg-white h-full max-h-screen overflow-auto">
             <h2 className="text-left text-lg mb-5 text-yellow-600">
-              CSR - Add / Edit Rows
+              Matrix - Add / Edit Rows
             </h2>
+
             <div className="w-full mx-auto my-5 p-8 border-2 border-yellow-600">
               <table className="w-full border-collapse mb-5 table-fixed">
                 <thead>
@@ -53,6 +54,9 @@ const CSRTable = () => {
                     </th>
                     <th className="text-center text-popupcolor p-1 border border-yellow-600 w-1/3">
                       Value
+                    </th>
+                    <th className="text-center text-popupcolor p-1 border border-yellow-600 w-1/3">
+                      Link
                     </th>
                   </tr>
                 </thead>
@@ -67,9 +71,9 @@ const CSRTable = () => {
                           }
                           className="w-full text-xs p-1 border border-yellow-600 rounded"
                         >
-                          <option value={1}>1</option>
-                          <option value={2}>2</option>
-                          <option value={3}>3</option>
+                          <option value={1}></option>
+                          <option value={2}></option>
+                          <option value={3}></option>
                         </select>
                       </td>
                       <td className="border text-xs text-popupcolor p-1 border-yellow-600 w-1/3">
@@ -80,30 +84,30 @@ const CSRTable = () => {
                           }
                           className="w-full text-xs text-popupcolor p-1 border border-yellow-600 rounded"
                         >
-                          <option value="Keyword">Keyword</option>
-                          {/* Add other search types if needed */}
+                          <option value="Keyword"></option>
                         </select>
                       </td>
                       <td className="border text-xs text-popupcolor p-1 border-yellow-600 w-1/3">
                         <input
                           type="text"
-                          value={row.value}
-                          onChange={(event) =>
-                            handleInputChange(event, index, "value")
-                          }
                           className="w-full text-xs p-1 border border-yellow-600 rounded"
                         />
+                      </td>
+                      <td className="border text-xs text-popupcolor p-1 border-yellow-600 w-1/3">
+                        <select
+                          value={row.searchType}
+                          onChange={(event) =>
+                            handleInputChange(event, index, "searchType")
+                          }
+                          className="w-full text-xs text-popupcolor p-1 border border-yellow-600 rounded"
+                        >
+                          <option value="Keyword"></option>
+                        </select>
                       </td>
                     </tr>
                   ))}
                 </tbody>
               </table>
-              <button
-                className="bg-red-600 text-white ml-80 p-1 rounded"
-                onClick={handleSubmit}
-              >
-                SUBMIT
-              </button>
             </div>
             <div className="flex justify-center gap-4 mt-5">
               <button
@@ -112,6 +116,11 @@ const CSRTable = () => {
               >
                 CLOSE
               </button>
+              <div className=" justify-between items-center text-xs absolute top-8 right-92 text-popupcolor p-1 w-[20%]">
+                <select className="w-full text-xs p-1 border-2 border-yellow-600 ">
+                  <option value="Keyword">Matrix 1</option>
+                </select>
+              </div>
               <button className="text-yellow-600 p-1 absolute top-12 right-4">
                 Save
               </button>
@@ -123,4 +132,4 @@ const CSRTable = () => {
   );
 };
 
-export default CSRTable;
+export default MatrixTable;
