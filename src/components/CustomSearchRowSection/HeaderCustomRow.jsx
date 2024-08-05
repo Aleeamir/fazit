@@ -1,6 +1,6 @@
 import React from "react";
 import logo from "../../assets/logo.png";
-const HeaderCustomRow = ({ togglePopup }) => {
+const HeaderCustomRow = ({ togglePopup, onRetrun }) => {
   return (
     <header
       className="flex justify-between items-center  p-4 shadow"
@@ -21,7 +21,10 @@ const HeaderCustomRow = ({ togglePopup }) => {
             >
               CLOSE
             </button>
-            <button className=" px-2  bg-popupcolor text-white rounded-lg">
+            <button
+              className=" px-2  bg-popupcolor text-white rounded-lg"
+              onClick={onRetrun}
+            >
               RETURN DATA
             </button>
           </div>

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import RowSettingsPopup from "./RowSettingsPopup ";
 import DrilldownPopup from "./DrilldownPopup";
 import CustomApp from "./CustomSearchRowSection/CustomApp";
-const AfterHeader = ({ selectedTab, setSelectedTab }) => {
+const AfterHeader = ({ selectedTab, setSelectedTab, onRetrun }) => {
   const [isRowSettingsPopupOpen, setIsRowSettingsPopupOpen] = useState(false);
   const [isDrilldownPopupOpen, setIsDrilldownPopupOpen] = useState(false);
   const [isHeaderCustomRow, setIsHeaderCustomRow] = useState(false);
@@ -113,7 +113,10 @@ const AfterHeader = ({ selectedTab, setSelectedTab }) => {
         <DrilldownPopup togglePopup={toggleDrilldownPopup} />
       )}
       {isHeaderCustomRow && (
-        <CustomApp togglePopup={toogleHeaderCustomeRowPopup} />
+        <CustomApp
+          togglePopup={toogleHeaderCustomeRowPopup}
+          onRetrun={onRetrun}
+        />
       )}
     </div>
   );

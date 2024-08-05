@@ -10,10 +10,10 @@ import {
   industryCategories,
 } from "../../components/categories.js";
 
-const CustomApp = ({ togglePopup }) => {
+const CustomApp = ({ togglePopup, onRetrun }) => {
   return (
     <div className="fixed inset-0 flex flex-col bg-white m-0 p-0 z-50 overflow-y-auto">
-      <HeaderCustomRow togglePopup={togglePopup} />
+      <HeaderCustomRow togglePopup={togglePopup} onRetrun={onRetrun} />
       <AfterHeaderCustom />
       <div className="flex flex-1">
         <div className="flex-1 p-4">
@@ -21,7 +21,7 @@ const CustomApp = ({ togglePopup }) => {
         </div>
         <div className="flex-1 p-4">
           <>
-            <div className="mb-4  rounded-lg bg-backcolor py-2 px-2">
+            <div className="mb-4  rounded-lg  py-2 px-2">
               <span className="text-categrycolor py-3">SEARCH 2</span>
               <SearchBar />
             </div>
