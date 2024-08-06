@@ -1,6 +1,6 @@
 import React from "react";
 import logo from "../../assets/logo.png";
-const HeaderCustomRow = ({ togglePopup, onRetrun, text }) => {
+const HeaderMatrix = ({ togglePopup, onRetrun, text }) => {
   return (
     <header
       className="flex justify-between items-center  p-4 shadow"
@@ -32,4 +32,4 @@ const HeaderCustomRow = ({ togglePopup, onRetrun, text }) => {
   );
 };
 
-export default HeaderCustomRow;
+export default HeaderMatrix;

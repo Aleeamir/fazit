@@ -1,6 +1,5 @@
 import React from "react";
-import HeaderCustomRow from "./HeaderCustomRow";
-import AfterHeaderCustom from "./AfterHeaderCustom";
+import AfterHeaderMatrix from "./AfterHeaderMatrix.jsx";
 import Section from "../Section";
 import Articles from "../Articles";
 import SearchBar from "../SearchBar";
@@ -9,16 +8,17 @@ import {
   dataCategories,
   industryCategories,
 } from "../../components/categories.js";
+import HeaderMatrix from "./HeaderMatrix.jsx";
 
-const CustomApp = ({ togglePopup, onRetrun }) => {
+const MatrixApp = ({ togglePopup, onRetrun }) => {
   return (
     <div className="fixed inset-0 flex flex-col bg-white m-0 p-0 z-50 overflow-y-auto">
-      <HeaderCustomRow
+      <HeaderMatrix
         togglePopup={togglePopup}
         onRetrun={onRetrun}
-        text="Custom Search Rows (CSR)"
+        text="Matrix"
       />
-      <AfterHeaderCustom />
+      <AfterHeaderMatrix />
       <div className="flex flex-1">
         <div className="flex-1 p-4">
           <Articles />
@@ -39,4 +39,4 @@ const CustomApp = ({ togglePopup, onRetrun }) => {
   );
 };
 
-export default CustomApp;
+export default MatrixApp;
