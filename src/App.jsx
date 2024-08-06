@@ -6,20 +6,31 @@ import Articles from "./components/Articles";
 import Section from "./components/Section";
 import Table from "./components/Table";
 import KeywordTable from "./components/KeywordTable";
+import MatrixApp from "./components/Matrix/MatrixApp.jsx";
 
 import {
   countryCategories,
   dataCategories,
   industryCategories,
 } from "./components/categories.js";
+
 function App() {
   const [selectedTab, setSelectedTab] = useState("categories");
   const [showNewSearchBar, setShowNewSearchBar] = useState(false);
   const [isPopupVisible, setIsPopupVisible] = useState(true);
+  const [showMatrixApp, setShowMatrixApp] = useState(false); // State to manage MatrixApp visibility
 
   function handleReturnData() {
     setShowNewSearchBar(!showNewSearchBar);
     setIsPopupVisible(false);
+  }
+
+  function handleCategoryClick() {
+    setShowMatrixApp(true); // Show MatrixApp on category button click
+  }
+
+  function handleCloseMatrixApp() {
+    setShowMatrixApp(false); // Hide MatrixApp
   }
 
   return (
@@ -40,9 +51,21 @@ function App() {
         <div className="flex-1 p-4">
           {selectedTab === "categories" && (
             <>
-              <Section title="COUNTRY" categories={countryCategories} />
-              <Section title="DATA" categories={dataCategories} />
-              <Section title="INDUSTRY" categories={industryCategories} />
+              <Section
+                title="COUNTRY"
+                categories={countryCategories}
+                onCategoryClick={handleCategoryClick} // Pass click handler
+              />
+              <Section
+                title="DATA"
+                categories={dataCategories}
+                onCategoryClick={handleCategoryClick} // Pass click handler
+              />
+              <Section
+                title="INDUSTRY"
+                categories={industryCategories}
+                onCategoryClick={handleCategoryClick} // Pass click handler
+              />
               <div className="mb-4 rounded-lg bg-backcolor py-4 px-4">
                 <span className="text-categrycolor py-3">SEARCH 2</span>
                 <SearchBar />
@@ -66,6 +89,13 @@ function App() {
           )}
         </div>
       </div>
+
+      {showMatrixApp && (
+        <MatrixApp
+          togglePopup={handleCloseMatrixApp}
+          onRetrun={handleCloseMatrixApp}
+        />
+      )}
     </div>
   );
 }
