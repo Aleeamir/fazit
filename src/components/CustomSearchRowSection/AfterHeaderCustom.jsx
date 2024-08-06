@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import CSRTable from "./CSRTable";
-import MatrixTable from "../Matrix/MatrixTable";
 
 const AfterHeaderCustom = () => {
   const [isCtrsPopup, setIsCtrsPopup] = useState(false);
