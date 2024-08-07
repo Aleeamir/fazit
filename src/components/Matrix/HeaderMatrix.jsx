@@ -1,6 +1,6 @@
 import React from "react";
 import logo from "../../assets/logo.png";
-const HeaderMatrix = ({ togglePopup, onRetrun, text }) => {
+const HeaderMatrix = ({ togglePopup, onRetrun, text, dataReturn }) => {
   return (
     <header
       className="flex justify-between items-center  p-4 shadow"
@@ -21,7 +21,7 @@ const HeaderMatrix = ({ togglePopup, onRetrun, text }) => {
             </button>
             <button
               className=" px-2  bg-popupcolor text-white rounded-lg"
-              onClick={onRetrun}
+              onClick={dataReturn}
             >
               RETURN DATA
             </button>

@@ -9,13 +9,16 @@ import {
   industryCategories,
 } from "../../components/categories.js";
 import HeaderMatrix from "./HeaderMatrix.jsx";
+import Matrix1 from "./Matrix1.jsx";
+import Matrix2 from "./Matrix2.jsx";
 
-const MatrixApp = ({ togglePopup, onRetrun }) => {
+const MatrixApp = ({ togglePopup, onRetrun, dataReturn }) => {
   return (
     <div className="fixed inset-0 flex flex-col bg-white m-0 p-0 z-50 overflow-y-auto">
       <HeaderMatrix
         togglePopup={togglePopup}
         onRetrun={onRetrun}
+        dataReturn={dataReturn}
         text="Matrix"
       />
       <AfterHeaderMatrix />
@@ -29,9 +32,8 @@ const MatrixApp = ({ togglePopup, onRetrun }) => {
               <span className="text-categrycolor py-3">SEARCH 2</span>
               <SearchBar />
             </div>
-            <Section title="Row 1" categories={countryCategories} />
-            <Section title="Row 2" categories={dataCategories} />
-            <Section title="Row 3" categories={industryCategories} />
+            <Matrix1 />
+            <Matrix2 />
           </>
         </div>
       </div>

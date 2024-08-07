@@ -19,6 +19,13 @@ function App() {
   const [showNewSearchBar, setShowNewSearchBar] = useState(false);
   const [isPopupVisible, setIsPopupVisible] = useState(true);
   const [showMatrixApp, setShowMatrixApp] = useState(false);
+  const [matrixSearchBar, setMatrixSearchBar] = useState(false);
+
+  function HandleMatrixReturnData() {
+    setMatrixSearchBar(!matrixSearchBar);
+    setIsPopupVisible(false);
+    setShowAfterHeader(true);
+  }
 
   function handleReturnData() {
     setShowNewSearchBar(!showNewSearchBar);
@@ -59,7 +66,9 @@ function App() {
               <Section
                 title="DATA"
                 categories={dataCategories}
-                onCategoryClick={handleCategoryClick} // Pass click handler
+                onCategoryClick={handleCategoryClick}
+
+                // Pass click handler
               />
               <Section
                 title="INDUSTRY"
@@ -67,14 +76,27 @@ function App() {
                 onCategoryClick={handleCategoryClick} // Pass click handler
               />
               <div className="mb-4 rounded-lg bg-backcolor py-4 px-4">
-                <span className="text-categrycolor py-3">SEARCH 2</span>
-                <SearchBar />
+                {!matrixSearchBar && (
+                  <>
+                    <span className="text-categrycolor py-3">SEARCH 2</span>
+                    <SearchBar />
+                  </>
+                )}
 
                 {showNewSearchBar && (
                   <>
                     <span className="text-categrycolor py-3">CRS 3</span>
                     <SearchBar />
                     <span className="text-categrycolor py-3">SEARCH 4</span>
+                    <SearchBar />
+                  </>
+                )}
+
+                {matrixSearchBar && (
+                  <>
+                    <span className="text-categrycolor py-3">MArtix 2</span>
+                    <SearchBar />
+                    <span className="text-categrycolor py-3">Search 3</span>
                     <SearchBar />
                   </>
                 )}
@@ -94,6 +116,7 @@ function App() {
         <MatrixApp
           togglePopup={handleCloseMatrixApp}
           onRetrun={handleCloseMatrixApp}
+          dataReturn={HandleMatrixReturnData}
         />
       )}
     </div>

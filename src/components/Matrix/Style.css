@@ -1,0 +1,133 @@
+/* Style.css */
+.csr-table-container {
+  position: relative;
+  width: 600px;
+  margin: 20px auto;
+  padding: 30px;
+  border: 5px solid #d4af37;
+  font-family: Arial, sans-serif;
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.csr-table-spacing {
+  width: 500px;
+  margin: 20px auto;
+  padding: 30px;
+  border: 2px solid #d4af37;
+}
+
+h2 {
+  text-align: left; /* Align text to the left */
+  font-size: 1em;
+  margin: 0; /* Remove default margin */
+  color: #d4af37;
+}
+
+.matrix-select {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 200px; /* Adjust the width as needed */
+  margin: 20px auto; /* Center the block horizontally */
+}
+
+.csr-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.csr-table th,
+.csr-table td {
+  text-align: left;
+  padding: 10px;
+  border: 1px solid #d4af37;
+}
+
+.csr-table th {
+  background-color: #fdf5e6;
+  color: #d4af37;
+}
+
+.csr-table td {
+  background-color: #fff;
+}
+
+.button-container {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.close-button,
+.save-button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.close-button {
+  background-color: #d4af37;
+  color: white;
+}
+
+.save-button {
+  background-color: white;
+  color: #d4af37;
+}
+
+/* Matrix1.css */
+.container {
+  padding: 20px;
+}
+
+.main-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;
+  border: 5px solid #d4af37;
+}
+
+.main-table th,
+.main-table td {
+  border: 1px solid #d4af37;
+  padding: 8px;
+  color: #b8962f;
+  font-size: small;
+  font-weight: 100;
+}
+
+.main-table td:hover {
+  background-color: #edd47f;
+}
+
+.main-table th {
+  background-color: #f5f5dc;
+}
+
+.main-table td {
+  background-color: #ffffff;
+}
+
+.main-table thead th {
+  border-bottom: 5px solid #d4af37;
+}
+
+.main-table td:nth-child(2),
+.main-table th:nth-child(2) {
+  border-left: 5px solid #d4af37;
+}
+
+.main-table th:nth-child(1) {
+  border-left: 5px solid white;
+  border-top: 5px solid white;
+  color: blue;
+  background-color: white;
+  border-right: 5px solid #d4af37;
+}
