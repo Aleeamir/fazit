@@ -9,6 +9,7 @@ const SearchBar = () => {
         {/* Add more options as needed */}
       </select>
       <input
+      
         type="text"
         className="flex-grow border-5 w-80 bg-blue-200"
         placeholder="Search..."
