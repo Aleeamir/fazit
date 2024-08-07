@@ -3,7 +3,7 @@ import logo from "../assets/logo.png";
 const Header = () => {
   return (
     <header
-      className="flex justify-between items-center  bg-white  pl-[50px] py-[50px] shadow"
+      className="flex justify-between items-center  bg-white  pl-[50px] py-[50px] "
       style={{ height: 83 }}
     >
       <div className="flex items-center">
@@ -12,7 +12,7 @@ const Header = () => {
       <div className="flex items-center space-x-4 pr-[10px] rounded-3xl ">
         <span className="text-categrycolor text-[14px]">SEARCH 1</span>
         <div className="relative border-2 rounded-3xl">
-          <div className="flex items-center  shadow-md w-full">
+          <div className="flex items-center w-full">
             <select className="bg-gray-100 border rounded-l-lg ">
               <option value="all">All</option>
             </select>
