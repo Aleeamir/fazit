@@ -105,6 +105,7 @@ const Articles = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:underline"
+                style={{ fontFamily: "Arial" }}
               >
                 {article.title}
               </a>
@@ -119,13 +120,17 @@ const Articles = () => {
                   whiteSpace: "nowrap",
                   overflow: "hidden",
                   textOverflow: "ellipsis",
+                  fontFamily: "Arial",
                 }}
               >
                 {article.url.length > 90
-                  ? article.description.substring(0, 30) + "..."
-                  : article.description}
+                  ? article.url.substring(0, 30) + "..."
+                  : article.url}
               </a>
-              <p className="text-gray-600 text-[12px] font-sans tracking-tight">
+              <p
+                className="text-gray-600 text-[12px] font-sans tracking-tight"
+                style={{ fontFamily: "Arial" }}
+              >
                 {article.description.length > 1000
                   ? article.description.substring(0, 900) + "..."
                   : article.description}
