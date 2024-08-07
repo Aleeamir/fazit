@@ -18,31 +18,31 @@ function App() {
   const [selectedTab, setSelectedTab] = useState("categories");
   const [showNewSearchBar, setShowNewSearchBar] = useState(false);
   const [isPopupVisible, setIsPopupVisible] = useState(true);
-  const [showMatrixApp, setShowMatrixApp] = useState(false); // State to manage MatrixApp visibility
+  const [showMatrixApp, setShowMatrixApp] = useState(false);
 
   function handleReturnData() {
     setShowNewSearchBar(!showNewSearchBar);
     setIsPopupVisible(false);
+    setShowAfterHeader(true);
   }
 
   function handleCategoryClick() {
-    setShowMatrixApp(true); // Show MatrixApp on category button click
+    setShowMatrixApp(true);
   }
 
   function handleCloseMatrixApp() {
-    setShowMatrixApp(false); // Hide MatrixApp
+    setShowMatrixApp(false);
   }
 
   return (
     <div className="flex flex-col">
       <Header />
-      {isPopupVisible && (
-        <AfterHeader
-          selectedTab={selectedTab}
-          setSelectedTab={setSelectedTab}
-          onRetrun={handleReturnData}
-        />
-      )}
+
+      <AfterHeader
+        selectedTab={selectedTab}
+        setSelectedTab={setSelectedTab}
+        onRetrun={handleReturnData}
+      />
 
       <div className="flex flex-1">
         <div className="flex-1 p-4">

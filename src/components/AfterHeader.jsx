@@ -18,6 +18,7 @@ const AfterHeader = ({ selectedTab, setSelectedTab, onRetrun }) => {
   function toogleHeaderCustomeRowPopup() {
     setIsHeaderCustomRow(!isHeaderCustomRow);
   }
+
   return (
     <div className="bg-bordercolor text-white shadow" style={{ height: 18 }}>
       <div className="flex justify-between items-center">
