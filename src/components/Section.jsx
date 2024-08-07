@@ -7,7 +7,7 @@ const Section = ({ title, categories, onCategoryClick }) => {
       <h2 className="text-sm rounded-lg text-categrycolor bg-back2 mb-2 px-2 py-1">
         {title}
       </h2>
-      <div className="flex space-x-1 overflow-x-auto bg-stone-50 items-center py-2">
+      <div className="flex space-x-1 overflow-x-auto bg-stone-50 items-center pl-[50px]">
         {categories.map((category, index) => (
           <CategoryButton
             key={index}

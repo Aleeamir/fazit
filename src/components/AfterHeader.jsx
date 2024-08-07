@@ -20,10 +20,10 @@ const AfterHeader = ({ selectedTab, setSelectedTab, onRetrun }) => {
   }
 
   return (
-    <div className="bg-bordercolor text-white shadow" style={{ height: 18 }}>
+    <div className="bg-bordercolor text-white shadow" style={{ height: 24 }}>
       <div className="flex justify-between items-center">
         <div className="flex pl-96">
-          <div className="flex space-x-4 text-xs">
+          <div className="flex space-x-4 text-[14px]">
             <a href="#" className="hover:underline">
               Options
             </a>
@@ -34,7 +34,7 @@ const AfterHeader = ({ selectedTab, setSelectedTab, onRetrun }) => {
               Login
             </a>
           </div>
-          <div className="flex space-x-2 pl-12 text-xs">
+          <div className="flex space-x-2 pl-12 text-[14px]">
             <span>Page:</span>
             {[...Array(6)].map((_, i) => (
               <a key={i} href="#" className="hover:underline">
@@ -46,7 +46,7 @@ const AfterHeader = ({ selectedTab, setSelectedTab, onRetrun }) => {
               Browse All
             </a>
           </div>
-          <div className="flex space-x-4 pl-12 text-xs">
+          <div className="flex space-x-4 pl-12 text-[14px]">
             <a
               href="#"
               className={`hover:underline ${
@@ -65,7 +65,7 @@ const AfterHeader = ({ selectedTab, setSelectedTab, onRetrun }) => {
             >
               Websites
             </a>
-            <div className="group relative text-xs">
+            <div className="group relative text-[14px]">
               <select
                 className={` text-white bg-bordercolor border-none ${
                   selectedTab === "keywords" ? "underline" : ""
@@ -75,7 +75,7 @@ const AfterHeader = ({ selectedTab, setSelectedTab, onRetrun }) => {
                 <option value="all">Keywords</option>
               </select>
             </div>
-            <div className="group relative text-xs">
+            <div className="group relative text-[14px]">
               <button
                 className="text-white bg-bordercolor border-none"
                 onClick={toggleDrilldownPopup}
@@ -83,12 +83,12 @@ const AfterHeader = ({ selectedTab, setSelectedTab, onRetrun }) => {
                 Drilldown
               </button>
             </div>
-            <div className="group text-xs">
+            <div className="group text-[14px]">
               <select className="text-white bg-bordercolor border-none">
                 <option value="all">Ranking</option>
               </select>
             </div>
-            <div className="group text-xs">
+            <div className="group text-[14px]">
               <button
                 className="text-white bg-bordercolor border-none"
                 onClick={toogleHeaderCustomeRowPopup}
@@ -98,7 +98,7 @@ const AfterHeader = ({ selectedTab, setSelectedTab, onRetrun }) => {
             </div>
           </div>
         </div>
-        <div className="group text-xs">
+        <div className="group text-[14px]">
           <button
             className="text-white bg-bordercolor border-none"
             onClick={toggleRowSettingsPopup}
