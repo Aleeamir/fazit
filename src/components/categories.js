@@ -25,7 +25,7 @@ export const countryCategories = [
     selected: false,
   },
   {
-    label: "United Kingdom",
+    label: "UnitedKingdom",
     count: 173620,
     icon: c4,
     selected: false,

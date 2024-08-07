@@ -51,11 +51,11 @@ function App() {
         onRetrun={handleReturnData}
       />
 
-      <div className="flex flex-1">
-        <div className="flex-1 p-4">
+      <div className="flex ">
+        <div className="flex-1 w-[58%] p-4">
           <Articles />
         </div>
-        <div className="flex-1 p-4">
+        <div className="flex-1 w-[48%] p-4">
           {selectedTab === "categories" && (
             <>
               <Section
