@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import MatrixTable from "./MatrixTable";
+import QueryTable from "./QueryTable";
 
-const AfterHeaderMatrix = () => {
+const AfterHeaderQuery = () => {
   const [isMatrixPopup, setIsMatrixPopup] = useState(false);
 
   function HandleCtrPopup() {
@@ -38,9 +38,9 @@ const AfterHeaderMatrix = () => {
           </div>
         </div>
       </div>
-      {isMatrixPopup && <MatrixTable />}
+      {isMatrixPopup && <QueryTable />}
     </div>
   );
 };
 
-export default AfterHeaderMatrix;
+export default AfterHeaderQuery;
