@@ -39,7 +39,7 @@ const AfterHeaderMatrix = () => {
           </div>
         </div>
       </div>
-      {isMatrixPopup && <QueryTable />}
+      {isMatrixPopup && <MatrixTable />}
     </div>
   );
 };

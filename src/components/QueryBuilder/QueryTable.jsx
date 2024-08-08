@@ -2,18 +2,22 @@ import React, { useState } from "react";
 
 const QueryTable = () => {
   const [tableData, setTableData] = useState([
-    { row: 1, searchType: "Keyword", value: "Vaccine" },
-    { row: 1, searchType: "Keyword", value: "Acquired Immunity" },
-    { row: 1, searchType: "Keyword", value: "Vaccine Mandate" },
-    { row: 1, searchType: "Keyword", value: "Booster" },
-    { row: 1, searchType: "Keyword", value: "Masked Mandate" },
-    { row: 1, searchType: "Keyword", value: "FDA" },
-    { row: 2, searchType: "Keyword", value: "Florida" },
-    { row: 2, searchType: "Keyword", value: "Ron Desantis" },
-    { row: 2, searchType: "Keyword", value: "Omicron" },
-    { row: 2, searchType: "Keyword", value: "School" },
-    { row: 3, searchType: "Keyword", value: "Pfizer" },
-    { row: 3, searchType: "Keyword", value: "Children" },
+    {
+      row: 1,
+      searchType: "URL Match",
+      value: "*Blog* *freenews*; *.net*;*.org*;*.biz*",
+    },
+    { row: 1, searchType: "Keyword", value: "The fed and jrome Power" },
+    { row: 1, searchType: "Keyword", value: "Keyword" },
+    { row: 1, searchType: "Keyword", value: "Keyword" },
+    { row: 1, searchType: "", value: "" },
+    { row: 1, searchType: "", value: "" },
+    { row: 2, searchType: "", value: "" },
+    { row: 2, searchType: "", value: "" },
+    { row: 2, searchType: "", value: "" },
+    { row: 2, searchType: "", value: "" },
+    { row: 3, searchType: "", value: "" },
+    { row: 3, searchType: "", value: "" },
   ]);
 
   const [isPopupOpen, setIsPopupOpen] = useState(true);
@@ -68,26 +72,28 @@ const QueryTable = () => {
                           }
                           className="w-full text-xs text-popupcolor p-1 border border-yellow-600 rounded"
                         >
-                          <option value="Keyword">URL Match</option>
-                          <option value="Keyword">KeyWord</option>
+                          <option value="Keyword">{row.searchType}</option>
                         </select>
                       </td>
                       <td className="border text-xs text-popupcolor p-1 border-yellow-600 w-1/3">
                         <input
                           type="text"
+                          value={row.value}
+                          onChange={(event) =>
+                            handleInputChange(event, index, "value")
+                          }
                           className="w-full text-xs p-1 border border-yellow-600 rounded"
                         />
                       </td>
                       <td className="border text-xs text-popupcolor p-1 border-yellow-600 w-1/3">
-                        <select
-                          value={row.searchType}
+                        <input
+                          type="checkbox"
+                          value={row.value}
                           onChange={(event) =>
-                            handleInputChange(event, index, "searchType")
+                            handleInputChange(event, index, "value")
                           }
-                          className="w-full text-xs text-popupcolor p-1 border border-yellow-600 rounded"
-                        >
-                          <option value="Keyword"></option>
-                        </select>
+                          className="w-full text-xs p-1 border border-yellow-600 rounded"
+                        />
                       </td>
                     </tr>
                   ))}
