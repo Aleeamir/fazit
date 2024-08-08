@@ -30,7 +30,6 @@ function App() {
   function handleReturnData() {
     setShowNewSearchBar(!showNewSearchBar);
     setIsPopupVisible(false);
-    setShowAfterHeader(true);
   }
 
   function handleCategoryClick() {

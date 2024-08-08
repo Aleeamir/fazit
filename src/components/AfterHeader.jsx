@@ -102,7 +102,7 @@ const AfterHeader = ({ selectedTab, setSelectedTab, onRetrun }) => {
                 className="text-white bg-bordercolor border-none"
                 onClick={toggleHeaderCustomRowPopup}
               >
-                Advance
+                Advanced
               </button>
             </div>
           </div>
