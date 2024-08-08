@@ -349,7 +349,7 @@ const Table = () => {
         </div>
       </div>
   
-      <div style={{ textAlign: "center", marginBottom: "10px" ,color: "#A68036"}}>Alpha Match:
+      <div style={{ textAlign: "center", marginBottom: "10px" ,color: "#A68036"}}>
         {alphabets.map((alpha) => (
           <span
             key={alpha}
