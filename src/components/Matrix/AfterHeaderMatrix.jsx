@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import MatrixTable from "./MatrixTable";
+import QueryTable from "../QueryBuilder/QueryTable";
 
 const AfterHeaderMatrix = () => {
   const [isMatrixPopup, setIsMatrixPopup] = useState(false);
@@ -38,7 +39,7 @@ const AfterHeaderMatrix = () => {
           </div>
         </div>
       </div>
-      {isMatrixPopup && <MatrixTable />}
+      {isMatrixPopup && <QueryTable />}
     </div>
   );
 };
