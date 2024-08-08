@@ -2,10 +2,12 @@ import React, { useState } from "react";
 import RowSettingsPopup from "./RowSettingsPopup ";
 import DrilldownPopup from "./DrilldownPopup";
 import CustomApp from "./CustomSearchRowSection/CustomApp";
+import RankingPopup from "./RankingPopup";
 const AfterHeader = ({ selectedTab, setSelectedTab, onRetrun }) => {
   const [isRowSettingsPopupOpen, setIsRowSettingsPopupOpen] = useState(false);
   const [isDrilldownPopupOpen, setIsDrilldownPopupOpen] = useState(false);
   const [isHeaderCustomRow, setIsHeaderCustomRow] = useState(false);
+  const [isRankingPopupOpen, setIsRankingPopupOpen] = useState(false);
 
   const toggleRowSettingsPopup = () => {
     setIsRowSettingsPopupOpen(!isRowSettingsPopupOpen);
@@ -15,9 +17,13 @@ const AfterHeader = ({ selectedTab, setSelectedTab, onRetrun }) => {
     setIsDrilldownPopupOpen(!isDrilldownPopupOpen);
   };
 
-  function toogleHeaderCustomeRowPopup() {
+  const toggleHeaderCustomRowPopup = () => {
     setIsHeaderCustomRow(!isHeaderCustomRow);
-  }
+  };
+
+  const toggleRankingPopup = () => {
+    setIsRankingPopupOpen(!isRankingPopupOpen);
+  };
 
   return (
     <div className="bg-bordercolor text-white shadow" style={{ height: 24 }}>
@@ -84,14 +90,17 @@ const AfterHeader = ({ selectedTab, setSelectedTab, onRetrun }) => {
               </button>
             </div>
             <div className="group text-[14px]">
-              <select className="text-white bg-bordercolor border-none">
-                <option value="all">Ranking</option>
-              </select>
+              <button
+                className="text-white bg-bordercolor border-none"
+                onClick={toggleRankingPopup} // Add onClick to toggle RankingPopup
+              >
+                Ranking
+              </button>
             </div>
             <div className="group text-[14px]">
               <button
                 className="text-white bg-bordercolor border-none"
-                onClick={toogleHeaderCustomeRowPopup}
+                onClick={toggleHeaderCustomRowPopup}
               >
                 Advance
               </button>
@@ -115,12 +124,16 @@ const AfterHeader = ({ selectedTab, setSelectedTab, onRetrun }) => {
       )}
       {isHeaderCustomRow && (
         <CustomApp
-          togglePopup={toogleHeaderCustomeRowPopup}
+          togglePopup={toggleHeaderCustomRowPopup}
           onRetrun={onRetrun}
         />
+      )}
+      {isRankingPopupOpen && (
+        <RankingPopup togglePopup={toggleRankingPopup} /> // Conditionally render RankingPopup
       )}
     </div>
   );
 };
+
 
 export default AfterHeader;
