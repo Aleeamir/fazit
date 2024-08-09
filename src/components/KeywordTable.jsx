@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import CategoryPopup from './CategoryPopup'; 
 
 const KeywordTable = () => {
   const [sortConfig, setSortConfig] = useState(null);
@@ -10,6 +11,7 @@ const KeywordTable = () => {
 
   const cssclass = "py-1 px-1 border-2";
   const textStyle = { fontSize: "14px", fontFamily: "Arial", padding: "5px" };
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
 
   const categories = ['/ All (4621)', '/ News', '/ Sports', '/ Entertainment'];
   const times = ['Last 24 Hrs', 'Last Week', 'Last Month', 'Last Year'];
@@ -80,11 +82,14 @@ const KeywordTable = () => {
     }
     setSortConfig({ key, direction });
   };
-
   const handleCategoryClick = () => {
-    alert("Category Popup");
+    setIsPopupOpen(true);
   };
-
+  
+  const handleClosePopup = () => {
+    setIsPopupOpen(false);
+  };
+  
   const handleTimeClick = () => {
     setSelectedTime(selectedTime === "Last 24 Hrs" ? "All" : "Last 24 Hrs");
   };
@@ -259,6 +264,8 @@ const KeywordTable = () => {
           ))}
         </tbody>
       </table>
+      {isPopupOpen && <CategoryPopup onClose={handleClosePopup} />}
+
     </div>
   );
 };
