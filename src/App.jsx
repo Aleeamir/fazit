@@ -104,7 +104,7 @@ function App() {
           )}
           {selectedTab === "websites" && <Table />}
           {selectedTab === "keywords" && (
-            <div className="mb-4 rounded-lg bg-backcolor py-4 px-4">
+            <div className="">
               <KeywordTable />
             </div>
           )}
