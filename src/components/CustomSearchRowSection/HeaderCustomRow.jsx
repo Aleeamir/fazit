@@ -21,7 +21,10 @@ const HeaderCustomRow = ({ togglePopup, onRetrun, text }) => {
             </button>
             <button
               className=" px-2  bg-popupcolor text-white rounded-lg"
-              onClick={onRetrun}
+              onClick={() => {
+                onRetrun();
+                togglePopup();
+              }}
             >
               RETURN DATA
             </button>
