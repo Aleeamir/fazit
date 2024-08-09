@@ -1,18 +1,18 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
+import CategoryPopup from './CategoryPopup';  // Import the popup component
 
 const Table = () => {
   const [sortConfig, setSortConfig] = useState(null);
-  const [selectedCategory, setSelectedCategory] = useState("/ All (586)");
-  const [selectedTime, setSelectedTime] = useState("Last 24 Hrs");
+  const [selectedCategory, setSelectedCategory] = useState('/ All (586)');
+  const [selectedTime, setSelectedTime] = useState('Last 24 Hrs');
   const [selectedAlpha, setSelectedAlpha] = useState(null);
   const [currentPage, setCurrentPage] = useState(1);
-  const [selectedRow, setSelectedRow] = useState(null); 
-  const cssclass = "py-1 px-1 border-2";
-  const textStyle = { fontSize: "14px", fontFamily: "Arial", padding: "5px" };
+  const [selectedRow, setSelectedRow] = useState(null);
+  const [isPopupOpen, setIsPopupOpen] = useState(false);  
+  const alphabets = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');// State to manage popup visibility
 
-  const categories = ["/ All (586)", "/ News", "/ Sports", "/ Entertainment"];
-  const times = ["Last 24 Hrs", "All"];
-  const alphabets = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
+  const cssclass = 'py-1 px-1 border-2';
+  const textStyle = { fontSize: '14px', fontFamily: 'Arial', padding: '5px' };
 
   const websites = [
     // Sample data
@@ -24,7 +24,7 @@ const Table = () => {
       pages: 759,
       images: 641,
       videos: 0,
-      Cfg:5,
+      Cfg: 5,
     },
     {
       website: "latimes.com",
@@ -34,7 +34,17 @@ const Table = () => {
       pages: 1054,
       images: 1035,
       videos: 0,
-      Cfg:5,
+      Cfg: 5,
+    },
+    {
+      website: "cnn.com",
+      overallRank: 3,
+      popularityRank: 2,
+      relRank: 1,
+      pages: 759,
+      images: 641,
+      videos: 0,
+      Cfg: 4,
     },
     {
       website: "cnn.com",
@@ -136,22 +146,21 @@ const Table = () => {
       videos: 0,
       Cfg: 4,
     },
-   
     // Add more data as necessary
   ];
 
-  const itemsPerPage = 10; 
-  const totalPages = 4; 
+  const itemsPerPage = 10;
+  const totalPages = 4;
 
   const sortedWebsites = React.useMemo(() => {
     let sortableWebsites = [...websites];
     if (sortConfig !== null) {
       sortableWebsites.sort((a, b) => {
         if (a[sortConfig.key] < b[sortConfig.key]) {
-          return sortConfig.direction === "ascending" ? -1 : 1;
+          return sortConfig.direction === 'ascending' ? -1 : 1;
         }
         if (a[sortConfig.key] > b[sortConfig.key]) {
-          return sortConfig.direction === "ascending" ? 1 : -1;
+          return sortConfig.direction === 'ascending' ? 1 : -1;
         }
         return 0;
       });
@@ -163,23 +172,23 @@ const Table = () => {
   }, [websites, sortConfig, currentPage]);
 
   const requestSort = (key) => {
-    let direction = "ascending";
+    let direction = 'ascending';
     if (
       sortConfig &&
       sortConfig.key === key &&
-      sortConfig.direction === "ascending"
+      sortConfig.direction === 'ascending'
     ) {
-      direction = "descending";
+      direction = 'descending';
     }
     setSortConfig({ key, direction });
   };
 
   const handleCategoryClick = () => {
-    alert("Category Popup");
+    setIsPopupOpen(true);  // Show the popup when category is clicked
   };
 
   const handleTimeClick = () => {
-    setSelectedTime(selectedTime === "Last 24 Hrs" ? "All" : "Last 24 Hrs");
+    setSelectedTime(selectedTime === 'Last 24 Hrs' ? 'All' : 'Last 24 Hrs');
   };
 
   const handlePageClick = (page) => {
@@ -375,9 +384,9 @@ const Table = () => {
           ))}
         </tbody>
       </table>
+      {isPopupOpen && <CategoryPopup onClose={() => setIsPopupOpen(false)} />}  {/* Render popup conditionally */}
     </div>
   );
-  
 };
 
 export default Table;
