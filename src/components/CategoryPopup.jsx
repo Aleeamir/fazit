@@ -93,12 +93,12 @@ const CategoryPopup = ({ onClose }) => {
     <>
       <div style={{
         position: 'fixed',
-        top: '200px', // popup vertically
-        right: '1', // popup horizontally
+        top: '230px', // popup vertically
+        right: '2', // popup horizontally
         backgroundColor: 'white',
         border: '2px solid #A68036',
         zIndex: 10,
-        width: '900px', // Adjust the width as needed
+        width: '850px', // Adjust the width as needed
         borderRadius: '8px',
         boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)',
         display: 'flex',
@@ -178,10 +178,10 @@ const CategoryPopup = ({ onClose }) => {
       </div>
       <div style={{
         position: 'fixed',
-        top: 200,
+        top: 220,
         right: 10,
         bottom: 10,
-        width: '930px', 
+        width: '1000px', 
         height: '420px', 
         backgroundColor: 'rgba(128, 128, 128, 0.5)',
         zIndex: 5
