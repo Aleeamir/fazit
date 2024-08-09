@@ -93,8 +93,8 @@ const CategoryPopup = ({ onClose }) => {
     <>
       <div style={{
         position: 'fixed',
-        top: '200px', // Adjust this value to move the popup vertically
-        right: '1', // Adjust this value to move the popup horizontally
+        top: '200px', // popup vertically
+        right: '1', // popup horizontally
         backgroundColor: 'white',
         border: '2px solid #A68036',
         zIndex: 10,
@@ -182,7 +182,7 @@ const CategoryPopup = ({ onClose }) => {
         right: 10,
         bottom: 10,
         width: '930px', 
-        height: '420px', // Adjust this width to match the width of the right-side column of your table
+        height: '420px', 
         backgroundColor: 'rgba(128, 128, 128, 0.5)',
         zIndex: 5
       }} />
