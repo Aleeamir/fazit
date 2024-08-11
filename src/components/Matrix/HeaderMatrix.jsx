@@ -21,7 +21,9 @@ const HeaderMatrix = ({ togglePopup, onRetrun, text, dataReturn }) => {
             </button>
             <button
               className=" px-2  bg-popupcolor text-white rounded-lg"
-              onClick={dataReturn}
+              onClick={() => {
+                onRetrun();
+                togglePopup();}}
             >
               RETURN DATA
             </button>

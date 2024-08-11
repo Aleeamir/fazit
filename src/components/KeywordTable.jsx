@@ -1,148 +1,60 @@
 import React, { useState } from "react";
+import CategoryPopup from './CategoryPopup'; 
 
 const KeywordTable = () => {
   const [sortConfig, setSortConfig] = useState(null);
-  const [selectedCategory, setSelectedCategory] = useState("/ All (4621)");
-  const [selectedTime, setSelectedTime] = useState("Last 24 Hrs");
+  const [selectedCategory, setSelectedCategory] = useState('/ All (4621)');
+  const [selectedTime, setSelectedTime] = useState('Last 24 Hrs');
   const [selectedAlpha, setSelectedAlpha] = useState(null);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [selectedRowIndex, setSelectedRowIndex] = useState(null);
 
   const cssclass = "py-1 px-1 border-2";
-  const textStyle = { fontSize: "14px", fontFamily: "Arial" };
+  const textStyle = { fontSize: "14px", fontFamily: "Arial", padding: "5px" };
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
 
-  const categories = ["/ All (4621)", "/ News", "/ Sports", "/ Entertainment"];
-
-  const times = ["Last 24 Hrs", "Last Week", "Last Month", "Last Year"];
-
-  const alphabets = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
+  const categories = ['/ All (4621)', '/ News', '/ Sports', '/ Entertainment'];
+  const times = ['Last 24 Hrs', 'Last Week', 'Last Month', 'Last Year'];
+  const alphabets = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
 
   const websites = [
-    {
-      website: "washingtonpost.com",
-      overallRank: 1,
-      popularityRank: 3,
-      relevanceRank: 1,
-      pages: 87,
-      images: 87,
-      videos: 0,
-    },
-    {
-      website: "breitbart.com",
-      overallRank: 2,
-      popularityRank: 4,
-      relevanceRank: 2,
-      pages: 145,
-      images: 145,
-      videos: 0,
-    },
-    {
-      website: "mysanantonio.com",
-      overallRank: 3,
-      popularityRank: 31,
-      relevanceRank: 3,
-      pages: 65,
-      images: 65,
-      videos: 0,
-    },
-    {
-      website: "salon.com",
-      overallRank: 4,
-      popularityRank: 17,
-      relevanceRank: 4,
-      pages: 21,
-      images: 21,
-      videos: 0,
-    },
-    {
-      website: "wn.com",
-      overallRank: 5,
-      popularityRank: 62,
-      relevanceRank: 5,
-      pages: 14,
-      images: 14,
-      videos: 0,
-    },
-    {
-      website: "foxnews.com",
-      overallRank: 6,
-      popularityRank: 2,
-      relevanceRank: 17,
-      pages: 88,
-      images: 88,
-      videos: 0,
-    },
-    {
-      website: "businessinsider.com",
-      overallRank: 7,
-      popularityRank: 5,
-      relevanceRank: 16,
-      pages: 77,
-      images: 45,
-      videos: 0,
-    },
-    {
-      website: "theepochtimes.com",
-      overallRank: 8,
-      popularityRank: 6,
-      relevanceRank: 15,
-      pages: 50,
-      images: 50,
-      videos: 0,
-    },
-    {
-      website: "time.com",
-      overallRank: 9,
-      popularityRank: 9,
-      relevanceRank: 14,
-      pages: 73,
-      images: 67,
-      videos: 0,
-    },
-    {
-      website: "dailycaller.com",
-      overallRank: 10,
-      popularityRank: 8,
-      relevanceRank: 13,
-      pages: 170,
-      images: 170,
-      videos: 0,
-    },
-    {
-      website: "latimes.com",
-      overallRank: 11,
-      popularityRank: 11,
-      relevanceRank: 12,
-      pages: 49,
-      images: 48,
-      videos: 0,
-    },
-    {
-      website: "abcnews.go.com",
-      overallRank: 12,
-      popularityRank: 12,
-      relevanceRank: 11,
-      pages: 50,
-      images: 49,
-      videos: 0,
-    },
-    {
-      website: "wsj.com",
-      overallRank: 13,
-      popularityRank: 7,
-      relevanceRank: 22,
-      pages: 39,
-      images: 39,
-      videos: 0,
-    },
-    {
-      website: "nytimes.com",
-      overallRank: 14,
-      popularityRank: 14,
-      relevanceRank: 1,
-      pages: 25,
-      images: 27,
-      videos: 0,
-    },
+    { website: "Neil Abercrombie", overallRank: "KW", popularityRank: 45612, relevanceRank: 21401, pages: 1206, images: 1987 },
+    { website: "Amy Adams", overallRank: "KW", popularityRank: 99541, relevanceRank: 256877, pages: 95477, images: 47966 },
+    { website: "Roma Agrawal", overallRank:"KW", popularityRank: 8549, relevanceRank: 844, pages: 26, images: 471 },
+    { website: "Neil Abercrombie", overallRank: "KW", popularityRank: 45612, relevanceRank: 21401, pages: 1206, images: 1987 },
+    { website: "Amy Adams", overallRank: "KW", popularityRank: 99541, relevanceRank: 256877, pages: 95477, images: 47966 },
+    { website: "Roma Agrawal", overallRank:"KW", popularityRank: 8549, relevanceRank: 844, pages: 26, images: 471 },
+    { website: "Neil Abercrombie", overallRank: "KW", popularityRank: 45612, relevanceRank: 21401, pages: 1206, images: 1987 },
+    { website: "Amy Adams", overallRank: "KW", popularityRank: 99541, relevanceRank: 256877, pages: 95477, images: 47966 },
+    { website: "Roma Agrawal", overallRank:"KW", popularityRank: 8549, relevanceRank: 844, pages: 26, images: 471 },
+    { website: "Neil Abercrombie", overallRank: "KW", popularityRank: 45612, relevanceRank: 21401, pages: 1206, images: 1987 },
+    { website: "Amy Adams", overallRank: "KW", popularityRank: 99541, relevanceRank: 256877, pages: 95477, images: 47966 },
+    { website: "Roma Agrawal", overallRank:"KW", popularityRank: 8549, relevanceRank: 844, pages: 26, images: 471 },
+    { website: "Neil Abercrombie", overallRank: "KW", popularityRank: 45612, relevanceRank: 21401, pages: 1206, images: 1987 },
+    { website: "Amy Adams", overallRank: "KW", popularityRank: 99541, relevanceRank: 256877, pages: 95477, images: 47966 },
+    { website: "Roma Agrawal", overallRank:"KW", popularityRank: 8549, relevanceRank: 844, pages: 26, images: 471 },
+    { website: "Neil Abercrombie", overallRank: "KW", popularityRank: 45612, relevanceRank: 21401, pages: 1206, images: 1987 },
+    { website: "Amy Adams", overallRank: "KW", popularityRank: 99541, relevanceRank: 256877, pages: 95477, images: 47966 },
+    { website: "Roma Agrawal", overallRank:"KW", popularityRank: 8549, relevanceRank: 844, pages: 26, images: 471 },
+    { website: "Neil Abercrombie", overallRank: "KW", popularityRank: 45612, relevanceRank: 21401, pages: 1206, images: 1987 },
+    { website: "Amy Adams", overallRank: "KW", popularityRank: 99541, relevanceRank: 256877, pages: 95477, images: 47966 },
+    { website: "Roma Agrawal", overallRank:"KW", popularityRank: 8549, relevanceRank: 844, pages: 26, images: 471 },
+    { website: "Neil Abercrombie", overallRank: "KW", popularityRank: 45612, relevanceRank: 21401, pages: 1206, images: 1987 },
+    { website: "Amy Adams", overallRank: "KW", popularityRank: 99541, relevanceRank: 256877, pages: 95477, images: 47966 },
+    { website: "Roma Agrawal", overallRank:"KW", popularityRank: 8549, relevanceRank: 844, pages: 26, images: 471 },
+    { website: "Neil Abercrombie", overallRank: "KW", popularityRank: 45612, relevanceRank: 21401, pages: 1206, images: 1987 },
+    { website: "Amy Adams", overallRank: "KW", popularityRank: 99541, relevanceRank: 256877, pages: 95477, images: 47966 },
+    { website: "Roma Agrawal", overallRank:"KW", popularityRank: 8549, relevanceRank: 844, pages: 26, images: 471 },
+    { website: "Neil Abercrombie", overallRank: "KW", popularityRank: 45612, relevanceRank: 21401, pages: 1206, images: 1987 },
+    { website: "Amy Adams", overallRank: "KW", popularityRank: 99541, relevanceRank: 256877, pages: 95477, images: 47966 },
+    { website: "Roma Agrawal", overallRank:"KW", popularityRank: 8549, relevanceRank: 844, pages: 26, images: 471 },
+    { website: "Amy Adams", overallRank: "KW", popularityRank: 99541, relevanceRank: 256877, pages: 95477, images: 47966 },
+
+    // Add more data as necessary
   ];
+
+  const itemsPerPage = 10;
+  const totalPages = Math.ceil(websites.length / itemsPerPage);
 
   const sortedWebsites = React.useMemo(() => {
     let sortableWebsites = [...websites];
@@ -157,219 +69,203 @@ const KeywordTable = () => {
         return 0;
       });
     }
-    return sortableWebsites;
-  }, [websites, sortConfig]);
+    return sortableWebsites.slice(
+      (currentPage - 1) * itemsPerPage,
+      currentPage * itemsPerPage
+    );
+  }, [websites, sortConfig, currentPage]);
 
   const requestSort = (key) => {
     let direction = "ascending";
-    if (
-      sortConfig &&
-      sortConfig.key === key &&
-      sortConfig.direction === "ascending"
-    ) {
+    if (sortConfig && sortConfig.key === key && sortConfig.direction === "ascending") {
       direction = "descending";
     }
     setSortConfig({ key, direction });
   };
+  const handleCategoryClick = () => {
+    setIsPopupOpen(true);
+  };
+  
+  const handleClosePopup = () => {
+    setIsPopupOpen(false);
+  };
+  
+  const handleTimeClick = () => {
+    setSelectedTime(selectedTime === "Last 24 Hrs" ? "All" : "Last 24 Hrs");
+  };
 
-  // Define color variables
-  const selectedColor = "#A68036";
-  const defaultColor = "#050505";
-  const headerBgColor = "#eff1ef"; // Background color for table headers
+  const handlePageClick = (page) => {
+    setCurrentPage(page);
+  };
+
+  const handleRowClick = (index) => {
+    setSelectedRowIndex(index);
+  };
 
   return (
     <div className="overflow-x-auto rounded-none">
-      <div className="py-2">
-        <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-            marginBottom: "10px",
-          }}
-        >
-          <span style={{ marginRight: "10px", color: selectedColor }}>
+      <div style={{ marginBottom: '9px', display: 'flex', justifyContent: 'flex-end', fontSize: '14px', fontFamily: 'Arial' }}>
+        <div style={{ display: "flex", color: "#A68036", marginRight: "10px" }}>
+          <button style={{ backgroundColor: "transparent", border: "none", color: "#A68036", cursor: "pointer", marginRight: "10px" }}>
+            Rank#
+          </button>
+          <button style={{ backgroundColor: "transparent", border: "none", color: "#A68036", cursor: "pointer", marginRight: "10px" }}>
+            Score
+          </button>
+          <button style={{ backgroundColor: "transparent", border: "none", color: "#A68036", cursor: "pointer"}}>
+            Count: 71
+          </button>
+        </div>
+      </div>
+  
+      <div className="py-2" style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "10px" }}>
+        <div style={{ display: "flex", alignItems: "center" }}>
+          <span style={{ marginRight: "10px", color: "#A68036" }}>
             Category:
           </span>
-          <select
-            value={selectedCategory}
-            onChange={(e) => setSelectedCategory(e.target.value)}
-            style={{ marginRight: "20px" }}
-          >
-            {categories.map((category, index) => (
-              <option
-                key={index}
-                value={category}
-                style={{
-                  color:
-                    selectedCategory === category
-                      ? selectedColor
-                      : defaultColor,
-                }}
-              >
-                {category}
-              </option>
-            ))}
-          </select>
-          <span style={{ marginRight: "10px", color: selectedColor }}>
+          <a href="#" onClick={handleCategoryClick} style={{ color: "#172d5f", marginRight: "180px" }}>
+            {selectedCategory}
+          </a>
+          <span style={{ marginRight: "10px", color: "#A68036" }}>
             Time:
           </span>
-          <select
-            value={selectedTime}
-            onChange={(e) => setSelectedTime(e.target.value)}
-          >
-            {times.map((time, index) => (
-              <option
-                key={index}
-                value={time}
-                style={{
-                  color: selectedTime === time ? selectedColor : defaultColor,
-                }}
-              >
-                {time}
-              </option>
-            ))}
-          </select>
+          <a href="#" onClick={handleTimeClick} style={{ color: "#172d5f", marginRight: "20px" }}>
+            {selectedTime}
+          </a>
+          <div style={{ borderLeft: "2px solid #A68036", height: "35px", marginLeft: "10px" }}></div>
         </div>
-        <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-            marginBottom: "10px",
-          }}
-        >
-          <span style={{ marginRight: "10px", color: selectedColor }}>
-            Alpha Match:
-          </span>
-          {alphabets.map((alpha) => (
-            <span
-              key={alpha}
-              onClick={() => setSelectedAlpha(alpha)}
+  
+        <div style={{ display: 'flex', justifyContent: 'flex-end', fontSize: '14px', fontFamily: 'Arial' }}>
+          {[...Array(totalPages).keys()].map((page) => (
+            <button
+              key={page + 1}
+              onClick={() => handlePageClick(page + 1)}
               style={{
-                cursor: "pointer",
-                margin: "0 5px",
-                textDecoration: selectedAlpha === alpha ? "underline" : "none",
-                color: selectedAlpha === alpha ? selectedColor : defaultColor,
+                margin: '0 5px',
+                padding: '0',
+                backgroundColor: 'transparent',
+                color: currentPage === page + 1 ? '#172d5f' : '#A68036',
+                border: 'none',
+                cursor: 'pointer',
+                textDecoration: currentPage === page + 1 ? 'underline' : 'none',
               }}
             >
-              {alpha}
-            </span>
+              {page + 1}
+            </button>
           ))}
+        </div>
+      </div>
+  
+      <div style={{ textAlign: "center", marginBottom: "10px" ,color: "#A68036"}}>
+        {alphabets.map((alpha) => (
           <span
-            onClick={() => setSelectedAlpha(null)}
+            key={alpha}
+            onClick={() => setSelectedAlpha(alpha)}
             style={{
               cursor: "pointer",
               margin: "0 5px",
-              textDecoration: selectedAlpha === null ? "underline" : "none",
-              color: selectedAlpha === null ? selectedColor : defaultColor,
+              textDecoration: selectedAlpha === alpha ? "underline" : "none",
+              color: selectedAlpha === alpha ? "#A68036" : "#050505",
             }}
           >
-            All
+            {alpha}
           </span>
-        </div>
+        ))}
+        <span
+          onClick={() => setSelectedAlpha(null)}
+          style={{
+            cursor: "pointer",
+            margin: "0 5px",
+            textDecoration: selectedAlpha === null ? "underline" : "none",
+            color: selectedAlpha === null ? "#A68036" : "#050505",
+          }}
+        >
+          All
+        </span>
       </div>
-      <table className="min-w-full bg-white border-2">
-        <thead className="border-2">
-          <tr className="border-2" style={{ backgroundColor: headerBgColor }}>
+  
+      <table className="min-w-full border-2">
+        <thead style={{ backgroundColor: "#eff1ef" }}>
+          <tr className="border-2">
             <th
               className={cssclass}
-              style={{ ...textStyle, color: selectedColor }}
+              style={{ ...textStyle, color: "#A68036", textAlign: "left" }}
               onClick={() => requestSort("website")}
             >
-              Website
+              Search Item
             </th>
             <th
               className={cssclass}
-              style={{ ...textStyle, color: selectedColor }}
+              style={{ ...textStyle, color: "#A68036", textAlign: "center" }}
               onClick={() => requestSort("overallRank")}
             >
-              Overall Rank
+              Type
             </th>
             <th
               className={cssclass}
-              style={{ ...textStyle, color: selectedColor }}
+              style={{ ...textStyle, color: "#A68036", textAlign: "center" ,cursor: "pointer" }}
               onClick={() => requestSort("popularityRank")}
             >
-              Popularity Rank
+              Pages ▼
             </th>
             <th
               className={cssclass}
-              style={{ ...textStyle, color: selectedColor }}
+              style={{ ...textStyle, color: "#A68036", textAlign: "center" }}
               onClick={() => requestSort("relevanceRank")}
-            >
-              Relevance Rank
-            </th>
-            <th
-              className={cssclass}
-              style={{ ...textStyle, color: selectedColor }}
-              onClick={() => requestSort("pages")}
-            >
-              Pages
-            </th>
-            <th
-              className={cssclass}
-              style={{ ...textStyle, color: selectedColor }}
-              onClick={() => requestSort("images")}
             >
               Images
             </th>
             <th
               className={cssclass}
-              style={{ ...textStyle, color: selectedColor }}
-              onClick={() => requestSort("videos")}
+              style={{ ...textStyle, color: "#A68036", textAlign: "center" }}
+              onClick={() => requestSort("pages")}
             >
               Videos
+            </th>
+            <th
+              className={cssclass}
+              style={{ ...textStyle, color: "#A68036", textAlign: "center" }}
+              onClick={() => requestSort("images")}
+            >
+              Websites
             </th>
           </tr>
         </thead>
         <tbody className="border-2">
           {sortedWebsites.map((website, index) => (
-            <tr key={index} className="border-2">
-              <td
-                className={cssclass}
-                style={{ ...textStyle, color: "#050505" }}
-              >
+            <tr
+              key={index}
+              className="border-2"
+              style={{
+                color: selectedRowIndex === index ? "#172d5f" : "#A68036",
+                cursor: "pointer",
+              }}
+              onClick={() => handleRowClick(index)}
+            >
+              <td className={cssclass} style={{ ...textStyle, textAlign: "left" }}>
                 {website.website}
               </td>
-              <td
-                className={cssclass}
-                style={{ ...textStyle, color: "#050505" }}
-              >
+              <td className={cssclass} style={{ ...textStyle, textAlign: "center" }}>
                 {website.overallRank}
               </td>
-              <td
-                className={cssclass}
-                style={{ ...textStyle, color: "#050505" }}
-              >
+              <td className={cssclass} style={{ ...textStyle, textAlign: "center" }}>
                 {website.popularityRank}
               </td>
-              <td
-                className={cssclass}
-                style={{ ...textStyle, color: "#050505" }}
-              >
+              <td className={cssclass} style={{ ...textStyle, textAlign: "center" }}>
                 {website.relevanceRank}
               </td>
-              <td
-                className={cssclass}
-                style={{ ...textStyle, color: "#050505" }}
-              >
+              <td className={cssclass} style={{ ...textStyle, textAlign: "center" }}>
                 {website.pages}
               </td>
-              <td
-                className={cssclass}
-                style={{ ...textStyle, color: "#050505" }}
-              >
+              <td className={cssclass} style={{ ...textStyle, textAlign: "center" }}>
                 {website.images}
-              </td>
-              <td
-                className={cssclass}
-                style={{ ...textStyle, color: "#050505" }}
-              >
-                {website.videos}
               </td>
             </tr>
           ))}
         </tbody>
       </table>
+      {isPopupOpen && <CategoryPopup onClose={handleClosePopup} />}
+
     </div>
   );
 };
