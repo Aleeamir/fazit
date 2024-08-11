@@ -3,10 +3,14 @@ import RowSettingsPopup from "./RowSettingsPopup ";
 import DrilldownPopup from "./DrilldownPopup";
 import CustomApp from "./CustomSearchRowSection/CustomApp";
 import RankingPopup from "./RankingPopup";
+import QueryApp from "./QueryBuilder/QueryApp";
+import MatrixApp from "./Matrix/MatrixApp";
 const AfterHeader = ({ selectedTab, setSelectedTab, onRetrun }) => {
   const [isRowSettingsPopupOpen, setIsRowSettingsPopupOpen] = useState(false);
   const [isDrilldownPopupOpen, setIsDrilldownPopupOpen] = useState(false);
   const [isHeaderCustomRow, setIsHeaderCustomRow] = useState(false);
+  const [isHeaderMatrix, setIsHeaderMatrix] = useState(false);
+  const [isHeaderQuery, setIsHeaderQuery] = useState(false);
   const [isRankingPopupOpen, setIsRankingPopupOpen] = useState(false);
 
   const toggleRowSettingsPopup = () => {
@@ -19,6 +23,12 @@ const AfterHeader = ({ selectedTab, setSelectedTab, onRetrun }) => {
 
   const toggleHeaderCustomRowPopup = () => {
     setIsHeaderCustomRow(!isHeaderCustomRow);
+  };
+  const toggleHeaderMatrixPopup = () => {
+    setIsHeaderMatrix(!isHeaderMatrix);
+  };
+  const toggleHeaderQuerySelectorRowPopup = () => {
+    setIsHeaderQuery(!isHeaderQuery);
   };
 
   const toggleRankingPopup = () => {
@@ -98,12 +108,25 @@ const AfterHeader = ({ selectedTab, setSelectedTab, onRetrun }) => {
               </button>
             </div>
             <div className="group text-[14px]">
-              <button
+              <select
+                name="advanced-options"
                 className="text-white bg-bordercolor border-none"
-                onClick={toggleHeaderCustomRowPopup}
+                onChange={(event) => {
+                  const value = event.target.value;
+                  if (value === "csr") {
+                    toggleHeaderCustomRowPopup();
+                  } else if (value === "matrix") {
+                    toggleHeaderMatrixPopup();
+                  } else if (value === "query-builder") {
+                    toggleHeaderQuerySelectorRowPopup();
+                  }
+                }}
               >
-                Advanced
-              </button>
+                <option value="">Advanced</option>
+                <option value="csr">CSR</option>
+                <option value="matrix">Matrix</option>
+                <option value="query-builder">Query Builder</option>
+              </select>
             </div>
           </div>
         </div>
@@ -128,12 +151,20 @@ const AfterHeader = ({ selectedTab, setSelectedTab, onRetrun }) => {
           onRetrun={onRetrun}
         />
       )}
+      {isHeaderMatrix && (
+        <MatrixApp togglePopup={toggleHeaderMatrixPopup} onRetrun={onRetrun} />
+      )}
+      {isHeaderQuery && (
+        <QueryApp
+          togglePopup={toggleHeaderQuerySelectorRowPopup}
+          onRetrun={onRetrun}
+        />
+      )}
       {isRankingPopupOpen && (
         <RankingPopup togglePopup={toggleRankingPopup} /> // Conditionally render RankingPopup
       )}
     </div>
   );
 };
-
 
 export default AfterHeader;

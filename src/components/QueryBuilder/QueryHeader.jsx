@@ -23,7 +23,7 @@ const QueryHeader = ({ togglePopup, onRetrun, text }) => {
               className=" px-2  bg-popupcolor text-white rounded-lg"
               onClick={onRetrun}
             >
-              RETURNDATA Return Data
+              RETURN DATA
             </button>
           </div>
         </div>
