@@ -9,6 +9,7 @@ import {
   dataCategories,
   industryCategories,
 } from "../../components/categories.js";
+import QueryComponent from "./QueryComponent.jsx";
 
 const QueryApp = ({ togglePopup, onRetrun }) => {
   return (
@@ -29,9 +30,7 @@ const QueryApp = ({ togglePopup, onRetrun }) => {
               <span className="text-categrycolor py-3">SEARCH 2</span>
               <SearchBar />
             </div>
-            <Section title="Row 1" categories={countryCategories} />
-            <Section title="Row 2" categories={dataCategories} />
-            <Section title="Row 3" categories={industryCategories} />
+            <QueryComponent />
           </>
         </div>
       </div>
