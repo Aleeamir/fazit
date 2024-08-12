@@ -21,23 +21,9 @@ function App() {
   const [showMatrixApp, setShowMatrixApp] = useState(false);
   const [matrixSearchBar, setMatrixSearchBar] = useState(false);
 
-  function HandleMatrixReturnData() {
-    setMatrixSearchBar(!matrixSearchBar);
-    setIsPopupVisible(false);
-    setShowAfterHeader(true);
-  }
-
   function handleReturnData() {
     setShowNewSearchBar(!showNewSearchBar);
     setIsPopupVisible(false);
-  }
-
-  function handleCategoryClick() {
-    setShowMatrixApp(true);
-  }
-
-  function handleCloseMatrixApp() {
-    setShowMatrixApp(false);
   }
 
   return (
@@ -57,23 +43,14 @@ function App() {
         <div className="flex-1 w-[48%] p-4">
           {selectedTab === "categories" && (
             <>
-              <Section
-                title="COUNTRY"
-                categories={countryCategories}
-                onCategoryClick={handleCategoryClick} // Pass click handler
-              />
+              <Section title="COUNTRY" categories={countryCategories} />
               <Section
                 title="DATA"
                 categories={dataCategories}
-                onCategoryClick={handleCategoryClick}
 
                 // Pass click handler
               />
-              <Section
-                title="INDUSTRY"
-                categories={industryCategories}
-                onCategoryClick={handleCategoryClick} // Pass click handler
-              />
+              <Section title="INDUSTRY" categories={industryCategories} />
               <div className="mb-4 rounded-lg bg-backcolor py-4 px-4">
                 {!matrixSearchBar && (
                   <>
@@ -110,14 +87,6 @@ function App() {
           )}
         </div>
       </div>
-
-      {showMatrixApp && (
-        <MatrixApp
-          togglePopup={handleCloseMatrixApp}
-          onRetrun={handleCloseMatrixApp}
-          dataReturn={HandleMatrixReturnData}
-        />
-      )}
     </div>
   );
 }
