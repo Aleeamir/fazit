@@ -1,86 +1,3 @@
-/* Style.css */
-.csr-table-container {
-  position: relative;
-  width: 600px;
-  margin: 20px auto;
-  padding: 30px;
-  border: 5px solid #d4af37;
-  font-family: Arial, sans-serif;
-  background-color: white;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.csr-table-spacing {
-  width: 500px;
-  margin: 20px auto;
-  padding: 30px;
-  border: 2px solid #d4af37;
-}
-
-h2 {
-  text-align: left; /* Align text to the left */
-  font-size: 1em;
-  margin: 0; /* Remove default margin */
-  color: #d4af37;
-}
-
-.matrix-select {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 200px; /* Adjust the width as needed */
-  margin: 20px auto; /* Center the block horizontally */
-}
-
-.csr-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-bottom: 20px;
-}
-
-.csr-table th,
-.csr-table td {
-  text-align: left;
-  padding: 10px;
-  border: 1px solid #d4af37;
-}
-
-.csr-table th {
-  background-color: #fdf5e6;
-  color: #d4af37;
-}
-
-.csr-table td {
-  background-color: #fff;
-}
-
-.button-container {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.close-button,
-.save-button {
-  padding: 10px 20px;
-  border: none;
-  border-radius: 3px;
-  cursor: pointer;
-  font-size: 16px;
-}
-
-.close-button {
-  background-color: #d4af37;
-  color: white;
-}
-
-.save-button {
-  background-color: white;
-  color: #d4af37;
-}
 
 /* Matrix1.css */
 .container {
@@ -108,7 +25,7 @@ h2 {
 }
 
 .main-table th {
-  background-color: #f5f5dc;
+  background-color: #ffffff;
 }
 
 .main-table td {
@@ -130,4 +47,11 @@ h2 {
   color: blue;
   background-color: white;
   border-right: 5px solid #d4af37;
+}
+
+.main-table tbody th {
+  background-color: #f9f9f9 !important;
+  color: #b8962f !important;
+  border: 1px solid #d4af37 !important;
+  padding: 8px !important;
 }

@@ -16,28 +16,28 @@ export default function Matrix2() {
         </thead>
         <tbody>
           <tr>
-            <td>All</td>
+            <th>All</th>
             <td>4621</td>
             <td>123</td>
             <td>140</td>
             <td>52</td>
           </tr>
           <tr>
-            <td>Texas</td>
+            <th>Texas</th>
             <td>54</td>
             <td>7</td>
             <td>41</td>
             <td>6</td>
           </tr>
           <tr>
-            <td>California</td>
+            <th>California</th>
             <td>36</td>
             <td>18</td>
             <td>36</td>
             <td>1</td>
           </tr>
           <tr>
-            <td>Contractors</td>
+            <th>Contractors</th>
             <td>82</td>
             <td>75</td>
             <td>40</td>

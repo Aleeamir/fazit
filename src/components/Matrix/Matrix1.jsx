@@ -21,7 +21,7 @@ export default function Matrix1() {
         </thead>
         <tbody>
           <tr>
-            <td>All</td>
+            <th>All</th>
             <td>4621</td>
             <td>96</td>
             <td>222</td>
@@ -30,7 +30,7 @@ export default function Matrix1() {
             <td>525</td>
           </tr>
           <tr>
-            <td>Immigration</td>
+            <th>Immigration</th>
             <td>100</td>
             <td>20</td>
             <td>41</td>
@@ -39,7 +39,7 @@ export default function Matrix1() {
             <td>43</td>
           </tr>
           <tr>
-            <td>Border Patrol</td>
+            <th>Border Patrol</th>
             <td>36</td>
             <td>18</td>
             <td>36</td>
@@ -48,7 +48,7 @@ export default function Matrix1() {
             <td>9</td>
           </tr>
           <tr>
-            <td>Cartels</td>
+            <th>Cartels</th>
             <td>82</td>
             <td>75</td>
             <td>40</td>
@@ -57,7 +57,7 @@ export default function Matrix1() {
             <td>12</td>
           </tr>
           <tr>
-            <td>Deportation</td>
+            <th>Deportation</th>
             <td>57</td>
             <td>43</td>
             <td>31</td>
@@ -66,7 +66,7 @@ export default function Matrix1() {
             <td>39</td>
           </tr>
           <tr>
-            <td>Enforcement</td>
+            <th>Enforcement</th>
             <td>67</td>
             <td>60</td>
             <td>28</td>
@@ -75,7 +75,7 @@ export default function Matrix1() {
             <td>29</td>
           </tr>
           <tr>
-            <td>Supreme Court</td>
+            <th>Supreme Court</th>
             <td>98</td>
             <td>35</td>
             <td>19</td>
@@ -84,7 +84,7 @@ export default function Matrix1() {
             <td>30</td>
           </tr>
           <tr>
-            <td>Drugs</td>
+            <th>Drugs</th>
             <td>38</td>
             <td>12</td>
             <td>15</td>
