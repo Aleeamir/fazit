@@ -23,6 +23,7 @@ const CategoryButton = ({ label, count, icon, selected, onClick }) => {
         }`}
         style={{ fontFamily: "arial" }}
       >
+        
         {count}
       </span>
     </div>
