@@ -41,6 +41,7 @@ const QueryComponent = () => {
         fontFamily: "Arial, sans-serif",
         color: "#b49f57",
         fontSize: "14px",
+        paddingLeft: "42px",
       }}
     >
       {/* Header Row */}
@@ -57,7 +58,7 @@ const QueryComponent = () => {
         >
           <li style={{ width: "150px", textAlign: "center" }}>Query Type</li>
           <li style={{ width: "60px", textAlign: "center" }}>Opt</li>
-          <li style={{ width: "350px", textAlign: "center" }}>Reference</li>
+          <li style={{ width: "240px", textAlign: "center" }}>Reference</li>
           <li style={{ width: "60px", textAlign: "center" }}>Count</li>
           <li style={{ width: "120px", textAlign: "center" }}>Results</li>
         </ul>
@@ -78,7 +79,7 @@ const QueryComponent = () => {
             value={query.queryType}
             style={{
               marginRight: "10px",
-              width: "150px",
+              width: "140px",
               height: "25px",
               borderRadius: "5px",
               border: "1px solid #b49f57",
@@ -93,7 +94,7 @@ const QueryComponent = () => {
             value={query.opt}
             style={{
               marginRight: "10px",
-              width: "60px",
+              width: "50px",
               height: "25px",
               borderRadius: "5px",
               border: "1px solid #b49f57",
@@ -109,7 +110,7 @@ const QueryComponent = () => {
             readOnly
             style={{
               marginRight: "10px",
-              width: "350px",
+              width: "250px",
               height: "25px",
               borderRadius: "5px",
               border: "1px solid #b49f57",
@@ -136,16 +137,7 @@ const QueryComponent = () => {
           {/* Run Button */}
           <button
             onClick={() => handleRunClick(query.id)}
-            style={{
-              backgroundColor: "#d9534f",
-              color: "white",
-              border: "none",
-              borderRadius: "5px",
-              padding: "5px 10px",
-              marginRight: "10px",
-              height: "30px",
-              cursor: "pointer",
-            }}
+            className="px-2 bg-[#ba3030] text-white rounded-r-lg"
           >
             {query.status}
           </button>
@@ -153,13 +145,15 @@ const QueryComponent = () => {
           {/* Result Button */}
           <button
             style={{
-              backgroundColor:
-                query.result === "Showing" ? "green" : "transparent",
-              color: query.result === "Showing" ? "white" : "#b49f57",
-              border: query.result === "Showing" ? "none" : "1px solid #b49f57",
-              borderRadius: "5px",
+              color: query.result === "Showing" ? "green" : "#b49f57",
+              border:
+                query.result === "Showing"
+                  ? "1px solid #b49f57"
+                  : "1px solid #b49f57",
+
               padding: "5px 10px",
               height: "30px",
+              marginLeft: "12px",
               cursor: "pointer",
             }}
           >
