@@ -5,12 +5,14 @@ import CustomApp from "./CustomSearchRowSection/CustomApp";
 import RankingPopup from "./RankingPopup";
 import QueryApp from "./QueryBuilder/QueryApp";
 import MatrixApp from "./Matrix/MatrixApp";
+import KeywordApp from "./KeywordsRepo/KeywordApp.jsx";
 const AfterHeader = ({ selectedTab, setSelectedTab, onRetrun }) => {
   const [isRowSettingsPopupOpen, setIsRowSettingsPopupOpen] = useState(false);
   const [isDrilldownPopupOpen, setIsDrilldownPopupOpen] = useState(false);
   const [isHeaderCustomRow, setIsHeaderCustomRow] = useState(false);
   const [isHeaderMatrix, setIsHeaderMatrix] = useState(false);
   const [isHeaderQuery, setIsHeaderQuery] = useState(false);
+  const [isHeaderKeyword, setIsHeaderKeyword] = useState(false);
   const [isRankingPopupOpen, setIsRankingPopupOpen] = useState(false);
 
   const toggleRowSettingsPopup = () => {
@@ -33,6 +35,9 @@ const AfterHeader = ({ selectedTab, setSelectedTab, onRetrun }) => {
 
   const toggleRankingPopup = () => {
     setIsRankingPopupOpen(!isRankingPopupOpen);
+  };
+  const toggleHeaderKywordPopUp = () => {
+    setIsHeaderKeyword(!isHeaderKeyword);
   };
 
   return (
@@ -119,6 +124,8 @@ const AfterHeader = ({ selectedTab, setSelectedTab, onRetrun }) => {
                     toggleHeaderMatrixPopup();
                   } else if (value === "query-builder") {
                     toggleHeaderQuerySelectorRowPopup();
+                  } else if (value === "custom-keyword") {
+                    toggleHeaderKywordPopUp();
                   }
                 }}
               >
@@ -126,6 +133,7 @@ const AfterHeader = ({ selectedTab, setSelectedTab, onRetrun }) => {
                 <option value="csr">CSR</option>
                 <option value="matrix">Matrix</option>
                 <option value="query-builder">Query Builder</option>
+                <option value="custom-keyword">Custom Keyword</option>
               </select>
             </div>
           </div>
@@ -160,9 +168,13 @@ const AfterHeader = ({ selectedTab, setSelectedTab, onRetrun }) => {
           onRetrun={onRetrun}
         />
       )}
-      {isRankingPopupOpen && (
-        <RankingPopup togglePopup={toggleRankingPopup} /> // Conditionally render RankingPopup
+      {isHeaderKeyword && (
+        <KeywordApp
+          togglePopup={toggleHeaderQuerySelectorRowPopup}
+          onRetrun={onRetrun}
+        />
       )}
+      {isRankingPopupOpen && <RankingPopup togglePopup={toggleRankingPopup} />}
     </div>
   );
 };

@@ -1,14 +1,8 @@
 import React from "react";
 import QueryHeader from "./QueryHeader.jsx";
 import AfterHeaderQuery from "./AfterHeaderQuery.jsx";
-import Section from "../Section";
 import Articles from "../Articles";
 import SearchBar from "../SearchBar";
-import {
-  countryCategories,
-  dataCategories,
-  industryCategories,
-} from "../../components/categories.js";
 import QueryComponent from "./QueryComponent.jsx";
 
 const QueryApp = ({ togglePopup, onRetrun }) => {

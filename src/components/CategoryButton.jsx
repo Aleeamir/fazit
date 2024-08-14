@@ -7,7 +7,7 @@ const CategoryButton = ({ label, count, icon, selected, onClick }) => {
       onClick={onClick}
     >
       <span
-        className={`text-[10px] bg-slate-50  ${
+        className={`text-[10px] ${
           selected ? "text-red-700 " : "text-gray-700"
         }`}
       >
@@ -23,7 +23,6 @@ const CategoryButton = ({ label, count, icon, selected, onClick }) => {
         }`}
         style={{ fontFamily: "arial" }}
       >
-        
         {count}
       </span>
     </div>
