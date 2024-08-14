@@ -7,7 +7,7 @@ const CategoryButton = ({ label, count, icon, selected, onClick }) => {
       onClick={onClick}
     >
       <span
-        className={`text-[10px]   ${
+        className={`text-[10px] bg-slate-50  ${
           selected ? "text-red-700 " : "text-gray-700"
         }`}
       >
