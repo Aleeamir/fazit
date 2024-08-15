@@ -18,6 +18,7 @@ const KeywordApp = ({ togglePopup, onRetrun }) => {
         text="Full Keywords Repository"
       />
       <AfterHeaderKeyword />
+
       <div className="flex flex-1">
         <div className=" w-[60%] p-2">
           <SearchTable />
