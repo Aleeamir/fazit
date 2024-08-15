@@ -107,7 +107,7 @@ const AfterHeader = ({ selectedTab, setSelectedTab, onRetrun }) => {
             <div className="group text-[14px]">
               <button
                 className="text-white bg-bordercolor border-none"
-                onClick={toggleRankingPopup} // Add onClick to toggle RankingPopup
+                onClick={toggleRankingPopup}
               >
                 Ranking
               </button>
@@ -169,10 +169,7 @@ const AfterHeader = ({ selectedTab, setSelectedTab, onRetrun }) => {
         />
       )}
       {isHeaderKeyword && (
-        <KeywordApp
-          togglePopup={toggleHeaderQuerySelectorRowPopup}
-          onRetrun={onRetrun}
-        />
+        <KeywordApp togglePopup={toggleHeaderKywordPopUp} onRetrun={onRetrun} />
       )}
       {isRankingPopupOpen && <RankingPopup togglePopup={toggleRankingPopup} />}
     </div>

@@ -2,23 +2,12 @@ import React from "react";
 import AfterHeaderKeyword from "./AfterHeaderKeyword.jsx";
 import HeaderKeyword from "./HeaderKeyword.jsx";
 import KeywordSection from "./KeywordSection.jsx";
-import SearchBar from "../SearchBar";
 import SearchTable from "./SearchTable.jsx";
 import {
-  countryCategories,
-  dataCategories,
-  industryCategories,
+  languageCategories,
+  dataTypeCategories,
+  dataSearchItems,
 } from "../../components/categories.js";
-
-import c1 from "../../assets/icon-images.png";
-export const languageCategories = [
-  {
-    label: "English",
-    count: 401834,
-    icon: c1,
-    selected: false,
-  },
-];
 
 const KeywordApp = ({ togglePopup, onRetrun }) => {
   return (
@@ -29,22 +18,41 @@ const KeywordApp = ({ togglePopup, onRetrun }) => {
         text="Full Keywords Repository"
       />
       <AfterHeaderKeyword />
+
       <div className="flex flex-1">
-        <div className="flex-1 p-4">
+        <div className=" w-[60%] p-2">
           <SearchTable />
         </div>
-        <div className="flex-1 p-4">
+        <div className="flex-1 w-[40%] p-2">
           <>
-            <div className="mb-4  rounded-lg  py-2 px-2">
-              <span className="text-categrycolor py-3">SEARCH 2</span>
-              <SearchBar />
+            <div className="mb-4 rounded-lg py-2 px-2">
+              <KeywordSection
+                title="Language"
+                categories={languageCategories}
+              />
+              <KeywordSection
+                title="Data Type"
+                categories={dataTypeCategories}
+              />
+              <KeywordSection
+                title="Search Items"
+                categories={dataSearchItems}
+              />
             </div>
-            <KeywordSection title="Language" categories={languageCategories} />
-            <KeywordSection title="Data Type" categories={dataCategories} />
-            <KeywordSection
-              title="Search Items"
-              categories={industryCategories}
-            />
+            <div className="flex items-center space-x-4 rounded-3xl">
+              <span className="text-categrycolor text-[14px]">SEARCH 2</span>
+              <div className="relative border-2 rounded-3xl">
+                <div className="flex items-center w-full">
+                  <input
+                    type="text"
+                    className="flex-grow w-[420px] rounded-3xl border-3 border-categrycolor"
+                  />
+                  <button className="px-2 bg-[#ba3030] text-white rounded-r-lg">
+                    FAZIT
+                  </button>
+                </div>
+              </div>
+            </div>
           </>
         </div>
       </div>

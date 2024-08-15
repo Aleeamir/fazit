@@ -3,9 +3,11 @@ import CategoryButton from "../CategoryButton";
 
 const KeywordSection = ({ title, categories, onCategoryClick }) => {
   return (
-    <div className="mb-4 rounded-lg  py-4 px-4">
-      <h2 className="text-sm rounded-lg text-categrycolor  px-2 ">{title}</h2>
-      <div className="flex space-x-1 overflow-x-auto  items-center pl-[50px]">
+    <div className="mb-4 rounded-lg  ">
+      <h2 className="text-sm font-bold rounded-lg text-categrycolor  px-2">
+        {title}
+      </h2>
+      <div className="flex overflow-x-auto  items-center pl-[50px]">
         {categories.map((category, index) => (
           <CategoryButton
             key={index}

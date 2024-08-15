@@ -124,3 +124,77 @@ export const industryCategories = [
   },
   // Add more industries
 ];
+
+export const languageCategories = [
+  {
+    label: "English",
+    count: 401834,
+    icon: c2,
+    selected: true,
+  },
+];
+
+export const dataTypeCategories = [
+  {
+    label: "All",
+    count: 173620,
+    icon: c1,
+    selected: false,
+  },
+  {
+    label: "Keyowrds",
+    count: 48501,
+    icon: c2,
+    selected: true,
+  },
+  {
+    label: "Pages",
+    count: 173620,
+    icon: c5,
+    selected: false,
+  },
+  {
+    label: "Website",
+    count: 48501,
+    icon: c7,
+    selected: false,
+  },
+  {
+    label: "Companies",
+    count: 173620,
+    icon: c1,
+    selected: false,
+  },
+];
+export const dataSearchItems = [
+  {
+    label: "All",
+    count: 173620,
+    icon: c1,
+    selected: false,
+  },
+  {
+    label: "People",
+    count: 48501,
+    icon: c2,
+    selected: true,
+  },
+  {
+    label: "Things",
+    count: 173620,
+    icon: c5,
+    selected: false,
+  },
+  {
+    label: "Events",
+    count: 48501,
+    icon: c7,
+    selected: false,
+  },
+  {
+    label: "Palces",
+    count: 173620,
+    icon: c1,
+    selected: false,
+  },
+];
