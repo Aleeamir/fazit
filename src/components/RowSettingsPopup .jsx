@@ -93,7 +93,7 @@ const RowSettingsPopup = ({ togglePopup }) => {
                   <td className="border  border-popupcolor">
                     <input type="radio" name="industryDisplay" />
                   </td>
-                  <td className="border  border-popupcolor">
+                  <td className="border  border-popupcolor ">
                     <input type="radio" name="industryDisplay" />
                   </td>
                   <td className="border  border-popupcolor">
