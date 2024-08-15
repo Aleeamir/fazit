@@ -14,11 +14,7 @@ const CategoryButton = ({ label, count, icon, selected, onClick }) => {
         {label}
       </span>
       <div className=" my-[10px] ml-[10px] mr-[5px] bg-white ">
-        <img
-          src={icon}
-          alt={label}
-          className={` ${selected ? "text-red-700 " : "text-gray-700"}`}
-        />
+        <img src={icon} alt={label} className="" />
       </div>
 
       <span
