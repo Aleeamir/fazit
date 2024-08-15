@@ -1,6 +1,6 @@
 import React from "react";
 import logo from "../../assets/logo.png";
-const HeaderKeyword = ({ togglePopup, onRetrun, text, dataReturn }) => {
+const HeaderKeyword = ({ togglePopup, onRetrun, text }) => {
   return (
     <header
       className="flex justify-between items-center  p-4 shadow"
