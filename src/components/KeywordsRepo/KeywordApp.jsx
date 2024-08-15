@@ -5,20 +5,12 @@ import KeywordSection from "./KeywordSection.jsx";
 import SearchBar from "../SearchBar";
 import SearchTable from "./SearchTable.jsx";
 import {
-  countryCategories,
-  dataCategories,
-  industryCategories,
+  languageCategories,
+  dataTypeCategories,
+  dataSearchItems,
 } from "../../components/categories.js";
 
 import c1 from "../../assets/icon-images.png";
-export const languageCategories = [
-  {
-    label: "English",
-    count: 401834,
-    icon: c1,
-    selected: false,
-  },
-];
 
 const KeywordApp = ({ togglePopup, onRetrun }) => {
   return (
@@ -40,11 +32,8 @@ const KeywordApp = ({ togglePopup, onRetrun }) => {
               <SearchBar />
             </div>
             <KeywordSection title="Language" categories={languageCategories} />
-            <KeywordSection title="Data Type" categories={dataCategories} />
-            <KeywordSection
-              title="Search Items"
-              categories={industryCategories}
-            />
+            <KeywordSection title="Data Type" categories={dataTypeCategories} />
+            <KeywordSection title="Search Items" categories={dataSearchItems} />
           </>
         </div>
       </div>
