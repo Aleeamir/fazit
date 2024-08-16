@@ -181,7 +181,7 @@ const CategoryPopup = ({ onClose }) => {
         top: 220,
         right: 10,
         bottom: 10,
-        width: '1000px', 
+        width: '940px', 
         height: '420px', 
         backgroundColor: 'rgba(128, 128, 128, 0.5)',
         zIndex: 5
