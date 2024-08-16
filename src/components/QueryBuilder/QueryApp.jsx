@@ -5,12 +5,12 @@ import Articles from "../Articles";
 import SearchBar from "../SearchBar";
 import QueryComponent from "./QueryComponent.jsx";
 
-const QueryApp = ({ togglePopup, onRetrun }) => {
+const QueryApp = ({ togglePopup, queryReturnData}) => {
   return (
     <div className="fixed inset-0 flex flex-col bg-white m-0 p-0 z-50 overflow-y-auto">
       <QueryHeader
         togglePopup={togglePopup}
-        onRetrun={onRetrun}
+        queryReturnData={queryReturnData}
         text="Query Builder"
       />
       <AfterHeaderQuery />
