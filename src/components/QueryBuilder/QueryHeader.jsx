@@ -1,6 +1,6 @@
 import React from "react";
 import logo from "../../assets/logo.png";
-const QueryHeader = ({ togglePopup, onRetrun, text }) => {
+const QueryHeader = ({ togglePopup, queryReturnData, text }) => {
   return (
     <header
       className="flex justify-between items-center  p-4 shadow"
@@ -22,7 +22,7 @@ const QueryHeader = ({ togglePopup, onRetrun, text }) => {
             <button
               className=" px-2  bg-popupcolor text-white rounded-lg"
               onClick={() => {
-                onRetrun();
+                queryReturnData();
                 togglePopup();}}
             >
               RETURN DATA
