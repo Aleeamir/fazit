@@ -12,13 +12,13 @@ import HeaderMatrix from "./HeaderMatrix.jsx";
 import Matrix1 from "./Matrix1.jsx";
 import Matrix2 from "./Matrix2.jsx";
 
-const MatrixApp = ({ togglePopup, onRetrun, dataReturn }) => {
+const MatrixApp = ({ togglePopup, onNewReturn}) => {
   return (
     <div className="fixed inset-0 flex flex-col bg-white m-0 p-0 z-50 overflow-y-auto">
       <HeaderMatrix
         togglePopup={togglePopup}
-        onRetrun={onRetrun}
-        dataReturn={dataReturn}
+        onNewReturn={onNewReturn}
+        
         text="Matrix"
       />
       <AfterHeaderMatrix />
