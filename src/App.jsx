@@ -8,6 +8,9 @@ import Table from "./components/Table";
 import KeywordTable from "./components/KeywordTable";
 import MatrixApp from "./components/Matrix/MatrixApp";
 import HeaderMatrix from './components/Matrix/HeaderMatrix'; 
+import QueryApp from "./components/QueryBuilder/QueryApp.jsx";
+import QueryHeader from './components/QueryBuilder/QueryHeader';
+
 import {
   countryCategories,
   dataCategories,
@@ -20,8 +23,10 @@ function App() {
   const [isPopupVisible, setIsPopupVisible] = useState(true);
   const [showMatrixApp, setShowMatrixApp] = useState(false);
   const [matrixSearchBar, setMatrixSearchBar] = useState(false);
+  const [QueryApp, setQueryApp] =useState(false);
+  const  [querySearchBar, setquerySearchBar]=useState(false);
 
-  function handleReturnData() {
+  function handleReturnData() { 
     setShowNewSearchBar(!showNewSearchBar);
     setIsPopupVisible(false);
     //setMatrixSearchBar(!matrixSearchBar);
@@ -32,7 +37,11 @@ function App() {
     setMatrixSearchBar(!matrixSearchBar);
     setIsPopupVisible(false);
   }
-
+  function handlequeryReturnData() {
+     
+    setquerySearchBar(!querySearchBar);
+    setIsPopupVisible(false);
+  }
   return (
     <div className="flex flex-col">
       <Header />
@@ -42,7 +51,7 @@ function App() {
         setSelectedTab={setSelectedTab}
         onRetrun={handleReturnData}
         onNewReturn={handleNewReturnData}
-       
+        queryReturnData={handlequeryReturnData}
       />
 
       <div className="flex ">
@@ -92,6 +101,15 @@ function App() {
                     <SearchBar />
                     <span className="text-categrycolor py-3">Search 3</span>
                     <SearchBar />
+                  </>
+                )}
+                {querySearchBar && (
+                  <>
+                    <span className="text-categrycolor py-3 ">Query 5
+                      </span>
+                    <SearchBar />
+                    
+                    
                   </>
                 )}
               </div>
