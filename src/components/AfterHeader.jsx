@@ -4,9 +4,10 @@ import DrilldownPopup from "./DrilldownPopup";
 import CustomApp from "./CustomSearchRowSection/CustomApp";
 import RankingPopup from "./RankingPopup";
 import QueryApp from "./QueryBuilder/QueryApp";
+import QueryHeader from "./QueryBuilder/QueryHeader.jsx";
 import MatrixApp from "./Matrix/MatrixApp";
 import KeywordApp from "./KeywordsRepo/KeywordApp.jsx";
-const AfterHeader = ({ selectedTab, setSelectedTab, onRetrun,onNewReturn }) => {
+const AfterHeader = ({ selectedTab, setSelectedTab, onRetrun,onNewReturn ,queryReturnData}) => {
   const [isRowSettingsPopupOpen, setIsRowSettingsPopupOpen] = useState(false);
   const [isDrilldownPopupOpen, setIsDrilldownPopupOpen] = useState(false);
   const [isHeaderCustomRow, setIsHeaderCustomRow] = useState(false);
@@ -164,8 +165,7 @@ const AfterHeader = ({ selectedTab, setSelectedTab, onRetrun,onNewReturn }) => {
       )}
       {isHeaderQuery && (
         <QueryApp
-          togglePopup={toggleHeaderQuerySelectorRowPopup}
-          onRetrun={onRetrun}
+          togglePopup={toggleHeaderQuerySelectorRowPopup} queryReturnData={queryReturnData}
         />
       )}
       {isHeaderKeyword && (
