@@ -6,7 +6,7 @@ import RankingPopup from "./RankingPopup";
 import QueryApp from "./QueryBuilder/QueryApp";
 import MatrixApp from "./Matrix/MatrixApp";
 import KeywordApp from "./KeywordsRepo/KeywordApp.jsx";
-const AfterHeader = ({ selectedTab, setSelectedTab, onRetrun }) => {
+const AfterHeader = ({ selectedTab, setSelectedTab, onRetrun,onNewReturn }) => {
   const [isRowSettingsPopupOpen, setIsRowSettingsPopupOpen] = useState(false);
   const [isDrilldownPopupOpen, setIsDrilldownPopupOpen] = useState(false);
   const [isHeaderCustomRow, setIsHeaderCustomRow] = useState(false);
@@ -160,7 +160,7 @@ const AfterHeader = ({ selectedTab, setSelectedTab, onRetrun }) => {
         />
       )}
       {isHeaderMatrix && (
-        <MatrixApp togglePopup={toggleHeaderMatrixPopup} onRetrun={onRetrun} />
+        <MatrixApp togglePopup={toggleHeaderMatrixPopup} onNewReturn={onNewReturn} />
       )}
       {isHeaderQuery && (
         <QueryApp
