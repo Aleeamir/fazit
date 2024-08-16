@@ -3,7 +3,7 @@ import React from "react";
 const CategoryButton = ({ label, count, icon, selected, onClick }) => {
   return (
     <div
-      className="flex flex-col items-center w-auto px-4 py-2 cursor-pointer transition-transform transform hover:scale-105"
+      className="flex flex-col items-center w-auto px-4 py-2 cursor-pointer transition-transform "
       onClick={onClick}
     >
       <span
