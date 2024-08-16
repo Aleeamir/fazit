@@ -144,6 +144,48 @@ const SearchTable = () => {
       videos: 11744,
       websites: 2889,
     },
+    {
+      name: "Roma Agrawal",
+      pages: 8549,
+      images: 844,
+      videos: 26,
+      websites: 471,
+    },
+    {
+      name: "Julie Andrews",
+      pages: 89180,
+      images: 158177,
+      videos: 66947,
+      websites: 46874,
+    },
+    {
+      name: "Jean Arthur",
+      pages: 12833,
+      images: 15966,
+      videos: 11744,
+      websites: 2889,
+    },
+    {
+      name: "Roma Agrawal",
+      pages: 8549,
+      images: 844,
+      videos: 26,
+      websites: 471,
+    },
+    {
+      name: "Julie Andrews",
+      pages: 89180,
+      images: 158177,
+      videos: 66947,
+      websites: 46874,
+    },
+    {
+      name: "Jean Arthur",
+      pages: 12833,
+      images: 15966,
+      videos: 11744,
+      websites: 2889,
+    },
     // Add more rows here...
   ];
 
@@ -157,12 +199,12 @@ const SearchTable = () => {
     });
   };
 
-  const cssClass = "p-2 border border-categrycolor";
+  const cssClass = "p-1 border border-categrycolor";
 
   return (
     <>
-      <div className="flex  font-sans ">
-        <table className="w-[80%] border-collapse text-sm text-center">
+      <div className="flex font-sans">
+        <table className="w-[80%] pl-1 border-collapse text-sm text-center">
           <thead>
             <tr className="text-categrycolor bg-[#ecf0f0] text-center">
               <th className={cssClass}>Select</th>
@@ -184,20 +226,20 @@ const SearchTable = () => {
                     onChange={() => handleSelect(item.name)}
                   />
                 </td>
-                <td className="p-2 border border-categrycolor text-left">
+                <td className="p-1 border border-categrycolor text-left">
                   {item.name}
                 </td>
-                <td className="p-2 border border-categrycolor text-left">KW</td>
-                <td className="p-2 border border-categrycolor text-right">
+                <td className="p-1 border border-categrycolor text-left">KW</td>
+                <td className="p-1 border border-categrycolor text-right">
                   {item.pages}
                 </td>
-                <td className="p-2 border border-categrycolor text-right">
+                <td className="p-1 border border-categrycolor text-right">
                   {item.images}
                 </td>
-                <td className="p-2 border border-categrycolor text-right">
+                <td className="p-1 border border-categrycolor text-right">
                   {item.videos}
                 </td>
-                <td className="p-2 border border-categrycolor text-right">
+                <td className="p-1 border border-categrycolor text-right">
                   {item.websites}
                 </td>
               </tr>
@@ -205,20 +247,24 @@ const SearchTable = () => {
           </tbody>
         </table>
 
-        <div className="w-1/5 border h-[420px]   border-categrycolor  text-categrycolor">
-          <div className="border-b bg-[#ecf0f0] border-categrycolor  text-center p-[6px] font-bold ">
-            Selected Items
+        <div className="flex flex-col justify-between w-1/5">
+          {/* Fixed height for Selected Items */}
+          <div className="border h-[420px] border-categrycolor text-categrycolor">
+            <div className="border-b bg-[#ecf0f0] border-categrycolor text-center p-[2px] font-bold">
+              Selected Items
+            </div>
+            <div className="text-center">
+              <p>Julie Andrews</p>
+              <p>Jean Arthur</p>
+            </div>
           </div>
-          <div className="text-center">
-            <p>julie Andrews </p>
-            <p>jean Arthur </p>
+          {/* Button fixed below the div */}
+          <div className="w-[10%] mt-2">
+            <button className="w-[10%] p-1 bg-red-800 text-white cursor-pointer fixed-bottom ">
+              SUBMIT
+            </button>
           </div>
         </div>
-      </div>
-      <div className="ml-auto   w-1/5 p-2">
-        <button className="w-full py-2 bg-red-800 text-white cursor-pointer">
-          SUBMIT
-        </button>
       </div>
     </>
   );
