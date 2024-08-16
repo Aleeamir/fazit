@@ -8,7 +8,6 @@ import Table from "./components/Table";
 import KeywordTable from "./components/KeywordTable";
 import MatrixApp from "./components/Matrix/MatrixApp";
 import HeaderMatrix from './components/Matrix/HeaderMatrix'; 
-
 import {
   countryCategories,
   dataCategories,
