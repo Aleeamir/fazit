@@ -164,11 +164,11 @@ const SearchTable = () => {
       <div className="flex  font-sans ">
         <table className="w-[80%] border-collapse text-sm text-center">
           <thead>
-            <tr className="text-categrycolor text-center">
+            <tr className="text-categrycolor bg-[#ecf0f0] text-center">
               <th className={cssClass}>Select</th>
               <th className={cssClass}>Search Item</th>
               <th className={cssClass}>Type</th>
-              <th className={cssClass}>Pages</th>
+              <th className={cssClass}>Pages ▼</th>
               <th className={cssClass}>Images</th>
               <th className={cssClass}>Videos</th>
               <th className={cssClass}>Websites</th>
@@ -205,20 +205,17 @@ const SearchTable = () => {
           </tbody>
         </table>
 
-        <div className="w-1/5 border border-categrycolor p-3 text-categrycolor">
-          <div className="border-b border-categrycolor text-right  font-bold mb-3">
+        <div className="w-1/5 border h-[420px]   border-categrycolor  text-categrycolor">
+          <div className="border-b bg-[#ecf0f0] border-categrycolor  text-center p-[6px] font-bold ">
             Selected Items
           </div>
-          {/* <ul className="list-none pl-0">
-            {selectedItems.map((item, index) => (
-              <li key={index} className="mb-1">
-                {item}
-              </li>
-            ))}
-          </ul> */}
+          <div className="text-center">
+            <p>julie Andrews </p>
+            <p>jean Arthur </p>
+          </div>
         </div>
       </div>
-      <div className="ml-auto  w-1/5 p-2">
+      <div className="ml-auto   w-1/5 p-2">
         <button className="w-full py-2 bg-red-800 text-white cursor-pointer">
           SUBMIT
         </button>
