@@ -10,6 +10,8 @@ import MatrixApp from "./components/Matrix/MatrixApp";
 import HeaderMatrix from './components/Matrix/HeaderMatrix'; 
 import QueryApp from "./components/QueryBuilder/QueryApp.jsx";
 import QueryHeader from './components/QueryBuilder/QueryHeader';
+import NewSearchBar from './components/NewSearchBar';
+
 
 import {
   countryCategories,
@@ -25,6 +27,7 @@ function App() {
   const [matrixSearchBar, setMatrixSearchBar] = useState(false);
   const [QueryApp, setQueryApp] =useState(false);
   const  [querySearchBar, setquerySearchBar]=useState(false);
+ 
 
   function handleReturnData() { 
     setShowNewSearchBar(!showNewSearchBar);
@@ -88,7 +91,7 @@ function App() {
                 {showNewSearchBar && (
                   <>
                     <span className="text-categrycolor py-3">CRS 3</span>
-                    <SearchBar />
+                    <NewSearchBar />
                     <span className="text-categrycolor py-3">SEARCH 4</span>
                     <SearchBar />
                   </>
@@ -96,9 +99,8 @@ function App() {
 
                 {matrixSearchBar && (
                   <>
-                    <span className="text-categrycolor py-3 ">Matrix 2 
-                      </span>
-                    <SearchBar />
+                    <span className="text-categrycolor py-3 ">Matrix 2 </span>
+                    <NewSearchBar />
                     <span className="text-categrycolor py-3">Search 3</span>
                     <SearchBar />
                   </>
@@ -107,7 +109,7 @@ function App() {
                   <>
                     <span className="text-categrycolor py-3 ">Query 5
                       </span>
-                    <SearchBar />
+                    <NewSearchBar />
                     
                     
                   </>
