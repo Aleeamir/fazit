@@ -80,37 +80,47 @@ function App() {
                 OnSendCountry={handleCountyData}
               />
               <div className="mb-4 rounded-lg bg-backcolor py-7 px-4">
-                {!matrixSearchBar && (
-                  <>
-                    <span className="text-categrycolor py-3">SEARCH 2</span>
-                    <SearchBar />
-                  </>
-                )}
+  {!matrixSearchBar && (
+    <div className="flex items-center mb-4">
+      <span className="text-categrycolor py-3 mr-4">SEARCH2</span>
+      <SearchBar />
+    </div>
+  )}
 
-                {showNewSearchBar && (
-                  <>
-                    <span className="text-categrycolor py-3">CRS 3</span>
-                    <NewSearchBar />
-                    <span className="text-categrycolor py-3">SEARCH 4</span>
-                    <SearchBar />
-                  </>
-                )}
+  {showNewSearchBar && (
+    <>
+      <div className="flex items-center mb-4">
+        <span className="text-categrycolor py-3 mr-10">CRS3</span>
+        <NewSearchBar />
+      </div>
+      <div className="flex items-center mb-4">
+        <span className="text-categrycolor py-3 mr-4">SEARCH4</span>
+        <SearchBar />
+      </div>
+    </>
+  )}
 
-                {matrixSearchBar && (
-                  <>
-                    <span className="text-categrycolor py-3 ">Matrix 2 </span>
-                    <NewSearchBar />
-                    <span className="text-categrycolor py-3">Search 3</span>
-                    <SearchBar />
-                  </>
-                )}
-                {querySearchBar && (
-                  <>
-                    <span className="text-categrycolor py-3 ">Query 5</span>
-                    <NewSearchBar />
-                  </>
-                )}
-              </div>
+  {matrixSearchBar && (
+    <>
+      <div className="flex items-center mb-4">
+        <span className="text-categrycolor py-3 mr-4">Matrix2</span>
+        <NewSearchBar />
+      </div>
+      <div className="flex items-center mb-4">
+        <span className="text-categrycolor py-3 mr-4">Search3</span>
+        <SearchBar />
+      </div>
+    </>
+  )}
+
+  {querySearchBar && (
+    <div className="flex items-center mb-4">
+      <span className="text-categrycolor py-3 mr-4">Query5</span>
+      <NewSearchBar />
+    </div>
+  )}
+</div>
+
             </>
           )}
           {selectedTab === "websites" && <Table />}
