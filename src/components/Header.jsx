@@ -3,7 +3,7 @@ import logo from "../assets/logo.png";
 const Header = () => {
   return (
     <header
-      className="flex justify-between items-center  bg-white  pl-[50px] py-[50px] "
+      className="flex justify-between items-center  bg-white  pl-[58px] py-[58px] "
       style={{ height: 83 }}
     >
       <div className="flex items-center">
