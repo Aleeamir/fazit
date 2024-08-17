@@ -99,7 +99,7 @@ const CategoryPopup = ({ onClose }) => {
         backgroundColor: 'white',
         border: '2px solid #A68036',
         zIndex: 10,
-        width: '820px', // Adjust the width as needed
+        width: '810px', // Adjust the width as needed
         borderRadius: '8px',
         boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)',
         display: 'flex',
