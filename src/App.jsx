@@ -60,10 +60,11 @@ function App() {
         <div className="flex-1 w-[48%] p-4">
           {selectedTab === "categories" && (
             <>
+            
               <Section
                 title="COUNTRY"
                 categories={countryCategories}
-                className="my-[10px] ml-[10px] mr-[5px] bg-white"
+                className="my-[10px] ml-[10px]  mr-[5px] bg-white"
                 OnSendCountry={handleCountyData}
               />
 
@@ -79,13 +80,26 @@ function App() {
                 class=" my-[10px] ml-[10px] mr-[5px] bg-white "
                 OnSendCountry={handleCountyData}
               />
-              <div className="mb-4 rounded-lg bg-backcolor py-7 px-4">
-  {!matrixSearchBar && (
-    <div className="flex items-center mb-4">
-      <span className="text-categrycolor py-3 mr-4">SEARCH2</span>
+              
+
+              <div className="mb-4 rounded-lg px-" style={{ backgroundColor: '#f5f5f5', display: 'inline-block',width:'100%',height:'12%' }}>
+      <h2
+        className="text-sm text-categrycolor bg-gray-100 mb-2 px-2 py-1"
+        style={{ backgroundColor: '#e8e9e9', borderRadius: '12px 0 0 0', borderTopRightRadius: '12px' }}
+      >
+       SEARCH2
+      </h2>
+      <div className="flex space-x-1 overflow-x-auto items-center pl-[40px]" style={{ width: 'auto'}}>
+        
       <SearchBar />
+      </div>
     </div>
-  )}
+
+
+             
+
+
+  
 
   {showNewSearchBar && (
     <>
@@ -119,7 +133,7 @@ function App() {
       <NewSearchBar />
     </div>
   )}
-</div>
+
 
             </>
           )}

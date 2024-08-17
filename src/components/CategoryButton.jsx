@@ -8,10 +8,11 @@ const CategoryButton = ({ label, count, icon, selected, OnSendCountry }) => {
     >
       <span
         className={`text-xs ${selected ? "text-red-700" : "text-gray-700"}`}
-      >
+     style={{fontSize:'14px',  textShadow: '0 1px 1px rgba(0, 0, 0, 0.2)'}} >
         {label}
       </span>
       <div className="my-[10px]  flex items-center justify-center">
+        
         <img
           src={icon}
           alt={label}
