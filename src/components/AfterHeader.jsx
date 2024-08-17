@@ -122,6 +122,23 @@ const AfterHeader = ({ selectedTab, setSelectedTab, onRetrun, onNewReturn, query
               <option value="custom-keyword">Custom Keyword</option>
             </select>
           </div>
+                  {/* Conditionally Rendered Context: News Button */}
+{/* Conditionally Rendered Context: News Button */}
+{(activeTab === "websites" || activeTab === "keywords") && (
+  <div className="group text-[14px] ml-auto">
+    <button
+      className="text-white bg-bordercolor border-none"
+      onClick={() => handleMenuClick("news")}
+    >
+      Context: 
+      <a href="#" className="text-[#77abed] underline ml-1">
+        News
+      </a>
+    </button>
+  </div>
+)}
+
+        
         </div>
         <div className="group text-[14px] ml-auto">
           <button
