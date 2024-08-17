@@ -127,7 +127,7 @@ const AfterHeader = ({ selectedTab, setSelectedTab, onRetrun, onNewReturn, query
 {(activeTab === "websites" || activeTab === "keywords") && (
   <div className="group text-[14px] ml-auto">
     <button
-      className="text-white fixed bg-bordercolor border-none"
+      className="text-white bg-bordercolor border-none"
       onClick={() => handleMenuClick("news")}
     >
       Context: 
