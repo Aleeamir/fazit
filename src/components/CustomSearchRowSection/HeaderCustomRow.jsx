@@ -3,7 +3,7 @@ import logo from "../../assets/logo.png";
 const HeaderCustomRow = ({ togglePopup, onRetrun, text }) => {
   return (
     <header
-      className="flex justify-between items-center  p-4 "
+      className="flex justify-between items-center  p-4 shadow"
       style={{ height: 83 }}
     >
       <div className="flex  items-center">
