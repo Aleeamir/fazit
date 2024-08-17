@@ -45,7 +45,7 @@ const AfterHeader = ({ selectedTab, setSelectedTab, onRetrun,onNewReturn ,queryR
     <div className="bg-bordercolor text-white shadow" style={{ height: 24 }}>
       <div className="flex justify-between items-center">
         <div className="flex pl-96">
-          <div className="flex space-x-4 text-[14px]">
+          <div className="flex space-x-3 text-[14px]">
             <a href="#" className="hover:underline">
               Options
             </a>
@@ -59,7 +59,7 @@ const AfterHeader = ({ selectedTab, setSelectedTab, onRetrun,onNewReturn ,queryR
           <div className="flex space-x-2 pl-12 text-[14px]">
             <span>Page:</span>
             {[...Array(6)].map((_, i) => (
-              <a key={i} href="#" className="hover:underline">
+              <a key={i} href="#" className="hover:underline"  >
                 {i + 1}
               </a>
             ))}
@@ -71,30 +71,32 @@ const AfterHeader = ({ selectedTab, setSelectedTab, onRetrun,onNewReturn ,queryR
           <div className="flex space-x-4 pl-12 text-[14px]">
             <a
               href="#"
-              className={`hover:underline ${
-                selectedTab === "categories" ? "underline" : ""
+              className={` ${
+                selectedTab === "categories" ?"text-[#77abed]" : "text-white"
+    
               }`}
               onClick={() => setSelectedTab("categories")}
             >
               Categories
             </a>
             <a
-              href="#"
-              className={`hover:underline ${
-                selectedTab === "websites" ? "underline" : ""
-              }`}
-              onClick={() => setSelectedTab("websites")}
-            >
-              Websites
+            href="#"
+               style={{
+                   color: selectedTab === "websites" ? "#77abed" : "text-categrycolor",
+                      }}
+             onClick={() => setSelectedTab("websites")}
+           >
+               Websites
             </a>
+
             <div className="group relative text-[14px]">
               <select
-                className={` text-white bg-bordercolor border-none ${
-                  selectedTab === "keywords" ? "underline" : ""
-                }  `}
-                onClick={() => setSelectedTab("keywords")}
+                className={`${
+                   selectedTab === "keywords" ? "text-[#77abed]" : "text-white"
+                  } bg-bordercolor border-none`}
+                   onClick={() => setSelectedTab("keywords")}
               >
-                <option value="all">Keywords</option>
+                <option value="all">Keywords </option>
               </select>
             </div>
             <div className="group relative text-[14px]">
@@ -139,9 +141,9 @@ const AfterHeader = ({ selectedTab, setSelectedTab, onRetrun,onNewReturn ,queryR
             </div>
           </div>
         </div>
-        <div className="group text-[14px]">
+        <div className="group text-[14px] ">
           <button
-            className="text-white bg-bordercolor border-none"
+            className=" text-white bg-bordercolor border-none "
             onClick={toggleRowSettingsPopup}
           >
             Row Setting
