@@ -43,7 +43,6 @@ const AfterHeader = ({ selectedTab, setSelectedTab, onRetrun, onNewReturn, query
           <a href="#" className="hover:underline">
             Login
           </a>
-<<<<<<< HEAD
         </div>
         <div className="flex flex-wrap space-x-2 text-[14px] ml-auto">
           <span>Page:</span>
@@ -124,105 +123,6 @@ const AfterHeader = ({ selectedTab, setSelectedTab, onRetrun, onNewReturn, query
             </select>
           </div>
         </div>
-=======
-        </div>
-        <div className="flex flex-wrap space-x-2 text-[14px] ml-auto">
-          <span>Page:</span>
-          {[...Array(6)].map((_, i) => (
-            <a key={i} href="#" className="hover:underline">
-              {i + 1}
-            </a>
-          ))}
-          <span>...</span>
-          <a href="#" className="hover:underline">
-            Browse All
-          </a>
-        </div>
-        <div className="flex flex-wrap space-x-4 text-[14px] ml-auto">
-          <a
-            href="#"
-            className={` ${activeTab === "categories" ? "text-[#77abed]" : ""}`}
-            onClick={() => handleMenuClick("categories")}
-          >
-            Categories
-          </a>
-          <a
-            href="#"
-            className={` ${activeTab === "websites" ? "text-[#77abed]" : ""}`}
-            onClick={() => handleMenuClick("websites")}
-          >
-            Websites
-          </a>
-          <div className="group relative text-[14px] ml-auto">
-            <button
-              className={`text-white bg-bordercolor border-none ${activeTab === "keywords" ? "text-[#77abed]" : ""}`}
-              onClick={() => handleMenuClick("keywords")}
-            >
-              Keywords
-              <span className="text-[12px]" style={{ color: '#77abed' }}>▼</span>
-            </button>
-          </div>
-          <div className="group relative text-[14px] ml-auto">
-            <button
-              className={`text-white bg-bordercolor border-none ${isDrilldownPopupOpen ? "text-[#77abed]" : ""}`}
-              onClick={toggleDrilldownPopup}
-            >
-              Drilldown
-              <span className="ml text-[12px]" style={{ color: '#77abed' }}>▼</span>
-            </button>
-          </div>
-          <div className="group text-[14px] ml-auto">
-            <button
-              className={`text-white bg-bordercolor border-none ${isRankingPopupOpen ? "text-[#77abed]" : ""}`}
-              onClick={toggleRankingPopup}
-            >
-              Ranking
-              <span className="text-[12px]" style={{ color: '#77abed' }}>▼</span>
-            </button>
-          </div>
-          <div className="group text-[14px] ml-auto">
-            <select
-              name="advanced-options"
-              className="text-white bg-bordercolor border-none"
-              onChange={(event) => {
-                const value = event.target.value;
-                if (value === "csr") {
-                  toggleHeaderCustomRowPopup();
-                } else if (value === "matrix") {
-                  toggleHeaderMatrixPopup();
-                } else if (value === "query-builder") {
-                  toggleHeaderQuerySelectorRowPopup();
-                } else if (value === "custom-keyword") {
-                  toggleHeaderKywordPopUp();
-                }
-              }}
-            >
-              <option value="">Advanced</option>
-              <option value="csr">CSR</option>
-              <option value="matrix">Matrix</option>
-              <option value="query-builder">Query Builder</option>
-              <option value="custom-keyword">Custom Keyword</option>
-            </select>
-          </div>
-                  
-{/* Conditionally Rendered Context: News Button */}
-{(activeTab === "websites" || activeTab === "keywords") && (
-  <div className="group text-[14px] ml-auto">
-    <button
-      className="text-white bg-bordercolor border-none"
-      onClick={() => handleMenuClick("news")}
-    >
-      Context: 
-      <a href="#" className="text-[#77abed] underline ml-1">
-        News
-      </a>
-    </button>
-  </div>
-)}
-
-        
-        </div>
->>>>>>> 93bcd86babba1ae73edc1307087f55c6d1ce1e3f
         <div className="group text-[14px] ml-auto">
           <button
             className={`text-white bg-bordercolor border-none ${isRowSettingsPopupOpen ? "text-[#77abed]" : ""}`}
