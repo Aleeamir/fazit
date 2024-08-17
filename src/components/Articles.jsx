@@ -87,7 +87,7 @@ const articles = [
     title: "49ers Christian McCaffrey showing MVP form",
     url: "https://www.mercurynews.com/nfl/bach-brandon-aiyuk-studs-and-duds-from-cards-week-4-loss-vs-49ers",
     description:
-      "SANTA CLARA, Calif. -- The NFL's Most Valuable Player award has been given to a quarterback for each of the past 10 seasons...",
+      "SANTA CLARA, Calif. -- The bt NFL's Most Valuable Player award has been given to a quarterback for each of the past 10 seasons...",
     imageUrl: img10,
     category: "Sports",
   },
