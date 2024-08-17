@@ -93,19 +93,19 @@ const CategoryPopup = ({ onClose }) => {
     <>
       <div style={{
         position: 'absolute',
-        marginLeft:-5,
+        marginLeft: -5,
         top: '230px', // popup vertically
-        //right: '5', // popup horizontally
         backgroundColor: 'white',
         border: '2px solid #A68036',
         zIndex: 10,
-        width: '810px', // Adjust the width as needed
+        width: '90%', // Adjust the width as needed for responsiveness
+        maxWidth: '48vw', // Max width to ensure it doesn't go too wide
         borderRadius: '8px',
         boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)',
         display: 'flex',
         flexDirection: 'column'
       }}>
-        <div style={{ display: 'flex', justifyContent: 'space-between', padding: '10px' }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', flexWrap:'wrap', padding: '10px' }}>
           <div style={{ display: 'flex', alignItems: 'center' }}>
             <div
               onClick={() => setActiveTab('Countries')}
@@ -136,7 +136,7 @@ const CategoryPopup = ({ onClose }) => {
           </button>
         </div>
         <div style={{ borderTop: '2px solid #A68036', paddingTop: '0px', display: 'flex', flexGrow: 1 }}>
-          <div style={{ display: 'flex', flex: 1 }}>
+          <div style={{ display: 'flex', flex: 1, overflowX: 'auto' }}>
             {activeTab === 'Countries' ? (
               <>
                 {renderColumn(countries, 0, 8, 0, true)}
