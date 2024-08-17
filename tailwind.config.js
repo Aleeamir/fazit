@@ -10,6 +10,9 @@ module.exports = {
         bordercolor: "#01478b",
         popupcolor: "#c9b286",
       },
+      zIndex: {
+        'max': '9999',
+      },
     },
   },
   plugins: [],

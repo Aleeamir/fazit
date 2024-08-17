@@ -3,9 +3,13 @@ import MatrixTable from "./MatrixTable";
 
 const AfterHeaderMatrix = () => {
   const [isMatrixPopup, setIsMatrixPopup] = useState(false);
-
+  const [activePage, setActivePage] = useState(1);
   function HandleCtrPopup() {
     setIsMatrixPopup(!isMatrixPopup);
+  }
+
+  function handlePageClick(pageNumber) {
+    setActivePage(pageNumber); // Update the active page number when a page is clicked
   }
   return (
     <div className="border-bordercolor border-b-4 " style={{ height: 18 }}>
@@ -14,7 +18,14 @@ const AfterHeaderMatrix = () => {
           <div className=" text-popupcolor   flex space-x-2 pl-16 text-xs">
             <span>Page:</span>
             {[...Array(6)].map((_, i) => (
-              <a key={i} href="#" className="hover:underline pl-2">
+              <a
+                key={i}
+                href="#"
+                onClick={() => handlePageClick(i + 1)}
+                className={`pl-2 hover:underline ${
+                  activePage === i + 1 ? "text-black" :""
+                }`}
+              >
                 {i + 1}
               </a>
             ))}

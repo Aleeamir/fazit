@@ -3,18 +3,31 @@ import CSRTable from "./CSRTable";
 
 const AfterHeaderCustom = () => {
   const [isCtrsPopup, setIsCtrsPopup] = useState(false);
+  const [activePage, setActivePage] = useState(1); // State to track the active page number
 
-  function HandleCtrPopup() {
+  function handleCtrPopup() {
     setIsCtrsPopup(!isCtrsPopup);
   }
+
+  function handlePageClick(pageNumber) {
+    setActivePage(pageNumber); // Update the active page number when a page is clicked
+  }
+
   return (
-    <div className="border-bordercolor border-b-4 " style={{ height: 18 }}>
+    <div className="border-bordercolor border-b-4" style={{ height: 18 }}>
       <div className="flex justify-stretch items-center font-bold">
         <div className="flex pl-96">
-          <div className=" text-popupcolor   flex space-x-2 pl-16 text-xs">
+          <div className="text-popupcolor flex space-x-2 pl-16 text-xs">
             <span>Page:</span>
             {[...Array(6)].map((_, i) => (
-              <a key={i} href="#" className="hover:underline pl-2">
+              <a
+                key={i}
+                href="#"
+                onClick={() => handlePageClick(i + 1)}
+                className={`pl-2 hover:underline ${
+                  activePage === i + 1 ? "text-black" :""
+                }`}
+              >
                 {i + 1}
               </a>
             ))}
@@ -22,18 +35,18 @@ const AfterHeaderCustom = () => {
           </div>
           <div className="flex space-x-4 pl-[600px] text-xs">
             <div className="group relative text-xs">
-              <button className="text-popupcolor  border-none">Add</button>
+              <button className="text-popupcolor border-none">Add</button>
               <span>/</span>
               <button
-                className="text-popupcolor  border-none"
-                onClick={HandleCtrPopup}
+                className="text-popupcolor border-none"
+                onClick={handleCtrPopup}
               >
                 Edit Row
               </button>
             </div>
 
             <div className="group text-xs">
-              <button className="text-popupcolor  border-none">Reset</button>
+              <button className="text-popupcolor border-none">Reset</button>
             </div>
           </div>
         </div>

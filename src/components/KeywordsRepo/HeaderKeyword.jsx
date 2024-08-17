@@ -3,7 +3,7 @@ import logo from "../../assets/logo.png";
 const HeaderKeyword = ({ togglePopup, text }) => {
   return (
     <header
-      className="flex justify-between items-center  p-4 shadow"
+      className="flex justify-between items-center  p-4 "
       style={{ height: 83 }}
     >
       <div className="flex  items-center">
