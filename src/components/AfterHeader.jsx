@@ -32,98 +32,103 @@ const AfterHeader = ({ selectedTab, setSelectedTab, onRetrun, onNewReturn, query
 
   return (
     <div className="bg-bordercolor text-white shadow" style={{ height: 24 }}>
-      <div className="flex justify-center items-center px-4">
-        <div className="flex flex-wrap space-x-4 text-[14px] ml-auto">
-          <a href="#" className="hover:underline">
-            Options
-          </a>
-          <a href="#" className="hover:underline">
-            Forum
-          </a>
-          <a href="#" className="hover:underline">
-            Login
-          </a>
-        </div>
-        <div className="flex flex-wrap space-x-2 text-[14px] ml-auto">
-          <span>Page:</span>
-          {[...Array(6)].map((_, i) => (
-            <a key={i} href="#" className="hover:underline">
-              {i + 1}
+      <div className="flex justify-between items-center">
+        <div className="flex pl-96">
+          <div className="flex space-x-4 text-[14px]">
+            <a href="#" className="hover:underline">
+              Options
             </a>
-          ))}
-          <span>...</span>
-          <a href="#" className="hover:underline">
-            Browse All
-          </a>
+            <a href="#" className="hover:underline">
+              Forum
+            </a>
+            <a href="#" className="hover:underline">
+              Login
+            </a>
+          </div>
+          <div className="flex space-x-2 pl-12 text-[14px]">
+            <span>Page:</span>
+            {[...Array(6)].map((_, i) => (
+              <a key={i} href="#" className="hover:underline">
+                {i + 1}
+              </a>
+            ))}
+            <span>...</span>
+            <a href="#" className="hover:underline">
+              Browse All
+            </a>
+          </div>
+          <div className="flex space-x-4 pl-12 text-[14px]">
+            <a
+              href="#"
+              className={`hover:underline ${
+                selectedTab === "categories" ? "underline" : ""
+              }`}
+              onClick={() => setSelectedTab("categories")}
+            >
+              Categories
+            </a>
+            <a
+              href="#"
+              className={`hover:underline ${
+                selectedTab === "websites" ? "underline" : ""
+              }`}
+              onClick={() => setSelectedTab("websites")}
+            >
+              Websites
+            </a>
+            <div className="group relative text-[14px]">
+              <select
+                className={` text-white bg-bordercolor border-none ${
+                  selectedTab === "keywords" ? "underline" : ""
+                }  `}
+                onClick={() => setSelectedTab("keywords")}
+              >
+                <option value="all">Keywords</option>
+              </select>
+            </div>
+            <div className="group relative text-[14px]">
+              <button
+                className="text-white bg-bordercolor border-none"
+                onClick={toggleDrilldownPopup}
+              >
+                Drilldown
+              </button>
+            </div>
+            <div className="group text-[14px]">
+              <button
+                className="text-white bg-bordercolor border-none"
+                onClick={toggleRankingPopup}
+              >
+                Ranking
+              </button>
+            </div>
+            <div className="group text-[14px]">
+              <select
+                name="advanced-options"
+                className="text-white bg-bordercolor border-none"
+                onChange={(event) => {
+                  const value = event.target.value;
+                  if (value === "csr") {
+                    toggleHeaderCustomRowPopup();
+                  } else if (value === "matrix") {
+                    toggleHeaderMatrixPopup();
+                  } else if (value === "query-builder") {
+                    toggleHeaderQuerySelectorRowPopup();
+                  } else if (value === "custom-keyword") {
+                    toggleHeaderKywordPopUp();
+                  }
+                }}
+              >
+                <option value="">Advanced</option>
+                <option value="csr">CSR</option>
+                <option value="matrix">Matrix</option>
+                <option value="query-builder">Query Builder</option>
+                <option value="custom-keyword">Custom Keyword</option>
+              </select>
+            </div>
+          </div>
         </div>
-        <div className="flex flex-wrap space-x-4 text-[14px] ml-auto">
-          <a
-            href="#"
-            className={` ${activeTab === "categories" ? "text-[#77abed]" : ""}`}
-            onClick={() => handleMenuClick("categories")}
-          >
-            Categories
-          </a>
-          <a
-            href="#"
-            className={` ${activeTab === "websites" ? "text-[#77abed]" : ""}`}
-            onClick={() => handleMenuClick("websites")}
-          >
-            Websites
-          </a>
-          <div className="group relative text-[14px] ml-auto">
-            <button
-              className={`text-white bg-bordercolor border-none ${activeTab === "keywords" ? "text-[#77abed]" : ""}`}
-              onClick={() => handleMenuClick("keywords")}
-            >
-              Keywords
-              <span className="text-[12px]" style={{ color: '#77abed' }}>▼</span>
-            </button>
-          </div>
-          <div className="group relative text-[14px] ml-auto">
-            <button
-              className={`text-white bg-bordercolor border-none ${isDrilldownPopupOpen ? "text-[#77abed]" : ""}`}
-              onClick={toggleDrilldownPopup}
-            >
-              Drilldown
-              <span className="ml text-[12px]" style={{ color: '#77abed' }}>▼</span>
-            </button>
-          </div>
-          <div className="group text-[14px] ml-auto">
-            <button
-              className={`text-white bg-bordercolor border-none ${isRankingPopupOpen ? "text-[#77abed]" : ""}`}
-              onClick={toggleRankingPopup}
-            >
-              Ranking
-              <span className="text-[12px]" style={{ color: '#77abed' }}>▼</span>
-            </button>
-          </div>
-          <div className="group text-[14px] ml-auto">
-            <select
-              name="advanced-options"
-              className="text-white bg-bordercolor border-none"
-              onChange={(event) => {
-                const value = event.target.value;
-                if (value === "csr") {
-                  toggleHeaderCustomRowPopup();
-                } else if (value === "matrix") {
-                  toggleHeaderMatrixPopup();
-                } else if (value === "query-builder") {
-                  toggleHeaderQuerySelectorRowPopup();
-                } else if (value === "custom-keyword") {
-                  toggleHeaderKywordPopUp();
-                }
-              }}
-            >
-              <option value="">Advanced</option>
-              <option value="csr">CSR</option>
-              <option value="matrix">Matrix</option>
-              <option value="query-builder">Query Builder</option>
-              <option value="custom-keyword">Custom Keyword</option>
-            </select>
-          </div>
-        </div>
-        <div className="group text-[14px] ml-auto">
+        <div className="group text-[14px]">
           <button
             className={`text-white bg-bordercolor border-none ${isRowSettingsPopupOpen ? "text-[#77abed]" : ""}`}
             onClick={toggleRowSettingsPopup}
