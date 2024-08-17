@@ -6,45 +6,41 @@ import Articles from "./components/Articles";
 import Section from "./components/Section";
 import Table from "./components/Table";
 import KeywordTable from "./components/KeywordTable";
-import MatrixApp from "./components/Matrix/MatrixApp";
-import HeaderMatrix from './components/Matrix/HeaderMatrix'; 
-import QueryApp from "./components/QueryBuilder/QueryApp.jsx";
-import QueryHeader from './components/QueryBuilder/QueryHeader';
-import NewSearchBar from './components/NewSearchBar';
-
+import NewSearchBar from "./components/NewSearchBar";
 
 import {
   countryCategories,
   dataCategories,
   industryCategories,
 } from "./components/categories.js";
+import Articles1 from "./components/Articles1.jsx";
 
 function App() {
   const [selectedTab, setSelectedTab] = useState("categories");
   const [showNewSearchBar, setShowNewSearchBar] = useState(false);
   const [isPopupVisible, setIsPopupVisible] = useState(true);
-  const [showMatrixApp, setShowMatrixApp] = useState(false);
   const [matrixSearchBar, setMatrixSearchBar] = useState(false);
-  const [QueryApp, setQueryApp] =useState(false);
-  const  [querySearchBar, setquerySearchBar]=useState(false);
- 
+  const [querySearchBar, setquerySearchBar] = useState(false);
+  const [selectCounty, setSelectCOuntry] = useState(false);
 
-  function handleReturnData() { 
+  function handleReturnData() {
     setShowNewSearchBar(!showNewSearchBar);
     setIsPopupVisible(false);
     //setMatrixSearchBar(!matrixSearchBar);
-   
   }
   function handleNewReturnData() {
-     
     setMatrixSearchBar(!matrixSearchBar);
     setIsPopupVisible(false);
   }
   function handlequeryReturnData() {
-     
     setquerySearchBar(!querySearchBar);
     setIsPopupVisible(false);
   }
+
+  function handleCountyData() {
+    setSelectCOuntry(!selectCounty);
+  }
+
   return (
     <div className="flex flex-col">
       <Header />
@@ -59,27 +55,30 @@ function App() {
 
       <div className="flex ">
         <div className="flex-1 w-[58%] p-4">
-          <Articles />
+          {selectCounty ? <Articles1 /> : <Articles />}
         </div>
         <div className="flex-1 w-[48%] p-4">
-        
-      
           {selectedTab === "categories" && (
             <>
-              <Section  title="COUNTRY" 
-                categories={countryCategories} 
-                className="my-[10px] ml-[10px] mr-[5px] bg-white" 
-            />
-              
+              <Section
+                title="COUNTRY"
+                categories={countryCategories}
+                className="my-[10px] ml-[10px] mr-[5px] bg-white"
+                OnSendCountry={handleCountyData}
+              />
+
               <Section
                 title="DATA"
                 categories={dataCategories}
                 className=" my-[10px] ml-[10px] mr-[5px] bg-white "
-
-                // Pass click handler
+                OnSendCountry={handleCountyData}
               />
-              <Section title="INDUSTRY" categories={industryCategories } 
-              class=" my-[10px] ml-[10px] mr-[5px] bg-white " />
+              <Section
+                title="INDUSTRY"
+                categories={industryCategories}
+                class=" my-[10px] ml-[10px] mr-[5px] bg-white "
+                OnSendCountry={handleCountyData}
+              />
               <div className="mb-4 rounded-lg bg-backcolor py-7 px-4">
                 {!matrixSearchBar && (
                   <>
@@ -107,11 +106,8 @@ function App() {
                 )}
                 {querySearchBar && (
                   <>
-                    <span className="text-categrycolor py-3 ">Query 5
-                      </span>
+                    <span className="text-categrycolor py-3 ">Query 5</span>
                     <NewSearchBar />
-                    
-                    
                   </>
                 )}
               </div>

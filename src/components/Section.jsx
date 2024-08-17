@@ -1,7 +1,7 @@
 import React from "react";
 import CategoryButton from "./CategoryButton";
 
-const Section = ({ title, categories, onCategoryClick }) => {
+const Section = ({ title, categories, OnSendCountry }) => {
   return (
     <div className="mb-4 rounded-lg bg-backcolor py-4 px-4">
       <h2 className="text-sm rounded-lg text-categrycolor bg-back2 mb-2 px-2 py-1">
@@ -15,7 +15,7 @@ const Section = ({ title, categories, onCategoryClick }) => {
             count={category.count}
             icon={category.icon}
             selected={category.selected}
-            onClick={onCategoryClick} // Pass click handler
+            OnSendCountry={OnSendCountry}
           />
         ))}
       </div>

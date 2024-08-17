@@ -1,0 +1,154 @@
+import React from "react";
+import img1 from "../assets/img-1.png";
+import img2 from "../assets/img-2.png";
+import img3 from "../assets/img-3.png";
+import img4 from "../assets/img-4.png";
+import img5 from "../assets/img-5.png";
+import img6 from "../assets/img-6.png";
+import img7 from "../assets/img-7.png";
+import img8 from "../assets/img-8.png";
+import img9 from "../assets/img-9.png";
+import img10 from "../assets/img-10.png";
+
+const articles = [
+  {
+    title: "United state Christian McCaffrey showing MVP form",
+    url: "https://www.mercurynews.com/nfl/bach-brandon-aiyuk-studs-and-duds-from-cards-week-4-loss-vs-49ers",
+    description:
+      "UNited state Valuable Player award has been given to a quarterback for each of the past 10 seasons...",
+    imageUrl: img1,
+    category: "Sports",
+  },
+  {
+    title: "United state  McCaffrey showing MVP form",
+    url: "https://www.mercurynews.com/nfl/bach-brandon-aiyuk-studs-and-duds-from-cards-week-4-loss-vs-49ers",
+    description:
+      "United state  The NFL's Most Valuable Player award has been given to a quarterback for each of the past 10 seasons...",
+    imageUrl: img9,
+    category: "Sports",
+  },
+  {
+    title: "United state  Week 4 Loss vs 49ers",
+    url: "https://www.mercurynews.com/nfl/bach-brandon-aiyuk-studs-and-duds-from-cards-week-4-loss-vs-49ers",
+    description:
+      "United state  The NFL's Most Valuable Player award has been given to a quarterback for each of the past 10 seasons...",
+    imageUrl: img3,
+    category: "Analysis",
+  },
+  {
+    title: "Germany  McCaffrey showing MVP form",
+    url: "https://www.mercurynews.com/nfl/bach-brandon-aiyuk-studs-and-duds-from-cards-week-4-loss-vs-49ers",
+    description:
+      "Germany  The NFL's Most Valuable Player award has been given to a quarterback for each of the past 10 seasons...",
+    imageUrl: img10,
+    category: "Sports",
+  },
+  {
+    title: "Germany McCaffrey showing MVP form",
+    url: "https://www.mercurynews.com/nfl/bach-brandon-aiyuk-studs-and-duds-from-cards-week-4-loss-vs-49ers",
+    description:
+      "Germany Player award has been given to a quarterback for each of the past 10 seasons...",
+    imageUrl: img5,
+    category: "Sports",
+  },
+  {
+    title: "49ers Christian McCaffrey showing MVP form",
+    url: "https://www.mercurynews.com/nfl/bach-brandon-aiyuk-studs-and-duds-from-cards-week-4-loss-vs-49ers",
+    description:
+      "SANTA CLARA, Calif. -- The NFL's Most Valuable Player award has been given to a quarterback for each of the past 10 seasons...",
+    imageUrl: img2,
+    category: "Sports",
+  },
+  {
+    title: "United Kingdom showing MVP form",
+    url: "https://www.mercurynews.com/nfl/bach-brandon-aiyuk-studs-and-duds-from-cards-week-4-loss-vs-49ers",
+    description:
+      "United Kingdom has been given to a quarterback for each of the past 10 seasons...",
+    imageUrl: img7,
+    category: "Sports",
+  },
+  {
+    title: "4United Kingdom showing MVP form",
+    url: "https://www.mercurynews.com/nfl/bach-brandon-aiyuk-studs-and-duds-from-cards-week-4-loss-vs-49ers",
+    description:
+      "United Kingdom given to a quarterback for each of the past 10 seasons...",
+    imageUrl: img1,
+    category: "Sports",
+  },
+  {
+    title: "United Kingdom MVP form",
+    url: "https://www.mercurynews.com/nfl/bach-brandon-aiyuk-studs-and-duds-from-cards-week-4-loss-vs-49ers",
+    description:
+      "United Kingdom Player award has been given to a quarterback for each of the past 10 seasons...",
+    imageUrl: img6,
+    category: "Sports",
+  },
+  {
+    title: "France McCaffrey showing MVP form",
+    url: "https://www.mercurynews.com/nfl/bach-brandon-aiyuk-studs-and-duds-from-cards-week-4-loss-vs-49ers",
+    description:
+      "France The bt NFL's Most Valuable Player award has been given to a quarterback for each of the past 10 seasons...",
+    imageUrl: img3,
+    category: "Sports",
+  },
+  // Add more articles as needed
+];
+const Articles1 = () => {
+  return (
+    <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-x-2 gap-y-1">
+      {articles.map((article, index) => (
+        <div key={index} className="bg-white overflow-hidden flex flex-col">
+          <div className="flex justify-between items-center">
+            <h2 className="text-black font-semibold whitespace-nowrap overflow-hidden text-ellipsis text-[24px]">
+              <a
+                href={article.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:underline"
+                style={{ fontFamily: "Arial" }}
+              >
+                {article.title}
+              </a>
+            </h2>
+          </div>
+          <div className="flex  flex-row">
+            <div className="flex-initial w-[60%] flex-col ">
+              <a
+                href={article.url}
+                className=" text-[14px] text-categrycolor  leading-normal"
+                style={{
+                  whiteSpace: "nowrap",
+                  overflow: "hidden",
+                  textOverflow: "ellipsis",
+                  fontFamily: "Arial",
+                }}
+              >
+                {article.url.length > 90
+                  ? article.url.substring(0, 30) + "..."
+                  : article.url}
+              </a>
+              <p
+                className="text-gray-600 text-[12px] font-sans tracking-tight"
+                style={{ fontFamily: "Arial" }}
+              >
+                {article.description.length > 1000
+                  ? article.description.substring(0, 900) + "..."
+                  : article.description}
+              </p>
+              <p className="text-[12px] text-blue-400">{article.category}</p>
+            </div>
+            <div className="flex-shrink-0">
+              <img
+                src={article.imageUrl}
+                alt={article.title}
+                className=" object-cover"
+              />
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+};
+
+export default Articles1;
