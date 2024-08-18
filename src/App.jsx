@@ -54,10 +54,10 @@ function App() {
       />
 
       <div className="flex ">
-        <div className="flex-1 basis-[60%] p-4">
+        <div className="flex-1 basis-[60%] p-8">
           {selectCounty ? <Articles1 /> : <Articles />}
         </div>
-        <div className="flex-1 basis-[40%] p-4">
+        <div className="flex-1 basis-[40%] p-8">
           {selectedTab === "categories" && (
             <>
               <Section
