@@ -27,7 +27,7 @@ const Section = ({ title, categories, OnSendCountry }) => {
       >
         <div
           style={{ //whitebar
-            width: "35%",
+            width: "34%",
             height: "7%",
             backgroundColor: "white", 
             position: "absolute",
