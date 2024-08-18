@@ -10,11 +10,13 @@ const Header = () => {
         className="flex items-center"
         style={{ marginTop: "11px", marginBottom: "19px", marginLeft: "67px" }}
       >
-        <img src={logo} alt="Fazit Logo" />
+        <img src={logo} alt="Fazit Logo" 
+        style={{ width: '180px', height: 'auto' }} 
+        />
       </div>
       <div
-        className="flex items-center space-x-4 pr-[10px] rounded-3xl"
-        style={{ marginTop: "58px", marginBottom: "30px", marginRight: "90px" }}
+        className="flex items-center space-x-4 pr-[10px] rounded-3xl "
+        style={{ marginTop: "58px", marginBottom: "30px", marginRight: "25px" }}
       >
         <span className="text-categrycolor text-[14px]">SEARCH 1</span>
         <div className="relative border-2 rounded-3xl">
