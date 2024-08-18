@@ -26,13 +26,14 @@ const Section = ({ title, categories, OnSendCountry }) => {
         style={{ width: "auto" }}
       >
         <div
-          style={{
-            width: "44%",
-            height: "9%",
-            backgroundColor: "white",
+          style={{ //whitebar
+            width: "35%",
+            height: "7%",
+            backgroundColor: "white", 
             position: "absolute",
             margin: "0px 7px ",
             marginBottom: "5px",
+            marginTop: "0px",
           }}
         ></div>
         {categories.map((category, index) => (
