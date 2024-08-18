@@ -24,7 +24,7 @@ const Table = () => {
       pages: 759,
       images: 641,
       videos: 0,
-      Cfg: 5,
+      
     },
     {
       website: "latimes.com",
@@ -34,7 +34,7 @@ const Table = () => {
       pages: 1054,
       images: 1035,
       videos: 0,
-      Cfg: 5,
+      
     },
     {
       website: "cnn.com",
@@ -44,7 +44,7 @@ const Table = () => {
       pages: 759,
       images: 641,
       videos: 0,
-      Cfg: 4,
+      
     },
     {
       website: "cnn.com",
@@ -54,7 +54,7 @@ const Table = () => {
       pages: 759,
       images: 641,
       videos: 0,
-      Cfg: 4,
+      
     },
     {
       website: "washingtonpost.com",
@@ -64,7 +64,7 @@ const Table = () => {
       pages: 759,
       images: 641,
       videos: 0,
-      Cfg:5,
+     
     },
     {
       website: "latimes.com",
@@ -74,7 +74,7 @@ const Table = () => {
       pages: 1054,
       images: 1035,
       videos: 0,
-      Cfg:5,
+      
     },
     {
       website: "cnn.com",
@@ -84,7 +84,7 @@ const Table = () => {
       pages: 759,
       images: 641,
       videos: 0,
-      Cfg: 4,
+     
     },
     {
       website: "washingtonpost.com",
@@ -94,7 +94,7 @@ const Table = () => {
       pages: 759,
       images: 641,
       videos: 0,
-      Cfg:5,
+     
     },
     {
       website: "latimes.com",
@@ -104,7 +104,7 @@ const Table = () => {
       pages: 1054,
       images: 1035,
       videos: 0,
-      Cfg:5,
+     
     },
     {
       website: "cnn.com",
@@ -114,7 +114,7 @@ const Table = () => {
       pages: 759,
       images: 641,
       videos: 0,
-      Cfg: 4,
+      
     },
     {
       website: "washingtonpost.com",
@@ -124,7 +124,7 @@ const Table = () => {
       pages: 759,
       images: 641,
       videos: 0,
-      Cfg:5,
+     
     },
     {
       website: "latimes.com",
@@ -134,7 +134,7 @@ const Table = () => {
       pages: 1054,
       images: 1035,
       videos: 0,
-      Cfg:5,
+     
     },
     {
       website: "cnn.com",
@@ -144,7 +144,7 @@ const Table = () => {
       pages: 759,
       images: 641,
       videos: 0,
-      Cfg: 4,
+      
     },
     // Add more data as necessary
   ];
@@ -286,10 +286,10 @@ const Table = () => {
           <tr className="border-2">
             <th
               className={`${cssclass} w-64`} 
-              style={{ ...textStyle, color: "#A68036", textAlign: "left" }} 
+              style={{ ...textStyle, color: "#A68036", textAlign: "CENTER" }} 
               onClick={() => requestSort("website")}
             >
-              Website
+              WEBSITE
             </th>
             <th
               className={cssclass}
@@ -303,46 +303,46 @@ const Table = () => {
               style={{ ...textStyle, color: "#A68036", textAlign: "center" }}
               onClick={() => requestSort("popularityRank")}
             >
-              Popularity Rank
+              POPULARITY RANK
             </th>
             <th
               className={cssclass}
               style={{ ...textStyle, color: "#A68036", textAlign: "center" }}
               onClick={() => requestSort("relRank")}
             >
-              Rel Rank
+              RELEVANCE RANK
             </th>
             <th
               className={cssclass}
               style={{ ...textStyle, color: "#A68036", textAlign: "center" }}
               onClick={() => requestSort("pages")}
             >
-              Pages
+              PAGES
             </th>
-            <th
+            {/* <th
               className={cssclass}
               style={{ ...textStyle, color: "#A68036", textAlign: "center" }}
               onClick={() => requestSort("images")}
             >
               Images
-            </th>
+            </th> */}
             <th
               className={cssclass}
               style={{ ...textStyle, color: "#A68036", textAlign: "center" }}
               onClick={() => requestSort("videos")}
             >
-              Videos
+              VIDEOS
             </th>
-            <th
+            {/* <th
               className={cssclass}
               style={{ ...textStyle, color: "#A68036", textAlign: "center" }}
               onClick={() => requestSort("Cfg")}
             >
               Cfg
-            </th>
-            <th className={cssclass} style={{ ...textStyle, color: "#A68036", textAlign: "center" }}>
+            </th> */}
+            {/* <th className={cssclass} style={{ ...textStyle, color: "#A68036", textAlign: "center" }}>
               Sel
-            </th>
+            </th> */}
           </tr>
         </thead>
         <tbody className="border-2">
@@ -368,18 +368,18 @@ const Table = () => {
               <td className={cssclass} style={{ ...textStyle, textAlign: "center" }}>
                 {website.pages}
               </td>
-              <td className={cssclass} style={{ ...textStyle, textAlign: "center" }}>
+              {/* <td className={cssclass} style={{ ...textStyle, textAlign: "center" }}>
                 {website.images}
-              </td>
+              </td> */}
               <td className={cssclass} style={{ ...textStyle, textAlign: "center" }}>
                 {website.videos}
               </td>
-              <td className={cssclass} style={{ ...textStyle, textAlign: "center" }}>
+              {/* <td className={cssclass} style={{ ...textStyle, textAlign: "center" }}>
                 {website.Cfg}
               </td>
               <td className="py-1 px-1 border border-gray-300" style={{ color: "#050544", textAlign: "center" }}>
                 <input type="checkbox" />
-              </td>
+              </td> */}
             </tr>
           ))}
         </tbody>
