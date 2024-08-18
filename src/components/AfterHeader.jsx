@@ -7,7 +7,13 @@ import QueryApp from "./QueryBuilder/QueryApp";
 import QueryHeader from "./QueryBuilder/QueryHeader.jsx";
 import MatrixApp from "./Matrix/MatrixApp";
 import KeywordApp from "./KeywordsRepo/KeywordApp.jsx";
-const AfterHeader = ({ selectedTab, setSelectedTab, onRetrun, onNewReturn, queryReturnData }) => {
+const AfterHeader = ({
+  selectedTab,
+  setSelectedTab,
+  onRetrun,
+  onNewReturn,
+  queryReturnData,
+}) => {
   const [activeTab, setActiveTab] = useState(null); // Track active tab
   const [isRowSettingsPopupOpen, setIsRowSettingsPopupOpen] = useState(false);
   const [isDrilldownPopupOpen, setIsDrilldownPopupOpen] = useState(false);
@@ -17,11 +23,15 @@ const AfterHeader = ({ selectedTab, setSelectedTab, onRetrun, onNewReturn, query
   const [isHeaderKeyword, setIsHeaderKeyword] = useState(false);
   const [isRankingPopupOpen, setIsRankingPopupOpen] = useState(false);
 
-  const toggleRowSettingsPopup = () => setIsRowSettingsPopupOpen(!isRowSettingsPopupOpen);
-  const toggleDrilldownPopup = () => setIsDrilldownPopupOpen(!isDrilldownPopupOpen);
-  const toggleHeaderCustomRowPopup = () => setIsHeaderCustomRow(!isHeaderCustomRow);
+  const toggleRowSettingsPopup = () =>
+    setIsRowSettingsPopupOpen(!isRowSettingsPopupOpen);
+  const toggleDrilldownPopup = () =>
+    setIsDrilldownPopupOpen(!isDrilldownPopupOpen);
+  const toggleHeaderCustomRowPopup = () =>
+    setIsHeaderCustomRow(!isHeaderCustomRow);
   const toggleHeaderMatrixPopup = () => setIsHeaderMatrix(!isHeaderMatrix);
-  const toggleHeaderQuerySelectorRowPopup = () => setIsHeaderQuery(!isHeaderQuery);
+  const toggleHeaderQuerySelectorRowPopup = () =>
+    setIsHeaderQuery(!isHeaderQuery);
   const toggleRankingPopup = () => setIsRankingPopupOpen(!isRankingPopupOpen);
   const toggleHeaderKywordPopUp = () => setIsHeaderKeyword(!isHeaderKeyword);
 
@@ -32,7 +42,10 @@ const AfterHeader = ({ selectedTab, setSelectedTab, onRetrun, onNewReturn, query
 
   return (
     <div className="bg-bordercolor text-white shadow" style={{ height: 24 }}>
-      <div className="flex justify-center items-center px-4" style={{  marginLeft:'310px'}}>
+      <div
+        className="flex justify-center items-center px-4"
+        style={{ marginLeft: "310px" }}
+      >
         <div className="flex flex-wrap space-x-4 text-[14px] ml-auto">
           <a href="#" className="hover:underline">
             Options
@@ -44,7 +57,10 @@ const AfterHeader = ({ selectedTab, setSelectedTab, onRetrun, onNewReturn, query
             Login
           </a>
         </div>
-        <div className="flex flex-wrap space-x-2 text-[14px] ml-auto" style={{marginLeft:'10px'}}>
+        <div
+          className="flex flex-wrap space-x-2 text-[14px] ml-auto"
+          style={{ marginLeft: "10px" }}
+        >
           <span>Page:</span>
           {[...Array(6)].map((_, i) => (
             <a key={i} href="#" className="hover:underline">
@@ -73,29 +89,41 @@ const AfterHeader = ({ selectedTab, setSelectedTab, onRetrun, onNewReturn, query
           </a>
           <div className="group relative text-[14px] ml-auto">
             <button
-              className={`text-white bg-bordercolor border-none ${activeTab === "keywords" ? "text-[#77abed]" : ""}`}
+              className={`text-white bg-bordercolor border-none ${
+                activeTab === "keywords" ? "text-[#77abed]" : ""
+              }`}
               onClick={() => handleMenuClick("keywords")}
             >
               Keywords
-              <span className="text-[12px]" style={{ color: '#77abed' }}>▼</span>
+              <span className="text-[12px]" style={{ color: "#77abed" }}>
+                ▼
+              </span>
             </button>
           </div>
           <div className="group relative text-[14px] ml-auto">
             <button
-              className={`text-white bg-bordercolor border-none ${isDrilldownPopupOpen ? "text-[#77abed]" : ""}`}
+              className={`text-white bg-bordercolor border-none ${
+                isDrilldownPopupOpen ? "text-[#77abed]" : ""
+              }`}
               onClick={toggleDrilldownPopup}
             >
               Drilldown
-              <span className="ml text-[12px]" style={{ color: '#77abed' }}>▼</span>
+              <span className="ml text-[12px]" style={{ color: "#77abed" }}>
+                ▼
+              </span>
             </button>
           </div>
           <div className="group text-[14px] ml-auto">
             <button
-              className={`text-white bg-bordercolor border-none ${isRankingPopupOpen ? "text-[#77abed]" : ""}`}
+              className={`text-white bg-bordercolor border-none ${
+                isRankingPopupOpen ? "text-[#77abed]" : ""
+              }`}
               onClick={toggleRankingPopup}
             >
               Ranking
-              <span className="text-[12px]" style={{ color: '#77abed' }}>▼</span>
+              <span className="text-[12px]" style={{ color: "#77abed" }}>
+                ▼
+              </span>
             </button>
           </div>
           {/* <div className="group text-[14px] ml-auto">
@@ -123,36 +151,61 @@ const AfterHeader = ({ selectedTab, setSelectedTab, onRetrun, onNewReturn, query
             </select>
           </div> */}
           {/* Conditionally Rendered Context: News Button */}
-{(activeTab === "websites" || activeTab === "keywords") && (
-  <div className="group text-[14px]" >
-    <button
-      className="text-white bg-bordercolor border-none"
-      onClick={() => handleMenuClick("news")}
-    >
-      Context: 
-      <a href="#" className="text-[#77abed] underline ml-1">
-        News
-      </a>
-    </button>
-  </div>
-)}
+          {(activeTab === "websites" || activeTab === "keywords") && (
+            <div className="group text-[14px]">
+              <button
+                className="text-white bg-bordercolor border-none"
+                onClick={() => handleMenuClick("news")}
+              >
+                Context:
+                <a href="#" className="text-[#77abed] underline ml-1">
+                  News
+                </a>
+              </button>
+            </div>
+          )}
         </div>
         <div className="group text-[14px] ml-auto">
           <button
-            className={`text-white bg-bordercolor border-none ${isRowSettingsPopupOpen ? "text-[#77abed]" : ""}`}
+            className={`text-white bg-bordercolor border-none ${
+              isRowSettingsPopupOpen ? "text-[#77abed]" : ""
+            }`}
             onClick={toggleRowSettingsPopup}
           >
             Row Setting
-            <span className="ml-2 text-[12px]" style={{ color: '#77abed' }}>▼</span>
+            <span className="ml-2 text-[12px]" style={{ color: "#77abed" }}>
+              ▼
+            </span>
           </button>
         </div>
       </div>
-      {isRowSettingsPopupOpen && <RowSettingsPopup togglePopup={toggleRowSettingsPopup} />}
-      {isDrilldownPopupOpen && <DrilldownPopup togglePopup={toggleDrilldownPopup} />}
-      {isHeaderCustomRow && <CustomApp togglePopup={toggleHeaderCustomRowPopup} onRetrun={onRetrun} />}
-      {isHeaderMatrix && <MatrixApp togglePopup={toggleHeaderMatrixPopup} onNewReturn={onNewReturn} />}
-      {isHeaderQuery && <QueryApp togglePopup={toggleHeaderQuerySelectorRowPopup} queryReturnData={queryReturnData} />}
-      {isHeaderKeyword && <KeywordApp togglePopup={toggleHeaderKywordPopUp} onRetrun={onRetrun} />}
+      {isRowSettingsPopupOpen && (
+        <RowSettingsPopup togglePopup={toggleRowSettingsPopup} />
+      )}
+      {isDrilldownPopupOpen && (
+        <DrilldownPopup togglePopup={toggleDrilldownPopup} />
+      )}
+      {isHeaderCustomRow && (
+        <CustomApp
+          togglePopup={toggleHeaderCustomRowPopup}
+          onRetrun={onRetrun}
+        />
+      )}
+      {isHeaderMatrix && (
+        <MatrixApp
+          togglePopup={toggleHeaderMatrixPopup}
+          onNewReturn={onNewReturn}
+        />
+      )}
+      {isHeaderQuery && (
+        <QueryApp
+          togglePopup={toggleHeaderQuerySelectorRowPopup}
+          queryReturnData={queryReturnData}
+        />
+      )}
+      {isHeaderKeyword && (
+        <KeywordApp togglePopup={toggleHeaderKywordPopUp} onRetrun={onRetrun} />
+      )}
       {isRankingPopupOpen && <RankingPopup togglePopup={toggleRankingPopup} />}
     </div>
   );
