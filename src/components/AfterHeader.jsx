@@ -167,8 +167,8 @@ const AfterHeader = ({
         </div>
         <div className="group text-[14px] ml-auto">
           <button
-            className={`text-white bg-bordercolor border-none ${
-              isRowSettingsPopupOpen ? "text-[#77abed]" : ""
+            className={`text-white bg-bordercolor border-none mr-5 ${
+              isRowSettingsPopupOpen ? "text-[#77abed]" : "#77abed"
             }`}
             onClick={toggleRowSettingsPopup}
           >
