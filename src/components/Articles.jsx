@@ -95,10 +95,10 @@ const articles = [
 ];
 const Articles = () => {
   return (
-    <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-x-2 gap-y-1">
+    <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-x-2 gap-y-1" style={{ marginBottom: '84px'}}>
       {articles.map((article, index) => (
-        <div key={index} className="bg-white overflow-hidden flex flex-col">
-          <div className="flex justify-between items-center">
+        <div key={index} className="bg-white overflow-hidden flex flex-col" style={{marginRight: '10px'}} >
+          <div className="flex justify-between items-center" >
             <h2 className="text-black font-semibold whitespace-nowrap overflow-hidden text-ellipsis text-[24px]">
               <a
                 href={article.url}

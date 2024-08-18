@@ -32,7 +32,7 @@ const AfterHeader = ({ selectedTab, setSelectedTab, onRetrun, onNewReturn, query
 
   return (
     <div className="bg-bordercolor text-white shadow" style={{ height: 24 }}>
-      <div className="flex justify-center items-center px-4">
+      <div className="flex justify-center items-center px-4" style={{  marginLeft:'310px'}}>
         <div className="flex flex-wrap space-x-4 text-[14px] ml-auto">
           <a href="#" className="hover:underline">
             Options
@@ -44,7 +44,7 @@ const AfterHeader = ({ selectedTab, setSelectedTab, onRetrun, onNewReturn, query
             Login
           </a>
         </div>
-        <div className="flex flex-wrap space-x-2 text-[14px] ml-auto">
+        <div className="flex flex-wrap space-x-2 text-[14px] ml-auto" style={{marginLeft:'10px'}}>
           <span>Page:</span>
           {[...Array(6)].map((_, i) => (
             <a key={i} href="#" className="hover:underline">
@@ -98,7 +98,7 @@ const AfterHeader = ({ selectedTab, setSelectedTab, onRetrun, onNewReturn, query
               <span className="text-[12px]" style={{ color: '#77abed' }}>▼</span>
             </button>
           </div>
-          <div className="group text-[14px] ml-auto">
+          {/* <div className="group text-[14px] ml-auto">
             <select
               name="advanced-options"
               className="text-white bg-bordercolor border-none"
@@ -121,10 +121,10 @@ const AfterHeader = ({ selectedTab, setSelectedTab, onRetrun, onNewReturn, query
               <option value="query-builder">Query Builder</option>
               <option value="custom-keyword">Custom Keyword</option>
             </select>
-          </div>
+          </div> */}
           {/* Conditionally Rendered Context: News Button */}
 {(activeTab === "websites" || activeTab === "keywords") && (
-  <div className="group text-[14px] ml-auto">
+  <div className="group text-[14px]" >
     <button
       className="text-white bg-bordercolor border-none"
       onClick={() => handleMenuClick("news")}
