@@ -131,7 +131,7 @@ const Articles = () => {
                 }}
               >
                 {article.url.length > 90
-                  ? article.url.substring(0, 35) + "..."
+                  ? article.url.substring(0, 34) + "..."
                   : article.url}
               </a>
               <p
