@@ -41,7 +41,10 @@ const AfterHeader = ({
   };
 
   return (
-    <div className="bg-bordercolor text-white shadow" style={{ height: 24 }}>
+    <div
+      className="bg-bordercolor text-stone-200  shadow"
+      style={{ height: 28 }}
+    >
       <div
         className="flex justify-center items-center px-4"
         style={{ marginLeft: "310px" }}
