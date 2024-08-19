@@ -5,7 +5,7 @@ const SearchBar = () => {
   return (
     <div className="flex items-center rounded-3xl w-full mr-1 pt-3 " style={{marginLeft:'8px'}}>
       <select className="bg-gray-300  " style={{border:"1px solid rgba(0, 0, 0, 0.1)",color:'dadada',borderRadius:'20px 0px 0px 20px'}} >
-        <option value="all" style={{color:'#d9d9d9'}}>All</option>
+        <option value="all" style={{color:'#d9d9d9'}}>All </option>
         {/* Add more options as needed */}
       </select>
       <input
