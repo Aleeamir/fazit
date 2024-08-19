@@ -23,7 +23,7 @@ const Header = () => {
         <span className="text-categrycolor  text-[18px]">SEARCH 1</span>
         <div className="border-gray-700  border-2 rounded-3xl">
           <div className="flex items-center w-full">
-            <select className=" bg-gray-50   rounded-l-lg ">
+            <select className=" bg-[#ececf6]   rounded-l-lg ">
               <option value="all">All</option>
             </select>
             <input
