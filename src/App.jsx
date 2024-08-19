@@ -54,7 +54,7 @@ function App() {
       />
 
       <div className="flex ">
-        <div className="flex-1 basis-[60%] p-2">
+        <div className="flex-1 basis-[60%] p-2" style={{ marginLeft:'21px'}}>
           {selectCounty ? <Articles1 /> : <Articles />}
         </div>
         <div className="flex-1 basis-[40%] p-2">
