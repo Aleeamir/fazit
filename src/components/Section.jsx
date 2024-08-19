@@ -5,7 +5,7 @@ const Section = ({ title, categories, OnSendCountry }) => {
   return (
     <div
       className="mb-4 rounded-lg "
-      style={{ backgroundColor: "#f5f5f5", display: "inline-block" }}
+      style={{ backgroundColor: "#f5f5f5", display: "inline-block", width:'100%' }}
     >
       <h2
         className="text-sm text-categrycolor bg-gray-100 mb-2 px-2 py-1"
