@@ -421,7 +421,7 @@ const KeywordTable = () => {
             Count: 71
           </button>
           <div
-            style={{ display: "flex", fontSize: "14px", fontFamily: "Arial" }}
+            style={{ display: "flex", fontSize: "14px", fontFamily: "Arial"  }}
           >
             {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((page) => (
               <button
@@ -440,7 +440,11 @@ const KeywordTable = () => {
                 {page}
               </button>
             ))}
+                      <button style={{ backgroundColor: 'transparent', border: 'none', color: '#A68036', cursor: 'pointer', fontSize: '14px', fontFamily: 'Arial', marginRight: '10px' }}>
+                    ...  18
+                  </button>
           </div>
+
         </div>
         <table className="min-w-full border-2 rounded-xl table-fixed">
         <thead style={{ backgroundColor: "#eff1ef" }}>
