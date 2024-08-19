@@ -21,7 +21,7 @@ const Header = () => {
         style={{ marginTop: "58px", marginBottom: "30px", marginRight: "25px" }}
       >
         <span className="text-categrycolor  text-[18px]">SEARCH 1</span>
-        <div className="border-gray-700  border-2 rounded-3xl">
+        <div className="border-gray-400  border-2 rounded-3xl">
           <div className="flex items-center w-full">
             <select className=" bg-gray-50   rounded-l-lg ">
               <option value="all">All</option>
