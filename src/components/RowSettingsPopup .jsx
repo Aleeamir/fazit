@@ -1,6 +1,6 @@
 const RowSettingsPopup = ({ togglePopup }) => {
   return (
-    <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
+    <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
       <div className="bg-white p-4 rounded  border-popupcolor border-8 ">
         <div className="flex  mb-4 text-stone-700">
           <h2 className="text-xl text-popupcolor  ">Options</h2>
