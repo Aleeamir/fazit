@@ -15,7 +15,7 @@ const articles = [
     title: "49ers Christian McCaffrey showing MVP form",
     url: "https://www.mercurynews.com/nfl/bach-brandon-aiyuk-studs-and-duds-from-cards-week-4-loss-vs-49ers",
     description:
-      "SANTA CLARA, Calif. -- The NFL's Most Valuable Player award has been given to a quarterback for each of the past 10 seasons...",
+      "SANTA CLARA, Calif. -- The NFL's Most Valuable Player award has been given to a quarterback for each of the past 10 seasons. However, Christian McCaffrey is breaking that trend by showing MVP-worthy performances consistently this season. His impact on the 49ers' offense is undeniable, making him a prime candidate for the MVP. With his exceptional versatility, McCaffrey continues to dominate, proving that a running back can still contend for the top individual honor in the NFL.",
     imageUrl: img1,
     category: "Sports",
   },
@@ -23,7 +23,7 @@ const articles = [
     title: "49ers Christian McCaffrey showing MVP form",
     url: "https://www.mercurynews.com/nfl/bach-brandon-aiyuk-studs-and-duds-from-cards-week-4-loss-vs-49ers",
     description:
-      "SANTA CLARA, Calif. -- The NFL's Most Valuable Player award has been given to a quarterback for each of the past 10 seasons...",
+      "SANTA CLARA, Calif. -- The NFL's Most Valuable Player award has been given to a quarterback for each of the past 10 seasons. However, Christian McCaffrey is breaking that trend by showing MVP-worthy performances consistently this season. His impact on the 49ers' offense is undeniable, making him a prime candidate for the MVP. With his exceptional versatility, McCaffrey continues to dominate, proving that a running back can still contend for the top individual honor in the NFL.",
     imageUrl: img2,
     category: "Sports",
   },
@@ -31,7 +31,7 @@ const articles = [
     title: "Studs From Cards Week 4 Loss vs 49ers",
     url: "https://www.mercurynews.com/nfl/bach-brandon-aiyuk-studs-and-duds-from-cards-week-4-loss-vs-49ers",
     description:
-      "SANTA CLARA, Calif. -- The NFL's Most Valuable Player award has been given to a quarterback for each of the past 10 seasons...",
+      "SANTA CLARA, Calif. -- The NFL's Most Valuable Player award has been given to a quarterback for each of the past 10 seasons. However, Christian McCaffrey is breaking that trend by showing MVP-worthy performances consistently this season. His impact on the 49ers' offense is undeniable, making him a prime candidate for the MVP. With his exceptional versatility, McCaffrey continues to dominate, proving that a running back can still contend for the top individual honor in the NFL.",
     imageUrl: img3,
     category: "Analysis",
   },
@@ -39,7 +39,7 @@ const articles = [
     title: "49ers Christian McCaffrey showing MVP form",
     url: "https://www.mercurynews.com/nfl/bach-brandon-aiyuk-studs-and-duds-from-cards-week-4-loss-vs-49ers",
     description:
-      "SANTA CLARA, Calif. -- The NFL's Most Valuable Player award has been given to a quarterback for each of the past 10 seasons...",
+      "SANTA CLARA, Calif. -- The NFL's Most Valuable Player award has been given to a quarterback for each of the past 10 seasons. However, Christian McCaffrey is breaking that trend by showing MVP-worthy performances consistently this season. His impact on the 49ers' offense is undeniable, making him a prime candidate for the MVP. With his exceptional versatility, McCaffrey continues to dominate, proving that a running back can still contend for the top individual honor in the NFL.",
     imageUrl: img4,
     category: "Sports",
   },
@@ -47,7 +47,7 @@ const articles = [
     title: "49ers Christian McCaffrey showing MVP form",
     url: "https://www.mercurynews.com/nfl/bach-brandon-aiyuk-studs-and-duds-from-cards-week-4-loss-vs-49ers",
     description:
-      "SANTA CLARA, Calif. -- The NFL's Most Valuable Player award has been given to a quarterback for each of the past 10 seasons...",
+      "SANTA CLARA, Calif. -- The NFL's Most Valuable Player award has been given to a quarterback for each of the past 10 seasons. However, Christian McCaffrey is breaking that trend by showing MVP-worthy performances consistently this season. His impact on the 49ers' offense is undeniable, making him a prime candidate for the MVP. With his exceptional versatility, McCaffrey continues to dominate, proving that a running back can still contend for the top individual honor in the NFL.",
     imageUrl: img5,
     category: "Sports",
   },
@@ -55,7 +55,7 @@ const articles = [
     title: "49ers Christian McCaffrey showing MVP form",
     url: "https://www.mercurynews.com/nfl/bach-brandon-aiyuk-studs-and-duds-from-cards-week-4-loss-vs-49ers",
     description:
-      "SANTA CLARA, Calif. -- The NFL's Most Valuable Player award has been given to a quarterback for each of the past 10 seasons...",
+      "SANTA CLARA, Calif. -- The NFL's Most Valuable Player award has been given to a quarterback for each of the past 10 seasons. However, Christian McCaffrey is breaking that trend by showing MVP-worthy performances consistently this season. His impact on the 49ers' offense is undeniable, making him a prime candidate for the MVP. With his exceptional versatility, McCaffrey continues to dominate, proving that a running back can still contend for the top individual honor in the NFL.",
     imageUrl: img6,
     category: "Sports",
   },
@@ -63,7 +63,7 @@ const articles = [
     title: "49ers Christian McCaffrey showing MVP form",
     url: "https://www.mercurynews.com/nfl/bach-brandon-aiyuk-studs-and-duds-from-cards-week-4-loss-vs-49ers",
     description:
-      "SANTA CLARA, Calif. -- The NFL's Most Valuable Player award has been given to a quarterback for each of the past 10 seasons...",
+      "SANTA CLARA, Calif. -- The NFL's Most Valuable Player award has been given to a quarterback for each of the past 10 seasons. However, Christian McCaffrey is breaking that trend by showing MVP-worthy performances consistently this season. His impact on the 49ers' offense is undeniable, making him a prime candidate for the MVP. With his exceptional versatility, McCaffrey continues to dominate, proving that a running back can still contend for the top individual honor in the NFL.",
     imageUrl: img7,
     category: "Sports",
   },
@@ -71,7 +71,7 @@ const articles = [
     title: "49ers Christian McCaffrey showing MVP form",
     url: "https://www.mercurynews.com/nfl/bach-brandon-aiyuk-studs-and-duds-from-cards-week-4-loss-vs-49ers",
     description:
-      "SANTA CLARA, Calif. -- The NFL's Most Valuable Player award has been given to a quarterback for each of the past 10 seasons...",
+      "SANTA CLARA, Calif. -- The NFL's Most Valuable Player award has been given to a quarterback for each of the past 10 seasons. However, Christian McCaffrey is breaking that trend by showing MVP-worthy performances consistently this season. His impact on the 49ers' offense is undeniable, making him a prime candidate for the MVP. With his exceptional versatility, McCaffrey continues to dominate, proving that a running back can still contend for the top individual honor in the NFL.",
     imageUrl: img8,
     category: "Sports",
   },
@@ -79,7 +79,7 @@ const articles = [
     title: "49ers Christian McCaffrey showing MVP form",
     url: "https://www.mercurynews.com/nfl/bach-brandon-aiyuk-studs-and-duds-from-cards-week-4-loss-vs-49ers",
     description:
-      "SANTA CLARA, Calif. -- The NFL's Most Valuable Player award has been given to a quarterback for each of the past 10 seasons...",
+      "SANTA CLARA, Calif. -- The NFL's Most Valuable Player award has been given to a quarterback for each of the past 10 seasons. However, Christian McCaffrey is breaking that trend by showing MVP-worthy performances consistently this season. His impact on the 49ers' offense is undeniable, making him a prime candidate for the MVP. With his exceptional versatility, McCaffrey continues to dominate, proving that a running back can still contend for the top individual honor in the NFL.",
     imageUrl: img9,
     category: "Sports",
   },
@@ -87,7 +87,7 @@ const articles = [
     title: "49ers Christian McCaffrey showing MVP form",
     url: "https://www.mercurynews.com/nfl/bach-brandon-aiyuk-studs-and-duds-from-cards-week-4-loss-vs-49ers",
     description:
-      "SANTA CLARA, Calif. -- The bt NFL's Most Valuable Player award has been given to a quarterback for each of the past 10 seasons...",
+      "SANTA CLARA, Calif. -- The NFL's Most Valuable Player award has been given to a quarterback for each of the past 10 seasons. However, Christian McCaffrey is breaking that trend by showing MVP-worthy performances consistently this season. His impact on the 49ers' offense is undeniable, making him a prime candidate for the MVP. With his exceptional versatility, McCaffrey continues to dominate, proving that a running back can still contend for the top individual honor in the NFL.",
     imageUrl: img10,
     category: "Sports",
   },
@@ -118,11 +118,11 @@ const Articles = () => {
               </a>
             </h2>
           </div>
-          <div className="flex  flex-row">
-            <div className="flex-initial w-[60%] flex-col ">
+          <div className="flex flex-row">
+            <div className="flex-initial w-[60%] flex-col">
               <a
                 href={article.url}
-                className=" text-[14px] text-categrycolor  leading-normal"
+                className=" text-[14px] text-categrycolor leading-normal"
                 style={{
                   whiteSpace: "nowrap",
                   overflow: "hidden",
@@ -131,24 +131,26 @@ const Articles = () => {
                 }}
               >
                 {article.url.length > 90
-                  ? article.url.substring(0, 30) + "..."
+                  ? article.url.substring(0, 35) + "..."
                   : article.url}
               </a>
               <p
-                className="text-gray-600 text-[12px] font-sans tracking-tight"
+                className=" text-[12px] font-sans text-[#958e77] tracking-tight"
                 style={{ fontFamily: "Arial" }}
               >
-                {article.description.length > 1000
-                  ? article.description.substring(0, 900) + "..."
+                {article.description.length > 300
+                  ? article.description.substring(0, 200) + "..."
                   : article.description}
               </p>
-              <p className="text-[12px] text-blue-400">{article.category}</p>
+              <p className="text-[12px] text-blue-400 italic">
+                {article.category}
+              </p>
             </div>
             <div className="flex-shrink-0">
               <img
                 src={article.imageUrl}
                 alt={article.title}
-                className=" object-cover"
+                className="object-cover"
               />
             </div>
           </div>
