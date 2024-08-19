@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import CategoryButton from './CategoryButton';;
+
 const CategoryPopup = ({ onClose }) => {
   const [activeCategory, setActiveCategory] = useState(null);
   const countries = [
