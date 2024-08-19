@@ -2,7 +2,7 @@ import React from "react";
 
 const DrilldownPopup = ({ togglePopup }) => {
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
+    <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
       <div className="bg-white max-w-max p-4 border border-gray-300">
         {/* Popup header with buttons */}
         <div className="flex justify-between mb-4">
