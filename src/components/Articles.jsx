@@ -146,7 +146,7 @@ const Articles = () => {
                   ? article.description.substring(0, 200) + "..."
                   : article.description}
               </p>
-              <p className="text-[12px] italic" style={{ color: "#263b6f" }}>
+              <p className="text-[12px] italic" style={{ color: "#263b6f", fontFamily: 'arial' }}>
                 {article.category}
               </p>
             </div>

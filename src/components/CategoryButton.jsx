@@ -22,7 +22,7 @@ const CategoryButton = ({ label, count, icon, selected, OnClick }) => {
         />
       </div>
       <span
-        className={`text-sm ${selected ? "text-red-700" : "text-gray-700"}`}
+        className={`text-sm ${selected ? "text-red-700 underline"  : "text-gray-700"}`}
         style={{ fontFamily: "Arial" }}
       >
         {count}
