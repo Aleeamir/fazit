@@ -1,11 +1,7 @@
 import React, { useState } from 'react';
 
 const CategoryPopup = ({ onClose }) => {
-  const [activeTab, setActiveTab] = useState('Countries');
-  const [currentPage, setCurrentPage] = useState(1);
-  const [selectedRow, setSelectedRow] = useState(null);
-  const [selectedColumn, setSelectedColumn] = useState(null);
-
+  const [activeCategory, setActiveCategory] = useState(null);
   const countries = [
     { name: 'United States', count: 1172 }, { name: 'India', count: 46 },
     { name: 'UK', count: 38 }, { name: 'Israel', count: 30 },

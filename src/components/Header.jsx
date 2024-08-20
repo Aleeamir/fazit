@@ -21,9 +21,10 @@ const Header = () => {
         <span className="text-categrycolor text-[14px]">SEARCH 1</span>
         <div className="relative rounded-3xl">
           <div className="flex items-center w-full">
-            <select className="bg-gray-100 border-2 border-gray-400 rounded-l-lg h-6">
-              <option value="all">All</option>
-            </select>
+          <select className="bg-gray-300  " style={{border:"1px solid rgba(0, 0, 0, 0.1)",color:'dadada',borderRadius:'20px 0px 0px 20px',background: 'linear-gradient(to bottom, #ffffff, #ececec, #d1d1d1, #b8b8b8)'}} >
+        <option value="all" style={{color:'#d9d9d9'}}>All</option>
+        {/* Add more options as needed */}
+      </select>
             <input
               type="text"
               className="flex-grow w-96 border-2 border-gray-400 h-6 bg-gray-200"
