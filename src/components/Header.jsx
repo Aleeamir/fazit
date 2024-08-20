@@ -4,12 +4,12 @@ const Header = () => {
   return (
     <header
       className="flex justify-between items-center  bg-white  pl-[58px] py-[58px] "
-      style={{ height: 83 }}
+      style={{ height: '123px' }}
     >
       <div
         className="flex items-center"
         // style={{ marginTop: "11px", marginBottom: "19px", marginLeft: "67px" }}
-        style={{ marginTop: "11px", marginBottom: "19px", marginLeft: "50px" }}
+        style={{ marginTop: "11px", marginBottom: "19px", marginLeft: "67px" }}
       >
         <img src={logo} alt="Fazit Logo"
           // style={{ width: '180px', height: 'auto' }}
