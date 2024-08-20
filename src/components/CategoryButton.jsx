@@ -18,7 +18,9 @@ const CategoryButton = ({ label, count, icon, selected, OnClick }) => {
           src={icon}
           alt={label}
           className="object-contain"
-          style={{ mixBlendMode: "multiply" }}
+          // style={{ mixBlendMode: "multiply"}}
+          style={{ mixBlendMode: "multiply", marginTop:'10px', marginBottom:'10px', marginLeft:'10px', height:'65px', width:'83px'}}
+
         />
       </div>
       <span

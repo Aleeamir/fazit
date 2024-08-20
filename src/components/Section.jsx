@@ -34,7 +34,7 @@ const Section = ({ title, categories, OnSendCountry }) => {
 
       <div
         className="flex space-x-1 overflow-x-auto items-center pl-[30px]"
-        style={{ width: "auto" }}
+        style={{ width: "auto", marginLeft:'50px' }}
       >
         <div
           style={{
