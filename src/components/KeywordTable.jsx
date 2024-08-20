@@ -460,22 +460,22 @@ const KeywordTable = () => {
           Search Item
         </th>
         <th
+          className={`py-1 px-1 border-2 uppercase cursor-pointer ${selectedColumn === "type" ? 'text-custom' : ''}`}
+          style={{
+            color: selectedColumn === "type" ? "rgb(23, 45, 95)" : "#A68036",
+            textAlign: "center",
+          }}
+          onClick={() => handleClick("type")}
+        >
+          Type
+        </th>
+        <th
           className={`py-1 px-1 border-2 uppercase cursor-pointer ${selectedColumn === "overallRank" ? 'text-custom' : ''}`}
           style={{
             color: selectedColumn === "overallRank" ? "rgb(23, 45, 95)" : "#A68036",
             textAlign: "center",
           }}
           onClick={() => handleClick("overallRank")}
-        >
-          Type
-        </th>
-        <th
-          className={`py-1 px-1 border-2 uppercase cursor-pointer ${selectedColumn === "popularityRank" ? 'text-custom' : ''}`}
-          style={{
-            color: selectedColumn === "popularityRank" ? "rgb(23, 45, 95)" : "#A68036",
-            textAlign: "center",
-          }}
-          onClick={() => handleClick("popularityRank")}
         >
           overall rank ▼
         </th>
