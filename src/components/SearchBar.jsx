@@ -11,18 +11,19 @@ const SearchBar = () => {
             border: "1px solid rgba(0, 0, 0, 0.1)",
             color: '#333', // Changed to a visible color
             borderRadius: '20px 0px 0px 20px',
-            padding: '8px 30px 8px 10px', // Add padding for the dropdown arrow
+            padding: '0px 22px 1px 15px', // Add padding for the dropdown arrow
             background: 'linear-gradient(to bottom, #ffffff, #ececec, #d1d1d1, #b8b8b8)',
             cursor: 'pointer', // Change cursor to pointer
             width: '60px', // Adjusted width
-            height: '30px', // Match input height
+            height: '25px', // Match input height
           }}
         >
-          <option value="all" style={{ color: '#333' }}>All</option>
+          <option value="all" style={{ color: '#333', }}>All</option>
           {/* Add more options as needed */}
         </select>
         {/* Custom dropdown arrow */}
-        <span className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500 pointer-events-none">▼</span>
+        <span className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500 pointer-events-none text-[12px] top-[13px]">▼</span>
+
       </div>
       <input
         type="text"
