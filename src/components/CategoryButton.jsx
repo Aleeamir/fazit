@@ -1,11 +1,12 @@
 import React from "react";
 
-const CategoryButton = ({ label, count, icon, selected, OnSendCountry }) => {
+const CategoryButton = ({ label, count, icon, selected, OnClick }) => {
   return (
     <div
-      className="flex flex-col items-center px-4 py-2 cursor-pointer transition-transform " style={{width:'100px'}}
-      onClick={OnSendCountry}
-    > 
+      className="flex flex-col items-center px-4 py-2 cursor-pointer transition-transform"
+      style={{ width: "100px" }}
+      onClick={OnClick}
+    >
       <span
         className={`text-xs ${selected ? "text-red-700" : "text-gray-700"}`}
         style={{ fontSize: "14px", textShadow: "0 1px 1px rgba(0, 0, 0, 0.2)" }}
@@ -16,7 +17,7 @@ const CategoryButton = ({ label, count, icon, selected, OnSendCountry }) => {
         <img
           src={icon}
           alt={label}
-          className=" object-contain"
+          className="object-contain"
           style={{ mixBlendMode: "multiply" }}
         />
       </div>

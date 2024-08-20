@@ -1,11 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 import CategoryButton from "./CategoryButton";
 
 const Section = ({ title, categories, OnSendCountry }) => {
+  const [selectedCategoryIndex, setSelectedCategoryIndex] = useState(null);
+
+  const handleCategoryClick = (index) => {
+    setSelectedCategoryIndex(index);
+    OnSendCountry(); // Trigger any additional actions on category click
+  };
+
   return (
     <div
-      className="mb-4 rounded-lg "
-      style={{ backgroundColor: "#f5f5f5", display: "inline-block", width:'100%' }}
+      className="mb-4 rounded-lg"
+      style={{
+        backgroundColor: "#f5f5f5",
+        display: "inline-block",
+        width: "100%",
+      }}
     >
       <h2
         className="text-sm text-categrycolor bg-gray-100 mb-2 px-2 py-1"
@@ -26,10 +37,11 @@ const Section = ({ title, categories, OnSendCountry }) => {
         style={{ width: "auto" }}
       >
         <div
-          style={{ //whitebar
+          style={{
+            //whitebar
             width: "37%",
             height: "6%",
-            backgroundColor: "white", 
+            backgroundColor: "white",
             position: "absolute",
             margin: "0px 7px ",
             marginBottom: "5px",
@@ -42,12 +54,13 @@ const Section = ({ title, categories, OnSendCountry }) => {
             label={category.label}
             count={category.count}
             icon={category.icon}
-            selected={category.selected}
-            OnSendCountry={OnSendCountry}
+            selected={index === selectedCategoryIndex}
+            OnClick={() => handleCategoryClick(index)}
           />
         ))}
       </div>
     </div>
   );
 };
+
 export default Section;

@@ -7,13 +7,13 @@ import Section from "./components/Section";
 import Table from "./components/Table";
 import KeywordTable from "./components/KeywordTable";
 import NewSearchBar from "./components/NewSearchBar";
+import Articles1 from "./components/Articles1.jsx";
 
 import {
   countryCategories,
   dataCategories,
   industryCategories,
 } from "./components/categories.js";
-import Articles1 from "./components/Articles1.jsx";
 
 function App() {
   const [selectedTab, setSelectedTab] = useState("categories");
@@ -26,12 +26,13 @@ function App() {
   function handleReturnData() {
     setShowNewSearchBar(!showNewSearchBar);
     setIsPopupVisible(false);
-    //setMatrixSearchBar(!matrixSearchBar);
   }
+
   function handleNewReturnData() {
     setMatrixSearchBar(!matrixSearchBar);
     setIsPopupVisible(false);
   }
+
   function handlequeryReturnData() {
     setquerySearchBar(!querySearchBar);
     setIsPopupVisible(false);
@@ -53,11 +54,14 @@ function App() {
         queryReturnData={handlequeryReturnData}
       />
 
-      <div className="flex " style={{marginTop: '8px'}}>
-        <div className="flex-1 basis-[60%] p-2" style={{ marginLeft:'21px'}}>
+      <div className="flex " style={{ marginTop: "8px" }}>
+        <div className="flex-1 basis-[60%] p-2" style={{ marginLeft: "21px" }}>
           {selectCounty ? <Articles1 /> : <Articles />}
         </div>
-        <div className="flex-1 basis-[40%] p-2" style={{marginRight: '21px', marginTop:'10px'}}>
+        <div
+          className="flex-1 basis-[40%] p-2"
+          style={{ marginRight: "21px", marginTop: "10px" }}
+        >
           {selectedTab === "categories" && (
             <>
               <Section
@@ -76,7 +80,7 @@ function App() {
               <Section
                 title="INDUSTRY"
                 categories={industryCategories}
-                class=" my-[10px] ml-[10px] mr-[5px] bg-white "
+                className=" my-[10px] ml-[10px] mr-[5px] bg-white "
                 OnSendCountry={handleCountyData}
               />
 
