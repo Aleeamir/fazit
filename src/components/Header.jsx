@@ -34,7 +34,7 @@ const Header = () => {
             background: 'linear-gradient(to bottom, #ffffff, #ececec, #d1d1d1, #b8b8b8)',
             cursor: 'pointer', // Change cursor to pointer
             width: '60px', // Adjusted width
-            height: '25px', // Match input height
+            height: '26px', // Match input height
           }}
         >
           <option value="all" style={{ color: '#333', }}>All</option>
@@ -47,10 +47,10 @@ const Header = () => {
             <input
               type="text"
               className="flex-grow w-96 border-2 border-gray-400 h-6 bg-gray-200"
-              style={{ width: "471px" }}
+              style={{ width: "471px", height:'26px' }}
               placeholder="Search..."
             />
-            <button className=" px-2  bg-[#ba3030] text-white rounded-r-lg">
+            <button className=" px-2  bg-[#ba3030] text-white rounded-r-lg" style={{borderRadius: '0px 20px 20px 0px',  height:'26px', fontSize:'14px', paddingRight:'17px'}}>
               FAZIT
             </button>
           </div>
