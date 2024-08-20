@@ -1,19 +1,19 @@
-import React, { useState } from 'react';
-import CategoryPopup from './CategoryPopup';
-import SearchBar from "../components/SearchBar";  // Import the popup component
+import React, { useState } from "react";
+import CategoryPopup from "./CategoryPopup";
+import SearchBar from "../components/SearchBar"; // Import the popup component
 
 const Table = () => {
   const [sortConfig, setSortConfig] = useState(null);
-  const [selectedCategory, setSelectedCategory] = useState('/ All (586)');
-  const [selectedTime, setSelectedTime] = useState('Last 24 Hrs');
+  const [selectedCategory, setSelectedCategory] = useState("/ All (586)");
+  const [selectedTime, setSelectedTime] = useState("Last 24 Hrs");
   const [selectedAlpha, setSelectedAlpha] = useState(null);
   const [currentPage, setCurrentPage] = useState(1);
   const [selectedRow, setSelectedRow] = useState(null);
   const [isPopupOpen, setIsPopupOpen] = useState(false);
-  const alphabets = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split(''); // State to manage popup visibility
+  const alphabets = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split(""); // State to manage popup visibility
 
-  const cssclass = 'py-1 px-1 border-2';
-  const textStyle = { fontSize: '14px', fontFamily: 'Arial', padding: '5px'  };
+  const cssclass = "py-1 px-1 border-[1.34px]";
+  const textStyle = { fontSize: "14px", fontFamily: "Arial", padding: "5px" };
 
   const websites = [
     // Sample data
@@ -25,7 +25,6 @@ const Table = () => {
       relRank: 1,
       pages: 87,
       videos: 0,
-      
     },
     {
       website: "breitbart.com",
@@ -35,7 +34,6 @@ const Table = () => {
       pages: 1054,
       //images: 1035,
       videos: 0,
-      
     },
     {
       website: "mysanantonio.com",
@@ -45,7 +43,6 @@ const Table = () => {
       pages: 759,
       //images: 641,
       videos: 0,
-      
     },
     {
       website: "salon.com",
@@ -54,7 +51,6 @@ const Table = () => {
       relRank: 1,
       pages: 87,
       videos: 0,
-      
     },
     {
       website: "foxnews.com",
@@ -63,7 +59,6 @@ const Table = () => {
       relRank: 1,
       pages: 87,
       videos: 0,
-      
     },
     {
       website: "businessinsider.com",
@@ -72,7 +67,6 @@ const Table = () => {
       relRank: 1,
       pages: 87,
       videos: 0,
-      
     },
     {
       website: "theepochtimes.com",
@@ -81,7 +75,6 @@ const Table = () => {
       relRank: 1,
       pages: 87,
       videos: 0,
-      
     },
     {
       website: "time.com",
@@ -90,8 +83,6 @@ const Table = () => {
       relRank: 1,
       pages: 87,
       videos: 0,
-      
-      
     },
     {
       website: "dailycaller.com",
@@ -100,7 +91,6 @@ const Table = () => {
       relRank: 1,
       pages: 87,
       videos: 0,
-      
     },
     {
       website: "latimes.com",
@@ -109,11 +99,7 @@ const Table = () => {
       relRank: 1,
       pages: 87,
       videos: 0,
-      
-      
     },
- 
-
   ];
 
   const itemsPerPage = 19;
@@ -124,10 +110,10 @@ const Table = () => {
     if (sortConfig !== null) {
       sortableWebsites.sort((a, b) => {
         if (a[sortConfig.key] < b[sortConfig.key]) {
-          return sortConfig.direction === 'ascending' ? -1 : 1;
+          return sortConfig.direction === "ascending" ? -1 : 1;
         }
         if (a[sortConfig.key] > b[sortConfig.key]) {
-          return sortConfig.direction === 'ascending' ? 1 : -1;
+          return sortConfig.direction === "ascending" ? 1 : -1;
         }
         return 0;
       });
@@ -139,23 +125,23 @@ const Table = () => {
   }, [websites, sortConfig, currentPage]);
 
   const requestSort = (key) => {
-    let direction = 'ascending';
+    let direction = "ascending";
     if (
       sortConfig &&
       sortConfig.key === key &&
-      sortConfig.direction === 'ascending'
+      sortConfig.direction === "ascending"
     ) {
-      direction = 'descending';
+      direction = "descending";
     }
     setSortConfig({ key, direction });
   };
 
   const handleCategoryClick = () => {
-    setIsPopupOpen(true);  // Show the popup when category is clicked
+    setIsPopupOpen(true); // Show the popup when category is clicked
   };
 
   const handleTimeClick = () => {
-    setSelectedTime(selectedTime === 'Last 24 Hrs' ? 'All' : 'Last 24 Hrs');
+    setSelectedTime(selectedTime === "Last 24 Hrs" ? "All" : "Last 24 Hrs");
   };
 
   const handlePageClick = (page) => {
@@ -167,52 +153,101 @@ const Table = () => {
   };
 
   return (
-    <div className="overflow-x-auto ">
+    <div className="overflow-x-auto p-0">
       <table
-        className="min-w-full border-2   rounded-lg"
+        className="min-w-full border-2  p-0 rounded-lg overflow-hidden border-gray-200"
         style={{
-          borderColor: '#e8e9e9',
-          borderRadius: '12px 12px 12px 12px',
-          borderCollapse: 'separate',
-          borderSpacing: '0px',
-          marginTop: '15px',
+          borderRadius: "12px 12px 12px 12px",
+          borderCollapse: "separate",
+          borderSpacing: "0px",
+          marginTop: "15px",
         }}
       >
-        <thead style={{ backgroundColor: '#eff1ef' }}> 
+        <thead style={{ backgroundColor: "#eff1ef" }}>
           <tr>
-            <td colSpan="6" style={{ backgroundColor: '#eff1ef', padding: '5px'  }}>
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                <div style={{ display: 'flex', alignItems: 'center' }}>
-                  <button style={{ backgroundColor: 'transparent', border: 'none', color: '#A68036', cursor: 'pointer', fontSize: '14px', fontFamily: 'Arial', marginLeft: '10px' }}>
-                    Count: 249
+            <td colSpan="6" className="bg-gray-200">
+              <div
+                style={{
+                  display: "flex",
+                  justifyContent: "space-between",
+                  alignItems: "center",
+                }}
+                className="relative p-3"
+              >
+                <div
+                  style={{ display: "flex", alignItems: "center" }}
+                  className=" rounded-t-lg"
+                >
+                  <button
+                    style={{
+                      border: "none",
+                      color: "#A68036",
+                      cursor: "pointer",
+                      fontSize: "16px",
+                      fontFamily: "Arial",
+                      marginLeft: "10px",
+                    }}
+                    className="flex-1 bg-gray-200"
+                  >
+                    Count:249
                   </button>
-                  <div style={{ display: 'flex', alignItems: 'center', marginLeft: '360px'  }}>
-                    <span style={{ fontSize: '14px', fontFamily: 'Arial', color: '#A68036', marginRight: '5px' }}>
+                  <div
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                    }}
+                    className="flex-1 absolute right-0"
+                  >
+                    <span
+                      style={{
+                        fontSize: "14px",
+                        fontFamily: "Arial",
+                        color: "#A68036",
+                        marginRight: "5px",
+                      }}
+                    >
                       Pages:
                     </span>
-                    <div style={{ display: 'flex', fontSize: '14px', fontFamily: 'Arial' }}>
+
+                    <div
+                      style={{
+                        display: "flex",
+                        fontSize: "14px",
+                        fontFamily: "Arial",
+                      }}
+                      >
                       {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((page) => (
                         <button
-                          key={page}
-                          onClick={() => handlePageClick(page)}
-                          style={{
-                            margin: '0 5px',
-                            padding: '0',
-                            backgroundColor: 'transparent',
-                            color: currentPage === page ? '#77abed' : '#A68036',
-                            border: 'none',
-                            cursor: 'pointer',
-                            textDecoration: currentPage === page ? 'none' : 'none',
+                        key={page}
+                        onClick={() => handlePageClick(page)}
+                        style={{
+                          margin: "0 5px",
+                          padding: "0",
+                          backgroundColor: "transparent",
+                            color: currentPage === page ? "#77abed" : "#A68036",
+                            border: "none",
+                            cursor: "pointer",
+                            textDecoration:
+                            currentPage === page ? "none" : "none",
                           }}
-                        >
+                          >
                           {page}
                         </button>
-                        
                       ))}
                     </div>
-                    <button style={{ backgroundColor: 'transparent', border: 'none', color: '#A68036', cursor: 'pointer', fontSize: '14px', fontFamily: 'Arial', marginRight: '10px' }}>
-                    ...  18
-                  </button>
+                    <button
+                      style={{
+                        backgroundColor: "transparent",
+                        border: "none",
+                        color: "#A68036",
+                        cursor: "pointer",
+                        fontSize: "14px",
+                        fontFamily: "Arial",
+                        marginRight: "10px",
+                      }}
+                      >
+                      ... 18
+                    </button>
                   </div>
                 </div>
                 {/* <div style={{ display: 'flex', alignItems: 'center' }}>
@@ -234,102 +269,146 @@ const Table = () => {
           </tr>
           <tr className="border-2">
             <th
-              className={`${cssclass} w-64 `} 
-              style={{ ...textStyle, color: '#A68036', textAlign: 'center',fontFamily:'Arial',fontSize:'14px' }} 
-              onClick={() => requestSort('website')}
+              className={`${cssclass} w-64 `}
+              style={{
+                ...textStyle,
+                color: "#A68036",
+                textAlign: "center",
+                fontFamily: "Arial",
+                fontSize: "14px",
+              }}
+              onClick={() => requestSort("website")}
             >
-              
               WEBSITE
             </th>
             <th
               className={cssclass}
-              style={{ ...textStyle, color: '#77abed', textAlign: 'center', cursor: 'pointer'}}
-              onClick={() => requestSort('overallRank')}
+              style={{
+                ...textStyle,
+                color: "#77abed",
+                textAlign: "center",
+                cursor: "pointer",
+              }}
+              onClick={() => requestSort("overallRank")}
             >
               OVERALL RANK
-               <span className="text-[12px]" style={{ color: '#77abed' }}> ▼</span>
-               
+              <span className="text-[12px]" style={{ color: "#77abed" }}>
+                {" "}
+                ▼
+              </span>
             </th>
             <th
               className={cssclass}
-              style={{ ...textStyle, color: '#A68036', textAlign: 'center' }}
-              onClick={() => requestSort('popularityRank')}
-              
+              style={{ ...textStyle, color: "#A68036", textAlign: "center" }}
+              onClick={() => requestSort("popularityRank")}
             >
               POPULARITY RANK
             </th>
             <th
               className={cssclass}
-              style={{ ...textStyle, color: '#A68036', textAlign: 'center' }}
-              onClick={() => requestSort('relRank')}
+              style={{ ...textStyle, color: "#A68036", textAlign: "center" }}
+              onClick={() => requestSort("relRank")}
             >
               RELEVANCE RANK
             </th>
             <th
               className={cssclass}
-              style={{ ...textStyle, color: '#A68036', textAlign: 'center' }}
-              onClick={() => requestSort('pages')}
+              style={{ ...textStyle, color: "#A68036", textAlign: "center" }}
+              onClick={() => requestSort("pages")}
             >
               PAGES
             </th>
-            <th className={cssclass} style={{ ...textStyle, color: '#A68036', textAlign: 'center' }}>
+            <th
+              className={cssclass}
+              style={{ ...textStyle, color: "#A68036", textAlign: "center" }}
+            >
               VIDEOS
             </th>
           </tr>
         </thead>
-        <tbody className="border-2">
+        <tbody className="border-1">
           {sortedWebsites.map((website, index) => (
             <tr
               key={index}
-              className="border-2"
+              className="border-1"
               onClick={() => handleRowClick(index)}
               style={{
-                color: selectedRow === index ? '#77abed' : '#A68036',
-                cursor: 'pointer',
-                backgroundColor: index % 2 === 0 ? 'transparent' : '#f0f0f0', // Alternating colors
+                color: selectedRow === index ? "#77abed" : "#A68036",
+                cursor: "pointer",
+                backgroundColor: index % 2 === 0 ? "transparent" : "#f0f0f0", // Alternating colors
               }}
             >
-              <td className={`${cssclass} w-64`} style={{ ...textStyle, textAlign: 'left' }}>
+              <td
+                className={`border ${cssclass} w-64`}
+                style={{ ...textStyle, textAlign: "left" }}
+              >
                 {website.website}
               </td>
-              <td className={cssclass} style={{ ...textStyle, textAlign: 'center' }}>
+              <td
+                className={cssclass}
+                style={{ ...textStyle, textAlign: "center" }}
+              >
                 {website.overallRank}
               </td>
-              <td className={cssclass} style={{ ...textStyle, textAlign: 'center' }}>
+              <td
+                className={cssclass}
+                style={{ ...textStyle, textAlign: "center" }}
+              >
                 {website.popularityRank}
               </td>
-              <td className={cssclass} style={{ ...textStyle, textAlign: 'center' }}>
+              <td
+                className={cssclass}
+                style={{ ...textStyle, textAlign: "center" }}
+              >
                 {website.relRank}
               </td>
-              <td className={cssclass} style={{ ...textStyle, textAlign: 'center' }}>
+              <td
+                className={cssclass}
+                style={{ ...textStyle, textAlign: "center" }}
+              >
                 {website.pages}
               </td>
-              <td className={cssclass} style={{ ...textStyle, textAlign: 'center' }}>
+              <td
+                className={cssclass}
+                style={{ ...textStyle, textAlign: "center" }}
+              >
                 {website.videos}
               </td>
             </tr>
           ))}
         </tbody>
-        
       </table>
-
-      {isPopupOpen && <CategoryPopup onClose={() => setIsPopupOpen(false)} />}  {/* Render popup conditionally */}
-      <div className="mb-4 rounded-lg  " style={{ backgroundColor: '#f5f5f5', display: 'inline-block',width:'100%', minHeight: '100px',marginTop: '20px'}}>
-      <h2
-        className="text-sm text-categrycolor bg-gray-100 mb-2 px-4 py-1 "
-        style={{ backgroundColor: '#e8e9e9', borderRadius: '12px 12px 0 0', borderTopRightRadius: '12px'}}
+      {isPopupOpen && <CategoryPopup onClose={() => setIsPopupOpen(false)} />}{" "}
+      {/* Render popup conditionally */}
+      <div
+        className="mb-4 rounded-lg  "
+        style={{
+          backgroundColor: "#f5f5f5",
+          display: "inline-block",
+          width: "100%",
+          minHeight: "100px",
+          marginTop: "20px",
+        }}
       >
-       SEARCH 2
-      </h2>
-      <div className="flex space-x-1 overflow-x-auto items-center pl-[40px]" style={{ width: 'auto'}}>
-        
-      <SearchBar />
+        <h2
+          className="text-sm text-categrycolor bg-gray-100 mb-2 px-4 py-1 "
+          style={{
+            backgroundColor: "#e8e9e9",
+            borderRadius: "12px 12px 0 0",
+            borderTopRightRadius: "12px",
+          }}
+        >
+          SEARCH 2
+        </h2>
+        <div
+          className="flex space-x-1 overflow-x-auto items-center pl-[40px]"
+          style={{ width: "auto" }}
+        >
+          <SearchBar />
+        </div>
       </div>
     </div>
-    </div>
-    
   );
-  
 };
 
 export default Table;

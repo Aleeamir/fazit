@@ -155,7 +155,9 @@ const Articles = () => {
                 src={article.imageUrl}
                 alt={article.title}
                 className="object-cover"
+                style={{ width:'174px', height: '115px' }}
               />
+              
             </div>
           </div>
         </div>

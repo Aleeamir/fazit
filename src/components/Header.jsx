@@ -8,10 +8,12 @@ const Header = () => {
     >
       <div
         className="flex items-center"
-        style={{ marginTop: "11px", marginBottom: "19px", marginLeft: "67px" }}
+        // style={{ marginTop: "11px", marginBottom: "19px", marginLeft: "67px" }}
+        style={{ marginTop: "11px", marginBottom: "19px", marginLeft: "50px" }}
       >
         <img src={logo} alt="Fazit Logo"
-          style={{ width: '180px', height: 'auto' }}
+          // style={{ width: '180px', height: 'auto' }}
+          style={{ width: '191px', height: '104px' }}
         />
       </div>
       <div
