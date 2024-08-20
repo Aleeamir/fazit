@@ -3,18 +3,40 @@ import React from "react";
 
 const SearchBar = () => {
   return (
-    <div className="flex items-center rounded-3xl w-full mr-1 pt-3 " style={{marginLeft:'8px'}}>
-      <select className="bg-gray-300  " style={{border:"1px solid rgba(0, 0, 0, 0.1)",color:'dadada',borderRadius:'20px 0px 0px 20px',background: 'linear-gradient(to bottom, #ffffff, #ececec, #d1d1d1, #b8b8b8)'}} >
-        <option value="all" style={{color:'#d9d9d9'}}>All</option>
-        {/* Add more options as needed */}
-      </select>
+    <div className="flex items-center rounded-3xl w-full mr-1 pt-3" style={{ marginLeft: '8px' }}>
+      <div className="relative">
+        <select
+          className="bg-gray-300 appearance-none"
+          style={{
+            border: "1px solid rgba(0, 0, 0, 0.1)",
+            color: '#333', // Changed to a visible color
+            borderRadius: '20px 0px 0px 20px',
+            padding: '8px 30px 8px 10px', // Add padding for the dropdown arrow
+            background: 'linear-gradient(to bottom, #ffffff, #ececec, #d1d1d1, #b8b8b8)',
+            cursor: 'pointer', // Change cursor to pointer
+            width: '60px', // Adjusted width
+            height: '30px', // Match input height
+          }}
+        >
+          <option value="all" style={{ color: '#333' }}>All</option>
+          {/* Add more options as needed */}
+        </select>
+        {/* Custom dropdown arrow */}
+        <span className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500 pointer-events-none">▼</span>
+      </div>
       <input
         type="text"
-        className=" h-6 border-5 rounded-l-none  bg-blue-200 px-2 py-2 pr-2 " style={{border: "1px solid rgba(8, 62, 135, 0.5)"
-          ,width:'80%'}}
-        placeholder=""
+        className="h-6 border-5 rounded-l-none bg-blue-200 px-2 py-2 pr-2"
+        style={{
+          border: "1px solid rgba(8, 62, 135, 0.5)",
+          width: '80%',
+        }}
+        placeholder="Search..."
       />
-      <button className=" px-2  bg-[#ba3030] text-white rounded-r-lg" style={{borderRadius:'0px 20px 20px 0px'}}>
+      <button
+        className="px-2 bg-[#ba3030] text-white rounded-r-lg"
+        style={{ borderRadius: '0px 20px 20px 0px' }}
+      >
         FAZIT
       </button>
     </div>
