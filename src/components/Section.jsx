@@ -16,6 +16,7 @@ const Section = ({ title, categories, OnSendCountry }) => {
         backgroundColor: "#f5f5f5",
         display: "inline-block",
         width: "100%",
+        borderRadius: '25px 25px 25px 25px'
       }}
     >
       <h2
@@ -27,6 +28,7 @@ const Section = ({ title, categories, OnSendCountry }) => {
           fontFamily: "Arial",
           fontSize: "14px",
           textShadow: "0 1px 1px rgba(0, 0, 0, 0.2)",
+          borderRadius: "20px 20px 0px 0px"
         }}
       >
         {title}
