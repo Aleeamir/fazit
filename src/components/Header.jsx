@@ -29,7 +29,7 @@ const Header = () => {
           style={{
             border: "1px solid rgba(0, 0, 0, 0.1)",
             color: '#333', // Changed to a visible color
-            borderRadius: '20px 0px 0px 20px',
+            borderRadius: '10px 0px 0px 10px',
             padding: '0px 22px 1px 15px', // Add padding for the dropdown arrow
             background: 'linear-gradient(to bottom, #ffffff, #ececec, #d1d1d1, #b8b8b8)',
             cursor: 'pointer', // Change cursor to pointer
@@ -50,7 +50,7 @@ const Header = () => {
               style={{ width: "471px", height:'26px' }}
               placeholder="Search..."
             />
-            <button className=" px-2  bg-[#ba3030] text-white rounded-r-lg" style={{borderRadius: '0px 20px 20px 0px',  height:'26px', fontSize:'14px', paddingRight:'17px'}}>
+            <button className=" px-2  text-white rounded-r-lg" style={{borderRadius: '0px 20px 20px 0px',  height:'26px', fontSize:'14px', paddingRight:'17px', paddingLeft:'12px', background: 'linear-gradient(rgb(236, 78, 80), rgb(178, 48, 48))'}}>
               FAZIT
             </button>
           </div>
