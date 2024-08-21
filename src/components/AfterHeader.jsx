@@ -42,12 +42,12 @@ const AfterHeader = ({
 
   return (
     <div
-      className="bg-bordercolor text-stone-200  shadow"
-      style={{ height: 28 }}
+      className="bg-[#00478c] text-stone-200  shadow"
+      style={{ height: "28px"  }}
     >
       <div
-        className="flex justify-center items-center px-4"
-        style={{ marginLeft: "310px" }}
+        className="flex justify-center items-center "
+        style={{ marginLeft: "310px", marginTop: '3px', marginBottom: '7px' }}
       >
         <div className="flex flex-wrap space-x-4 text-[14px] ml-auto">
           <a href="#" className="hover:underline">
