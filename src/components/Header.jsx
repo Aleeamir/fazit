@@ -23,9 +23,9 @@ const Header = () => {
         <span className="text-categrycolor text-[14px]">SEARCH 1</span>
         <div className="relative rounded-3xl">
           <div className="flex items-center w-full">
-          <div className="relative">
+          <div className="relative " >
         <select
-          className="mb-[2px] bg-gray-300 appearance-none text-[11px] border-[1px] border-[#98999c]"
+          className="mb-[1 px] bg-gray-300 appearance-none text-[11px] border-[1px] border-[#98999c]"
           style={{
             color: '#333', // Changed to a visible color
             borderRadius: '10px 0px 0px 10px',
@@ -40,7 +40,7 @@ const Header = () => {
           {/* Add more options as needed */}
         </select>
         {/* Custom dropdown arrow */}
-        <span className="absolute right-2 transform -translate-y-1/2 text-[#7c7c7c] pointer-events-none text-[12px] top-[55%]">▼</span>
+        <span className="absolute right-2 transform -translate-y-1/2 text-[#7c7c7c] pointer-events-none text-[12px] top-[47%] ">▼</span>
 
       </div>
             <input
