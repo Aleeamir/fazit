@@ -23,7 +23,7 @@ const Section = ({ title, categories, OnSendCountry }) => {
         className="text-sm text-categrycolor bg-gray-100 mb-2 px-2 py-1"
         style={{
           backgroundColor: "#e8e9e9",
-          borderRadius: "12px 0 0 0",
+          // borderRadius: "12px 0 0 0",
           borderTopRightRadius: "12px",
           fontFamily: "Arial",
           fontSize: "14px",

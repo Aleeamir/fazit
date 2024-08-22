@@ -54,7 +54,7 @@ const Header = () => {
               type="text"
               className="flex-grow w-96 border-[1px]  border-[#98999c] h-6 bg-gray-200 placeholder:text-[#0d1444] px-3"
               style={{ width: "518px", height: "26px" }}
-              placeholder="Search..."
+              placeholder="San Francisco 49ers"
             />
             <button className="fazit-button">FAZIT</button>
           </div>
