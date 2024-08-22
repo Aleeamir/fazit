@@ -28,16 +28,17 @@ const Header = () => {
           <div className="flex items-center w-full">
             <div className="relative">
               <select
-                className="mb-[2px] bg-gray-300 appearance-none text-[11px] border-[1px] border-[#98999c]"
+                className=" bg-gray-300 appearance-none text-[11px] border-[1px] border-[#98999c]"
                 style={{
                   color: "#333", // Changed to a visible color
                   borderRadius: "10px 0px 0px 10px",
-                  padding: "0px 10px 1px 10px", // Add padding for the dropdown arrow
+                  padding: "2px 10px 1px 10px", // Add padding for the dropdown arrow
                   background:
                     "linear-gradient(to bottom, #ffffff, #ececec, #d1d1d1, #b8b8b8)",
                   cursor: "pointer", // Change cursor to pointer
                   width: "47px", // Adjusted width
                   height: "26px", // Match input height
+                  fontFamily: 'arial'
                 }}
               >
                 <option value="all" style={{ color: "#333" }}>
@@ -46,7 +47,7 @@ const Header = () => {
                 {/* Add more options as needed */}
               </select>
               {/* Custom dropdown arrow */}
-              <span className="absolute right-2 transform -translate-y-1/2 text-[#7c7c7c] pointer-events-none text-[12px] top-[55%]">
+              <span className="absolute right-2 transform -translate-y-1/2 text-[#7c7c7c] pointer-events-none text-[11px] top-[50%]">
                 ▼
               </span>
             </div>
