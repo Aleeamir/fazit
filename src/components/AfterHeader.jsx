@@ -43,11 +43,7 @@ const AfterHeader = ({
   return (
     <div
       className="bg-[#00478c] text-stone-200  shadow"
-<<<<<<< HEAD
-      style={{ height: 29 }}
-=======
       style={{ height: "28px"  }}
->>>>>>> 1eda31e7b8dbbbdc49fa0da1f94998b1020a51cf
     >
       <div
         className="flex justify-center items-center "
