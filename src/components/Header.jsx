@@ -26,6 +26,7 @@ const Header = () => {
         <span className="text-categrycolor text-[14px]">SEARCH 1</span>
         <div className="relative rounded-3xl">
           <div className="flex items-center w-full">
+<<<<<<< HEAD
             <div className="relative">
               <select
                 className="mb-[2px] bg-gray-300 appearance-none text-[11px] border-[1px] border-[#98999c]"
@@ -54,9 +55,42 @@ const Header = () => {
               type="text"
               className="flex-grow w-96 border-[1px]  border-[#98999c] h-6 bg-gray-200 placeholder:text-[#0d1444] px-3"
               style={{ width: "518px", height: "26px" }}
+=======
+          <div className="relative " >
+        <select
+          className="mb-[1 px] bg-gray-300 appearance-none text-[11px] border-[1px] border-[#98999c]"
+          style={{
+            color: '#333', // Changed to a visible color
+            borderRadius: '10px 0px 0px 10px',
+            padding: '0px 10px 1px 10px', // Add padding for the dropdown arrow
+            background: 'linear-gradient(to bottom, #ffffff, #ececec, #d1d1d1, #b8b8b8)',
+            cursor: 'pointer', // Change cursor to pointer
+            width: '47px', // Adjusted width
+            height: '26px', // Match input height
+          }}
+        >
+          <option value="all" style={{ color: '#333', }} >All</option>
+          {/* Add more options as needed */}
+        </select>
+        {/* Custom dropdown arrow */}
+        <span className="absolute right-2 transform -translate-y-1/2 text-[#7c7c7c] pointer-events-none text-[12px] top-[47%] ">▼</span>
+
+      </div>
+            <input
+              type="text"
+              className="flex-grow w-96 border-[1px]  border-[#98999c] h-6 bg-gray-200 placeholder:text-[#0d1444] px-3"
+              style={{ width: "518px", height:'26px' }}
+>>>>>>> 1eda31e7b8dbbbdc49fa0da1f94998b1020a51cf
               placeholder="Search..."
+
             />
+<<<<<<< HEAD
             <button className="fazit-button">FAZIT</button>
+=======
+            <button className="w-[71px] text-white rounded-r-full bg-[#d12e2e] flex items-center justify-center h-[26px] border-[1px] border-[#960000]">
+              FAZIT
+            </button>
+>>>>>>> 1eda31e7b8dbbbdc49fa0da1f94998b1020a51cf
           </div>
         </div>
       </div>

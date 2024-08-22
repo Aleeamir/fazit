@@ -35,7 +35,7 @@ const SearchBar = () => {
         }}
         placeholder="Search..."
       />
-                <button className="fazit-button">FAZIT</button>
+      <button className="fazit-button">FAZIT</button>
 
     </div>
   );
