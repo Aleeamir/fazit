@@ -107,16 +107,16 @@ const Articles = () => {
           style={{ marginRight: "10px" }}
         >
           <div className="flex justify-between items-center">
-            <h2 className="text-black font-semibold whitespace-nowrap overflow-hidden text-ellipsis text-[24px]">
+            <h2 className="text-black whitespace-nowrap overflow-hidden text-ellipsis text-[24px]">
               <a
                 href={article.url}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:underline"
-                style={{ fontFamily: "Arial" }}
+                style={{ fontFamily: "Arial", fontWeight: '400' }}
               >
                 {article.title.length > 10
-                  ? article.title.substring(0, 38) + "..."
+                  ? article.title.substring(0, 42) + "..."
                   : article.title}
                 {/* {article.title} */}
               </a>
@@ -126,27 +126,31 @@ const Articles = () => {
             <div className="flex-initial w-[60%] flex-col">
               <a
                 href={article.url}
-                className=" text-[14px] text-categrycolor leading-normal"
+                className="block text-[14px] text-categrycolor leading-normal"
                 style={{
                   whiteSpace: "nowrap",
                   overflow: "hidden",
                   textOverflow: "ellipsis",
                   fontFamily: "Arial",
+                  width: '100%' // Ensure the link takes the full width
                 }}
               >
                 {article.url.length > 90
-                  ? article.url.substring(0, 34) + "..."
+                  ? article.url.substring(0, 43) + "..."
                   : article.url}
               </a>
               <p
-                className=" text-[12px] font-sans text-[#958e77] tracking-tight"
-                style={{ fontFamily: "Arial" }}
+                className="text-[12px] font-sans text-[#958e77] tracking-tight"
+                style={{ fontFamily: "Arial", color: '#695d38', lineHeight: '16px' }}
               >
                 {article.description.length > 300
-                  ? article.description.substring(0, 200) + "..."
+                  ? article.description.substring(0, 250) + "..."
                   : article.description}
               </p>
-              <p className="text-[12px] italic" style={{ color: "#263b6f", fontFamily: 'arial' }}>
+              <p
+                className="text-[12px] italic"
+                style={{ color: "#263b6f", fontFamily: "Arial" }}
+              >
                 {article.category}
               </p>
             </div>
@@ -155,11 +159,11 @@ const Articles = () => {
                 src={article.imageUrl}
                 alt={article.title}
                 className="object-cover"
-                style={{ width:'174px', height: '115px' }}
+                style={{ width: '174px', height: '115px' }}
               />
-              
             </div>
           </div>
+
         </div>
       ))}
     </div>
