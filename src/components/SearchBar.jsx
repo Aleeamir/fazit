@@ -1,6 +1,6 @@
 // src/components/SearchBar.js
 import React from "react";
-
+import "./fazitButton.css"
 const SearchBar = () => {
   return (
     <div className="flex items-center rounded-3xl w-full mr-1 pt-3" style={{ marginLeft: '8px' }}>
@@ -35,19 +35,8 @@ const SearchBar = () => {
         }}
         placeholder="Search..."
       />
-     <button
-  className="px-2 text-white rounded-r-lg"
-  style={{
-    background: 'linear-gradient(rgb(236, 78, 80), rgb(178, 48, 48))',
-    borderRadius: '0px 20px 20px 0px',
-    height: '26px',
-    fontSize: '14px',
-    paddingRight: '17px',
-    paddingLeft:'12px'
-  }}
->
-  FAZIT
-</button>
+                <button className="fazit-button">FAZIT</button>
+
     </div>
   );
 };

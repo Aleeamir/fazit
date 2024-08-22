@@ -1,0 +1,30 @@
+/* CSS file or CSS module */
+.fazit-button {
+  display: inline-block;
+  width: 75px;
+  height: 26px;
+  padding-top: 3px;
+  border: solid 1px #960000;
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
+  background: rgb(206, 44, 44);
+  background: linear-gradient(
+    180deg,
+    rgba(206, 44, 44, 1) 0%,
+    rgba(155, 4, 4, 1) 100%
+  );
+  color: #fff;
+  text-align: center;
+  font-family: arial;
+  font-size: 14px;
+  cursor: pointer;
+}
+.fazit-button:hover {
+  background: rgb(155, 4, 4);
+  background: linear-gradient(
+    180deg,
+    rgba(155, 4, 4, 1) 0%,
+    rgba(206, 44, 44, 1) 100%
+  );
+  color: rgba(255, 255, 255, 0.75);
+}
