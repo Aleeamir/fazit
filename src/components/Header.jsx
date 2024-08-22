@@ -24,14 +24,14 @@ const Header = () => {
         style={{ marginTop: "58px", marginBottom: "30px", marginRight: "40px" }}
       >
         <span className="text-categrycolor text-[14px]">SEARCH 1</span>
-        <div className="relative rounded-3xl">
+        <div className="relative rounded-3xl" style={{marginLeft:'10px'}}>
           <div className="flex items-center w-full">
             <div className="relative">
               <select
                 className=" bg-gray-300 appearance-none text-[11px] border-[1px] border-[#98999c]"
                 style={{
                   color: "#333", // Changed to a visible color
-                  borderRadius: "10px 0px 0px 10px",
+                  borderRadius: "50px 0px 0px 50px",
                   padding: "2px 10px 1px 10px", // Add padding for the dropdown arrow
                   background:
                     "linear-gradient(to bottom, #ffffff, #ececec, #d1d1d1, #b8b8b8)",
