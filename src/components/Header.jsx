@@ -69,10 +69,13 @@ const Header = () => {
                   height: "26px",
                   fontFamily: "arial",
                   // marginRight:'1px'
-                  borderRightWidth: "2px",
+                  borderRightWidth: "1px",
                 }}
               >
-                <option value="all" style={{ color: "#333" }}>
+                <option value="all" style={{ color: "#333",backgroundColor:"#706e6e" }}>
+                  All
+                </option>
+                <option value="all" style={{ color: "#333",backgroundColor:"#706e6e" }}>
                   All
                 </option>
               </select>
