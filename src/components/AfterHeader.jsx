@@ -90,6 +90,13 @@ const AfterHeader = ({
           >
             Websites
           </a>
+          <a
+            href="#"
+            className={` ${activeTab === "websites" ? "text-[#77abed]" : ""}`}
+            onClick={() => handleMenuClick("websites")}
+          >
+            Channels
+          </a>
           <div className="group relative text-[14px] ml-auto">
             <button
               className={`text-white bg-bordercolor border-none ${
@@ -175,7 +182,7 @@ const AfterHeader = ({
             }`}
             onClick={toggleRowSettingsPopup}
           >
-            Row Setting
+             Setting
             <span className="ml-2 text-[12px]" style={{ color: "#77abed" }}>
               ▼
             </span>

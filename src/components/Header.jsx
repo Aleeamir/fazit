@@ -84,7 +84,7 @@ const Header = () => {
               <textarea
                 className={`border-[1px] border-[#98999c] bg-gray-200 placeholder:text-[#0d1444] px-3 resize-none overflow-hidden`}
                 style={{
-                  marginTop: 8,
+                  marginTop: 3,
                   width: "518px",
                   // height: isSearching ? "26px" : "auto", 
                   height: '26px',
