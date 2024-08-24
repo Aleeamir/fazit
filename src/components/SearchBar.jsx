@@ -41,7 +41,19 @@ const SearchBar = () => {
         }}
         placeholder="Search..."
       />
-      <button className="fazit-button">FAZIT</button>
+      <button className="fazit-button"
+      style={{
+        backgroundColor: "#e94e3c", // Color similar to the "FAZIT" button
+        color: "#fff",
+        padding: "0 15px",
+        height: "26px",
+        fontSize: "12px",
+        borderRadius: "0px 50px 50px 0px",
+        border: "none",
+        cursor: "pointer",
+        fontFamily: "arial",
+      }}
+      >FAZIT</button>
 
     </div>
   );
