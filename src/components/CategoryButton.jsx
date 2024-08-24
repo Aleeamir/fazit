@@ -4,7 +4,7 @@ const CategoryButton = ({ label, count, icon, selected, OnClick }) => {
   return (
     <div
       className="flex flex-col items-center px-4 py-2 cursor-pointer transition-transform"
-      style={{ width: "100px" }}
+      style={{ width: "105px" }}
       onClick={OnClick}
     >
       <span
