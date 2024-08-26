@@ -26,7 +26,9 @@ const CategoryButton = ({ title, label, count,icon, selected, OnClick }) => {
       >
         {label}
       </span>
+      {/* <div className=" flex items-center justify-center py-[10px]"> */}
       <div className=" flex items-center justify-center py-[10px]">
+
         <img
           src={title === "COUNTRY" || title=="DATA" ? icon : selected ? selectedIcon : unselectedIcon}
           alt={label}
@@ -34,14 +36,22 @@ const CategoryButton = ({ title, label, count,icon, selected, OnClick }) => {
           // style={{ mixBlendMode: "multiply"}}
           style={{
             mixBlendMode: "multiply",
-            marginTop: "10px",
-            marginBottom: "10px",
+            // marginTop: "10px",
+            // marginBottom: "10px",
             marginLeft: "10px",
             height: "65px",
             width: "83px",
           }}
         />
       </div>
+      {/* <span
+        className={`text-sm ${
+          selected ?title=="COUNTRY"?"text-red-700": "text-[#99063c] underline" : title==="COUNTRY"?"text-[#6d401b]":"text-[#0066f5]"
+        } py-[10px]`}
+        style={{ fontFamily: "Arial" }}
+      >
+        {count}
+      </span> */}
       <span
         className={`text-sm ${
           selected ?title=="COUNTRY"?"text-red-700": "text-[#99063c] underline" : title==="COUNTRY"?"text-[#6d401b]":"text-[#0066f5]"

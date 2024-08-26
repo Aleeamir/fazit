@@ -49,7 +49,7 @@ const AfterHeader = ({
         className="flex justify-center items-center "
         style={{ marginLeft: "310px", marginTop: '3px', marginBottom: '7px' }}
       >
-        <div className="flex flex-wrap space-x-4 text-[14px] ml-auto">
+        <div className="flex flex-wrap space-x-4 text-[14px] ml-auto " style={{paddingLeft:'125px'}} >
           <a href="#" className="hover:underline">
             Options
           </a>
@@ -62,7 +62,9 @@ const AfterHeader = ({
         </div>
         <div
           className="flex flex-wrap space-x-2 text-[14px] ml-auto"
-          style={{ marginLeft: "10px" }}
+          // style={{ marginLeft: "10px" }}
+          style={{ marginLeft: "70px" }}
+
         >
           <span>Page:</span>
           {[...Array(6)].map((_, i) => (
@@ -75,7 +77,7 @@ const AfterHeader = ({
             Browse All
           </a>
         </div>
-        <div className="flex flex-wrap space-x-4 text-[14px] ml-auto">
+        <div className="flex flex-wrap space-x-4 text-[14px] ml-[95px]">
           <a
             href="#"
             className={` ${activeTab === "categories" ? "text-[#77abed]" : ""}`}
@@ -131,9 +133,9 @@ const AfterHeader = ({
               onClick={toggleRankingPopup}
             >
               Ranking
-              <span className="text-[12px]" style={{ color: "#77abed" }}>
+              <span className="text-[14px]" style={{ color: "#77abed" }}>
                 ▼
-              </span>
+              </span> 
             </button>
           </div>
           {/* <div className="group text-[14px] ml-auto">

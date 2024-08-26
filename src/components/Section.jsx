@@ -20,7 +20,7 @@ const Section = ({ title, categories, OnSendCountry }) => {
       }}
     >
       <h2
-        className="text-sm text-[#a98c3c] bg-gray-100 mb-2 pt-[10px] pl-[20px] h-[30px]"
+        className="text-sm text-[#a98c3c] bg-gray-100 mb-2 pt-[6px] pl-[20px] h-[30px]"
         style={{
           backgroundColor: "#e8e9e9",
           borderTopRightRadius: "12px",
