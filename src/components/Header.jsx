@@ -37,17 +37,12 @@ const Header = () => {
 
   return (
     <header
-      className="flex justify-between items-center  bg-white   py-[58px] "
-      style={{ height: "126px" }}
+      className="flex justify-between items-center  bg-white  pl-[58px] py-[58px] "
+      style={{ height: "123px" }}
     >
       <div
         className="flex items-center"
-<<<<<<< HEAD
         style={{ marginTop: "11px", marginBottom: "19px", marginLeft: "67px" }}
-=======
-        // style={{ marginTop: "11px", marginBottom: "19px", marginLeft: "67px" }}
-        style={{ marginTop: "10px", marginBottom: "19px", marginLeft: "70px" }}
->>>>>>> cfb0673b6e9459c7391e034a086a364ca68f82c0
       >
         <img
           src={logo}
@@ -72,21 +67,15 @@ const Header = () => {
                   color: "#333",
                   borderRadius: "50px 0px 0px 50px",
                   padding: "2px 10px 1px 10px",
-
                   background:
                     "linear-gradient(to bottom, #ffffff, #ececec, #d1d1d1, #b8b8b8)",
                   cursor: "pointer",
                   width: "47px",
                   height: "26px",
                   fontFamily: "arial",
-                  // marginRight:'1px'
-                  borderRightWidth: "1px",
                 }}
               >
-                <option value="all" style={{ color: "#333",backgroundColor:"#706e6e" }}>
-                  All
-                </option>
-                <option value="all" style={{ color: "#333",backgroundColor:"#706e6e" }}>
+                <option value="all" style={{ color: "#333" }}>
                   All
                 </option>
               </select>
@@ -148,25 +137,6 @@ const Header = () => {
                   ▼
                 </button>
               </div>
-
-              <textarea
-                className={`border-[1px] border-[#98999c] bg-gray-200 placeholder:text-[#0d1444] px-3 resize-none overflow-hidden`}
-                style={{
-                  marginTop: 3,
-                  width: "518px",
-                  // height: isSearching ? "26px" : "auto", 
-                  height: '26px',
-                  // maxHeight: isSearching ? "78px" : "auto", 
-                  // transition: "height 0.3s ease", 
-                  // paddingRight: isSearching ? "40px" : "10px", 
-                  userSelect:'none' ,outline:'none'
-
-                }}
-                value={inputValue}
-                onChange={handleInputChange}
-                rows={1}
-                placeholder="San Francisco 49ers"
-              />
               {isSearching && (
                 <div className="absolute right-[10px] top-[5px] loader"></div>
               )}
