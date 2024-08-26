@@ -41,11 +41,12 @@ const Section = ({ title, categories, OnSendCountry }) => {
         <div
           style={{
             //whitebar
-            width: "38%",
+            width: "35%",
             height: "6%",
             backgroundColor: "white",
             position: "absolute",
             margin: "0px 7px ",
+            // marginLeft: "45px",
             marginBottom: "5px",
             marginTop: "0px",
           }}

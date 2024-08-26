@@ -3,8 +3,10 @@ import React from "react";
 const CategoryButton = ({ title, label, count, icon, selected, OnClick }) => {
   return (
     <div
-      className="flex flex-col items-center px-4 py-2 cursor-pointer transition-transform"
-      style={{ width: "105px" }}
+      // className="flex flex-col items-center px-4 py-2 cursor-pointer transition-transform"
+      className="flex flex-col items-center cursor-pointer transition-transform"
+      // style={{ width: "105px" }}
+      style={{ width: "82px", paddingLeft:'5px', paddingRight:'5px' }}
       onClick={OnClick}
     >
       <span
@@ -21,7 +23,7 @@ const CategoryButton = ({ title, label, count, icon, selected, OnClick }) => {
       >
         {label}
       </span>
-      <div className="my-[10px] mx-[10px] flex items-center justify-center py-[10px]">
+      <div className=" flex items-center justify-center py-[10px]">
         <img
           src={icon}
           alt={label}
