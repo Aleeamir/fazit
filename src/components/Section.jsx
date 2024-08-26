@@ -20,7 +20,7 @@ const Section = ({ title, categories, OnSendCountry }) => {
       }}
     >
       <h2
-        className="text-sm text-categrycolor bg-gray-100 mb-2 px-2 py-1"
+        className="text-sm text-[#a98c3c] bg-gray-100 mb-2 pt-[10px] pl-[20px] h-[30px]"
         style={{
           backgroundColor: "#e8e9e9",
           borderTopRightRadius: "12px",
@@ -34,23 +34,25 @@ const Section = ({ title, categories, OnSendCountry }) => {
       </h2>
 
       <div
-        className="flex space-x-1 overflow-x-auto items-center pl-[30px]"
+        className="flex space-x-1 overflow-x-auto items-center pl-[45px]"
         style={{ width: "auto" }}
       >
         <div
           style={{
             //whitebar
-            width: "37%",
+            width: "35%",
             height: "6%",
             backgroundColor: "white",
             position: "absolute",
             margin: "0px 7px ",
+            // marginLeft: "45px",
             marginBottom: "5px",
             marginTop: "0px",
           }}
         ></div>
         {categories.map((category, index) => (
           <CategoryButton
+          title={title}
             key={index}
             label={category.label}
             count={category.count}

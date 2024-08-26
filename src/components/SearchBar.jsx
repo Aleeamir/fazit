@@ -5,37 +5,58 @@ const SearchBar = () => {
   return (
     <div className="flex items-center rounded-3xl w-full mr-1 pt-3" style={{ marginLeft: '8px' }}>
       <div className="relative">
-        <select
-          className="bg-gray-300 appearance-none"
-          style={{
-            border: "1px solid rgba(0, 0, 0, 0.1)",
-            color: '#333', // Changed to a visible color
-            borderRadius: '10px 0px 0px 10px',
-            padding: '0px 22px 1px 15px', // Add padding for the dropdown arrow
-            background: 'linear-gradient(to bottom, #ffffff, #ececec, #d1d1d1, #b8b8b8)',
-            cursor: 'pointer', // Change cursor to pointer
-            width: '60px', // Adjusted width
-            height: '26px', // Match input height
-          }}
-        >
-          <option value="all" style={{ color: '#333', }}>All</option>
-          {/* Add more options as needed */}
-        </select>
-        {/* Custom dropdown arrow */}
-        <span className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500 pointer-events-none text-[12px] top-[13px]">▼</span>
+              <select
+                className="bg-gray-300 appearance-none text-[11px] border-[1px] border-[#98999c]"
+                style={{
+                  color: "#333",
+                  borderRadius: "50px 0px 0px 50px",
+                  padding: "2px 10px 1px 10px",
 
-      </div>
+                  background:
+                    "linear-gradient(to bottom, #ffffff, #ececec, #d1d1d1, #b8b8b8)",
+                  cursor: "pointer",
+                  width: "47px",
+                  height: "26px",
+                  fontFamily: "arial",
+                  // marginRight:'1px'
+                  borderRightWidth: "1px",
+                }}
+              >
+                <option value="all" style={{ color: "#333",backgroundColor:"#706e6e" }}>
+                  All
+                </option>
+                <option value="all" style={{ color: "#333",backgroundColor:"#706e6e" }}>
+                  All
+                </option>
+              </select>
+              <span className="absolute right-2 transform -translate-y-1/2 text-[#7c7c7c] pointer-events-none text-[11px] top-[50%]">
+                ▼
+              </span>
+            </div>
       <input
         type="text"
         className="h-6 border-5 rounded-l-none bg-blue-200 px-2 py-2 pr-2"
         style={{
           border: "1px solid rgba(8, 62, 135, 0.5)",
           width: '80%',
-          height: '26px'
+          height: '26px',
+          userSelect:'none' ,outline:'none'
         }}
         placeholder="Search..."
       />
-      <button className="fazit-button">FAZIT</button>
+      <button className="fazit-button"
+      style={{
+        backgroundColor: "#e94e3c", // Color similar to the "FAZIT" button
+        color: "#fff",
+        padding: "0 15px",
+        height: "26px",
+        fontSize: "12px",
+        borderRadius: "0px 50px 50px 0px",
+        border: "none",
+        cursor: "pointer",
+        fontFamily: "arial",
+      }}
+      >FAZIT</button>
 
     </div>
   );

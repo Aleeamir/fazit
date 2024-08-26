@@ -1,30 +1,48 @@
 import React from "react";
 
-const CategoryButton = ({ label, count, icon, selected, OnClick }) => {
+const CategoryButton = ({ title, label, count, icon, selected, OnClick }) => {
   return (
     <div
-      className="flex flex-col items-center px-4 py-2 cursor-pointer transition-transform"
-      style={{ width: "100px" }}
+      // className="flex flex-col items-center px-4 py-2 cursor-pointer transition-transform"
+      className="flex flex-col items-center cursor-pointer transition-transform"
+      // style={{ width: "105px" }}
+      style={{ width: "82px", paddingLeft:'5px', paddingRight:'5px' }}
       onClick={OnClick}
     >
       <span
-        className={`text-xs ${selected ? "text-red-700" : "text-gray-700"}`}
+        className={`text-xs
+          
+          ${
+          selected
+            ? title === "COUNTRY"
+              ? "text-red-700"
+              : "text-[#99063c] "
+            : title==="COUNTRY"?"text-[#6d401b]":"text-[#0066f5]"
+        } py-[10px]`}
         style={{ fontSize: "14px", textShadow: "0 1px 1px rgba(0, 0, 0, 0.2)" }}
       >
         {label}
       </span>
-      <div className="my-[10px] flex items-center justify-center">
+      <div className=" flex items-center justify-center py-[10px]">
         <img
           src={icon}
           alt={label}
           className="object-contain"
           // style={{ mixBlendMode: "multiply"}}
-          style={{ mixBlendMode: "multiply", marginTop:'10px', marginBottom:'10px', marginLeft:'10px', height:'65px', width:'83px'}}
-
+          style={{
+            mixBlendMode: "multiply",
+            marginTop: "10px",
+            marginBottom: "10px",
+            marginLeft: "10px",
+            height: "65px",
+            width: "83px",
+          }}
         />
       </div>
       <span
-        className={`text-sm ${selected ? "text-red-700 underline"  : "text-gray-700"}`}
+        className={`text-sm ${
+          selected ?title=="COUNTRY"?"text-red-700": "text-[#99063c] underline" : title==="COUNTRY"?"text-[#6d401b]":"text-[#0066f5]"
+        } py-[10px]`}
         style={{ fontFamily: "Arial" }}
       >
         {count}

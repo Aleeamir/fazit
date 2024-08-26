@@ -8,6 +8,8 @@ import Table from "./components/Table";
 import KeywordTable from "./components/KeywordTable";
 import NewSearchBar from "./components/NewSearchBar";
 import Articles1 from "./components/Articles1.jsx";
+import DemoSearch from "./components/DemoSearch.jsx";
+import DemoSearch2 from "./components/DemoSearch2.jsx";
 
 import {
   countryCategories,
