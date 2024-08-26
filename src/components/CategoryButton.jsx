@@ -1,6 +1,9 @@
 import React from "react";
+import unselectedIcon from "../assets/!selected-icon.png";
+import selectedIcon from "../assets/selected-icon.png";
 
-const CategoryButton = ({ title, label, count, icon, selected, OnClick }) => {
+const CategoryButton = ({ title, label, count,icon, selected, OnClick }) => {
+ 
   return (
     <div
       // className="flex flex-col items-center px-4 py-2 cursor-pointer transition-transform"
@@ -25,7 +28,7 @@ const CategoryButton = ({ title, label, count, icon, selected, OnClick }) => {
       </span>
       <div className=" flex items-center justify-center py-[10px]">
         <img
-          src={icon}
+          src={title === "COUNTRY" ? icon : selected ? selectedIcon : unselectedIcon}
           alt={label}
           className="object-contain"
           // style={{ mixBlendMode: "multiply"}}
