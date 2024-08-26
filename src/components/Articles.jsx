@@ -15,7 +15,7 @@ const articles = [
     title: "49ers Christian McCaffrey lkdlka oihroi oiqhioiohiqohio form",
     url: "https://www.mercurynews.com/nfl/bach-brandon-aiyuk-studs-and-duds-from-cards-week-4-loss-vs-49ers",
     description:
-      "SANTA CLARA, Calif. -- The NFL's Most Valuable Player award has been given to a quarterback for each of the past 10 seasons. However, Christian McCaffrey is breaking that trend by showing MVP-worthy performances consistently this season. His impact on the 49ers' offense is undeniable, making him a prime candidate for the MVP. With his exceptional versatility, McCaffrey continues to dominate, proving that a running back can still contend for the top individual honor in the NFL.",
+      "SANTA CLARA, Calif. -- The NFL's Most Valuable Player award has been given to a quarterback for each of the past 10 seasons. However, Christian McCaffrey is breaking that trend by showing MVP-worthy performances consistently this season. His impact o...",
     imageUrl: img1,
     category: "Sports",
   },
