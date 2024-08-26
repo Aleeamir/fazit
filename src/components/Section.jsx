@@ -16,19 +16,18 @@ const Section = ({ title, categories, OnSendCountry }) => {
         backgroundColor: "#f5f5f5",
         display: "inline-block",
         width: "100%",
-        borderRadius: '25px 25px 25px 25px'
+        borderRadius: "25px 25px 25px 25px",
       }}
     >
       <h2
         className="text-sm text-categrycolor bg-gray-100 mb-2 px-2 py-1"
         style={{
           backgroundColor: "#e8e9e9",
-          // borderRadius: "12px 0 0 0",
           borderTopRightRadius: "12px",
           fontFamily: "Arial",
           fontSize: "14px",
           textShadow: "0 1px 1px rgba(0, 0, 0, 0.2)",
-          borderRadius: "20px 20px 0px 0px"
+          borderRadius: "20px 20px 0px 0px",
         }}
       >
         {title}

@@ -6,6 +6,7 @@ const Header = () => {
   const [inputValue, setInputValue] = useState("");
   const [isSearching, setIsSearching] = useState(false);
   const [elapsedTime, setElapsedTime] = useState(0);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   useEffect(() => {
     let timer;
@@ -29,6 +30,11 @@ const Header = () => {
     setIsSearching(false);
     setElapsedTime(0);
   };
+
+  const toggleDropdown = () => {
+    setIsDropdownOpen(!isDropdownOpen);
+  };
+
   return (
     <header
       className="flex justify-between items-center  bg-white  pl-[58px] py-[58px] "
@@ -36,22 +42,22 @@ const Header = () => {
     >
       <div
         className="flex items-center"
-        // style={{ marginTop: "11px", marginBottom: "19px", marginLeft: "67px" }}
         style={{ marginTop: "11px", marginBottom: "19px", marginLeft: "67px" }}
       >
         <img
           src={logo}
           alt="Fazit Logo"
-          // style={{ width: '180px', height: 'auto' }}
           style={{ width: "191px", height: "104px" }}
         />
       </div>
 
       <div
-        className="flex items-center space-x-4 pr-[10px] rounded-3xl"
+        className="flex items-center space-x-4 pr-[10px] rounded-3xl relative"
         style={{ marginTop: "58px", marginBottom: "30px", marginRight: "40px" }}
       >
-        <span className="text-categrycolor text-[14px]">SEARCH 1</span>
+        <span className="text-categrycolor text-[14px]" style={{ zIndex: 0 }}>
+          SEARCH 1
+        </span>
         <div className="relative rounded-3xl" style={{ marginLeft: "10px" }}>
           <div className="flex items-center w-full relative">
             <div className="relative">
@@ -73,49 +79,85 @@ const Header = () => {
                   All
                 </option>
               </select>
-              <span className="absolute right-2 transform -translate-y-1/2 text-[#7c7c7c] pointer-events-none text-[11px] top-[50%]">
+              <span className="absolute right-2 transform -translate-y-1/2 text-[#7c7c7c]  pointer-events-none text-[11px] top-[50%]">
                 ▼
               </span>
             </div>
             <div className="relative flex-grow">
-              <textarea
-                className={`border-[1px] border-[#98999c] bg-gray-200 placeholder:text-[#0d1444] px-3 resize-none overflow-hidden`}
-                style={{
-                  marginTop: 8,
-                  width: "518px",
-                  height: isSearching ? "26px" : "auto", // Shrink back to 26px when searching
-                  maxHeight: isSearching ? "78px" : "auto", // Maintain max height when searching
-                  transition: "height 0.3s ease", // Smooth transition for height change
-                  paddingRight: isSearching ? "40px" : "10px", // Extra padding for the loader
-                }}
-                value={inputValue}
-                onChange={handleInputChange}
-                rows={1}
-                placeholder="San Francisco 49ers"
-              />
+              <div className="flex items-center">
+                {isDropdownOpen ? (
+                  <textarea
+                    className={`border-[1px] border-[#98999c] bg-gray-200 placeholder:text-[#0d1444] px-3 resize-none overflow-hidden`}
+                    style={{
+                      width: "518px",
+                      height: "78px",
+                      maxHeight: "78px",
+                      paddingRight: isSearching ? "40px" : "30px",
+                      transition: "height 0.3s ease",
+                      position: "relative",
+                      zIndex: 2, // Keep it above the input field
+                      marginTop: "50px",
+                      borderBottomLeftRadius: "15px", // Round bottom-left corner
+                      borderBottomRightRadius: "15px", // Round bottom-right corner
+                    }}
+                    value={inputValue}
+                    onChange={handleInputChange}
+                    rows={3}
+                    placeholder="San Francisco 49ers"
+                  />
+                ) : (
+                  <input
+                    type="text"
+                    className="border-[1px] border-[#98999c] bg-gray-200 placeholder:text-[#0d1444] px-3"
+                    style={{
+                      width: "518px",
+                      height: "26px",
+                      paddingRight: isSearching ? "40px" : "30px",
+                    }}
+                    value={inputValue}
+                    onChange={handleInputChange}
+                    placeholder="San Francisco 49ers"
+                  />
+                )}
+                <button
+                  className="toggle-dropdown-button absolute right-3"
+                  style={{
+                    backgroundColor: "transparent",
+                    color: "#333",
+                    height: "26px",
+                    fontSize: "14px",
+                    border: "none",
+                    cursor: "pointer",
+                    fontFamily: "arial",
+                    marginRight: "20px",
+                    zIndex: 3,
+                  }}
+                  onClick={toggleDropdown}
+                >
+                  ▼
+                </button>
+              </div>
               {isSearching && (
                 <div className="absolute right-[10px] top-[5px] loader"></div>
               )}
             </div>
-            <div className="relative flex items-center">
-              <button
-                className="fazit-button"
-                style={{
-                  backgroundColor: "#e94e3c", // Color similar to the "FAZIT" button
-                  color: "#fff",
-                  padding: "0 15px",
-                  height: "26px",
-                  fontSize: "12px",
-                  borderRadius: "0px 50px 50px 0px",
-                  border: "none",
-                  cursor: "pointer",
-                  fontFamily: "arial",
-                }}
-                onClick={isSearching ? handleCancel : handleSearch}
-              >
-                {isSearching ? "Cancel" : "FAZIT"}
-              </button>
-            </div>
+            <button
+              className="fazit-button"
+              style={{
+                backgroundColor: "#e94e3c", // Color similar to the "FAZIT" button
+                color: "#fff",
+                padding: "0 15px",
+                height: "26px",
+                fontSize: "12px",
+                borderRadius: "0px 50px 50px 0px",
+                border: "none",
+                cursor: "pointer",
+                fontFamily: "arial",
+              }}
+              onClick={isSearching ? handleCancel : handleSearch}
+            >
+              {isSearching ? "Cancel" : "FAZIT"}
+            </button>
           </div>
           {isSearching && (
             <span className="absolute right-0 top-[-20px] text-[12px] text-[#7c7c7c] font-arial">
