@@ -28,7 +28,7 @@ const CategoryButton = ({ title, label, count,icon, selected, OnClick }) => {
       </span>
       <div className=" flex items-center justify-center py-[10px]">
         <img
-          src={title === "COUNTRY" ? icon : selected ? selectedIcon : unselectedIcon}
+          src={title === "COUNTRY" || title=="DATA" ? icon : selected ? selectedIcon : unselectedIcon}
           alt={label}
           className="object-contain"
           // style={{ mixBlendMode: "multiply"}}
