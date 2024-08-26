@@ -95,7 +95,6 @@ const Header = () => {
               </span>
             </div>
             <div className="relative flex-grow">
-<<<<<<< HEAD
               <div className="flex items-center">
                 {isDropdownOpen ? (
                   <textarea
@@ -168,7 +167,6 @@ const Header = () => {
                 rows={1}
                 placeholder="San Francisco 49ers"
               />
->>>>>>> cfb0673b6e9459c7391e034a086a364ca68f82c0
               {isSearching && (
                 <div className="absolute right-[10px] top-[5px] loader"></div>
               )}
