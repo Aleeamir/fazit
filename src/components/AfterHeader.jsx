@@ -63,7 +63,7 @@ const AfterHeader = ({
         <div
           className="flex flex-wrap space-x-2 text-[14px] ml-auto"
           // style={{ marginLeft: "10px" }}
-          style={{ marginLeft: "77px" }}
+          style={{ marginLeft: "68px" }}
 
         >
           <span>Page:</span>
@@ -77,7 +77,7 @@ const AfterHeader = ({
             Browse All
           </a>
         </div>
-        <div className="flex flex-wrap space-x-4 text-[14px] ml-[100px]">
+        <div className="flex flex-wrap space-x-4 text-[14px] ml-[72px]">
           <a
             href="#"
             className={` ${activeTab === "categories" ? "text-[#77abed]" : ""}`}
@@ -120,7 +120,7 @@ const AfterHeader = ({
               onClick={toggleDrilldownPopup}
             >
               Drilldown
-              <span className="ml text-[12px]" style={{ color: "#77abed" }}>
+              <span className="ml text-[14px]" style={{ color: "#77abed" }}>
                 ▼
               </span>
             </button>

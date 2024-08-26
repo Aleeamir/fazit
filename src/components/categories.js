@@ -134,7 +134,7 @@ export const industryCategories = [
     selected: false,
   },
   {
-    label: "More",
+    label: "More...",
     count: 14983,
     icon: c6,
     selected: false,

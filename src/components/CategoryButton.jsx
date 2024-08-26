@@ -47,7 +47,7 @@ const CategoryButton = ({ title, label, count,icon, selected, OnClick }) => {
 
 
       {/* <div className=" flex items-center justify-center py-[10px]"> */}
-      <div className=" flex items-center justify-center py-[10px]">
+      <div className=" flex items-center justify-center ">
 
         <img
           src={title === "COUNTRY" || title=="DATA" ? icon : selected ? selectedIcon : unselectedIcon}
@@ -94,7 +94,7 @@ const CategoryButton = ({ title, label, count,icon, selected, OnClick }) => {
                label === "UnitedKingdom" ? "#6c7ca4" :
                label === "Comoros" ? "#94bc8f" :
                label === "France" ? "#5b6cb1" :
-               label === "More" ? "blue" :
+               label === "More..." ? "blue" :
                "#0066f5")
             : "")
   }}
