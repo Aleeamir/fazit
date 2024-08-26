@@ -37,12 +37,12 @@ const Header = () => {
 
   return (
     <header
-      className="flex justify-between items-center  bg-white  pl-[58px] py-[58px] "
-      style={{ height: "123px" }}
+      className="flex justify-between items-center  bg-white  py-[58px] "
+      style={{ height: "126px" }}
     >
       <div
         className="flex items-center"
-        style={{ marginTop: "11px", marginBottom: "19px", marginLeft: "67px" }}
+        style={{ marginTop: "10px", marginBottom: "19px", marginLeft: "70px" }}
       >
         <img
           src={logo}
@@ -52,12 +52,10 @@ const Header = () => {
       </div>
 
       <div
-        className="flex items-center space-x-4 pr-[10px] rounded-3xl relative"
+        className="flex items-center space-x-4 pr-[10px] rounded-3xl "
         style={{ marginTop: "58px", marginBottom: "30px", marginRight: "40px" }}
       >
-        <span className="text-categrycolor text-[14px]" style={{ zIndex: 0 }}>
-          SEARCH 1
-        </span>
+        <span className="text-categrycolor text-[14px]">SEARCH 1</span>
         <div className="relative rounded-3xl" style={{ marginLeft: "10px" }}>
           <div className="flex items-center w-full relative">
             <div className="relative">
@@ -73,9 +71,19 @@ const Header = () => {
                   width: "47px",
                   height: "26px",
                   fontFamily: "arial",
+                  borderRightWidth: "1px",
                 }}
               >
-                <option value="all" style={{ color: "#333" }}>
+                <option
+                  value="all"
+                  style={{ color: "#333", backgroundColor: "#706e6e" }}
+                >
+                  All
+                </option>
+                <option
+                  value="all"
+                  style={{ color: "#333", backgroundColor: "#706e6e" }}
+                >
                   All
                 </option>
               </select>
