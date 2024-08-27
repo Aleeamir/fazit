@@ -147,7 +147,7 @@ const Articles = () => {
               </a>
               <p
                 className="text-[12px] font-sans text-[#958e77] tracking-tight"
-                style={{ fontFamily: "Arial", color: '#695d38', lineHeight: '16px' }}
+                style={{ fontFamily: "Arial", color: '#695d38', lineHeight: '16px', marginRight: '20px' }}
               >
                 {article.description.length > 300
                   ? article.description.substring(0, 250) + "..."

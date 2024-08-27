@@ -124,7 +124,7 @@ const Articles1 = () => {
                 style={{ fontFamily: "Arial", fontWeight: '300' }}
               >
                 {article.title.length > 10
-                  ? article.title.substring(0, 42) + "..."
+                  ? article.title.substring(0, 46) + "..."
                   : article.title}
                 {/* {article.title} */}
               </a>
@@ -148,7 +148,7 @@ const Articles1 = () => {
               </a>
               <p
                 className=" text-[12px] font-sans text-[#958e77] tracking-tight"
-                style={{ fontFamily: "Arial", color:'#695d38', lineHeight: '16px' }}
+                style={{ fontFamily: "Arial", color:'#695d38', lineHeight: '16px', marginRight: '20px' }}
               >
                 {article.description.length > 300
                   ? article.description.substring(0, 250) + "..."

@@ -64,7 +64,9 @@ const AfterHeader = ({
           className="flex flex-wrap space-x-2 text-[14px] ml-auto"
           // style={{ marginLeft: "10px" }}
           // style={{ marginLeft: "68px" }}
-          style={{ marginLeft: "349px" }}
+          // style={{ marginLeft: "349px" }}
+          style={{ marginLeft: "313px" }}
+
 
 
         >
@@ -199,7 +201,7 @@ const AfterHeader = ({
             </div>
           )}
         </div>
-        <div className="group text-[14px] ml-auto">
+        <div className="group text-[14px] ml-[177px]">
           {/* <button
             className={`text-white bg-bordercolor border-none mr-5 ${isRowSettingsPopupOpen ? "text-[#77abed]" : "#77abed"
               }`}
@@ -211,7 +213,7 @@ const AfterHeader = ({
             </span>
           </button> */}
           {/* <div className="group relative text-[14px] ml-auto"> */}
-          <div className="group relative text-[14px] ml-[103px]">
+          <div className="group relative text-[14px] ">
 
             <button
               className={`text-white bg-bordercolor border-none ${isDrilldownPopupOpen ? "text-[#77abed]" : ""
