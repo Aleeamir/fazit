@@ -64,7 +64,7 @@ const AfterHeader = ({
           className="flex flex-wrap space-x-2 text-[14px] ml-auto"
           // style={{ marginLeft: "10px" }}
           // style={{ marginLeft: "68px" }}
-          style={{ marginLeft: "251px" }}
+          style={{ marginLeft: "349px" }}
 
 
         >
@@ -79,7 +79,9 @@ const AfterHeader = ({
             Browse All
           </a>
         </div>
-        <div className="group text-[14px] ml-auto">
+        {/* <div className="group text-[14px] ml-auto"> */}
+        <div className="group text-[14px] ml-[103px]">
+
           <button
             className={`text-white bg-bordercolor border-none mr-5 ${isRowSettingsPopupOpen ? "text-[#77abed]" : "#77abed"
               }`}
@@ -92,7 +94,7 @@ const AfterHeader = ({
           </button>
         </div>
         {/* <div className="flex flex-wrap space-x-4 text-[14px] ml-[72px]"> */}
-        <div className="flex flex-wrap space-x-4 text-[14px] ml-[51px]">
+        <div className="flex flex-wrap space-x-4 text-[14px] ml-[54px]">
           <a
             href="#"
             className={` ${activeTab === "categories" ? "text-[#77abed]" : ""}`}
@@ -208,7 +210,9 @@ const AfterHeader = ({
               ▼
             </span>
           </button> */}
-          <div className="group relative text-[14px] ml-auto">
+          {/* <div className="group relative text-[14px] ml-auto"> */}
+          <div className="group relative text-[14px] ml-[103px]">
+
             <button
               className={`text-white bg-bordercolor border-none ${isDrilldownPopupOpen ? "text-[#77abed]" : ""
                 }`}
