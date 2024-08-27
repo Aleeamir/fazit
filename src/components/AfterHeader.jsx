@@ -104,8 +104,8 @@ const AfterHeader = ({
           </a>
           <a
             href="#"
-            className={` ${activeTab === "categories" ? "text-[#77abed]" : ""}`}
-            onClick={() => handleMenuClick("categories")}
+            className={` ${activeTab === "Stories" ? "text-[#77abed]" : ""}`}
+            onClick={() => handleMenuClick("Stories")}
           >
             News Stories
           </a>
@@ -118,8 +118,8 @@ const AfterHeader = ({
           </a>
           <a
             href="#"
-            className={` ${activeTab === "websites" ? "text-[#77abed]" : ""}`}
-            onClick={() => handleMenuClick("websites")}
+            className={` ${activeTab === "Channels" ? "text-[#77abed]" : ""}`}
+            onClick={() => handleMenuClick("Channels")}
           >
             Channels
           </a>
