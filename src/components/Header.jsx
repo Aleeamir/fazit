@@ -142,7 +142,7 @@ const Header = () => {
                   }}
                   onClick={toggleDropdown}
                 >
-                  ▼
+                  {/* ▼ */}
                 </button>
               </div>
               {isSearching && (
