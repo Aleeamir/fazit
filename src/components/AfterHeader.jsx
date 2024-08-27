@@ -64,7 +64,7 @@ const AfterHeader = ({
           className="flex flex-wrap space-x-2 text-[14px] ml-auto"
           // style={{ marginLeft: "10px" }}
           // style={{ marginLeft: "68px" }}
-          style={{ marginLeft: "334px" }}
+          style={{ marginLeft: "251px" }}
 
 
         >
@@ -145,7 +145,7 @@ const AfterHeader = ({
               </span>
             </button>
           </div> */}
-          <div className="group text-[14px] ml-auto">
+          {/* <div className="group text-[14px] ml-auto">
             
             <button
               className={`text-white bg-bordercolor border-none ${isRankingPopupOpen ? "text-[#77abed]" : ""
@@ -157,7 +157,7 @@ const AfterHeader = ({
                 ▼
               </span>
             </button>
-          </div>
+          </div> */}
           {/* <div className="group text-[14px] ml-auto">
             <select
               name="advanced-options"
