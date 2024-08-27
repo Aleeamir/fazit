@@ -80,7 +80,7 @@ const AfterHeader = ({
           </a>
         </div>
         {/* <div className="group text-[14px] ml-auto"> */}
-        <div className="group text-[14px] ml-[103px]">
+        <div className="group text-[14px] ml-[112px]">
 
           <button
             className={`text-white bg-bordercolor border-none mr-5 ${isRowSettingsPopupOpen ? "text-[#77abed]" : "#77abed"
@@ -94,7 +94,7 @@ const AfterHeader = ({
           </button>
         </div>
         {/* <div className="flex flex-wrap space-x-4 text-[14px] ml-[72px]"> */}
-        <div className="flex flex-wrap space-x-4 text-[14px] ml-[54px]">
+        <div className="flex flex-wrap space-x-4 text-[14px] ml-[47px]">
           <a
             href="#"
             className={` ${activeTab === "categories" ? "text-[#77abed]" : ""}`}
