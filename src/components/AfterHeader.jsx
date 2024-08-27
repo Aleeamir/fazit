@@ -43,13 +43,13 @@ const AfterHeader = ({
   return (
     <div
       className="bg-[#00478c] text-stone-200  shadow"
-      style={{ height: "28px"  }}
+      style={{ height: "28px" }}
     >
       <div
         className="flex justify-center items-center "
         style={{ marginLeft: "310px", marginTop: '3px', marginBottom: '7px' }}
       >
-        <div className="flex flex-wrap space-x-4 text-[14px] ml-auto " style={{paddingLeft:'125px'}} >
+        {/* <div className="flex flex-wrap space-x-4 text-[14px] ml-auto " style={{ paddingLeft: '125px' }} >
           <a href="#" className="hover:underline">
             Options
           </a>
@@ -59,11 +59,13 @@ const AfterHeader = ({
           <a href="#" className="hover:underline">
             Login
           </a>
-        </div>
+        </div> */}
         <div
           className="flex flex-wrap space-x-2 text-[14px] ml-auto"
           // style={{ marginLeft: "10px" }}
-          style={{ marginLeft: "68px" }}
+          // style={{ marginLeft: "68px" }}
+          style={{ marginLeft: "334px" }}
+
 
         >
           <span>Page:</span>
@@ -77,13 +79,33 @@ const AfterHeader = ({
             Browse All
           </a>
         </div>
-        <div className="flex flex-wrap space-x-4 text-[14px] ml-[72px]">
+        <div className="group text-[14px] ml-auto">
+          <button
+            className={`text-white bg-bordercolor border-none mr-5 ${isRowSettingsPopupOpen ? "text-[#77abed]" : "#77abed"
+              }`}
+            onClick={toggleRowSettingsPopup}
+          >
+            Row Setting
+            <span className="ml-2 text-[12px]" style={{ color: "#77abed" }}>
+              ▼
+            </span>
+          </button>
+        </div>
+        {/* <div className="flex flex-wrap space-x-4 text-[14px] ml-[72px]"> */}
+        <div className="flex flex-wrap space-x-4 text-[14px] ml-[51px]">
           <a
             href="#"
             className={` ${activeTab === "categories" ? "text-[#77abed]" : ""}`}
             onClick={() => handleMenuClick("categories")}
           >
             Categories
+          </a>
+          <a
+            href="#"
+            className={` ${activeTab === "categories" ? "text-[#77abed]" : ""}`}
+            onClick={() => handleMenuClick("categories")}
+          >
+            News Stories
           </a>
           <a
             href="#"
@@ -101,9 +123,8 @@ const AfterHeader = ({
           </a>
           <div className="group relative text-[14px] ml-auto">
             <button
-              className={`text-white bg-bordercolor border-none ${
-                activeTab === "keywords" ? "text-[#77abed]" : ""
-              }`}
+              className={`text-white bg-bordercolor border-none ${activeTab === "keywords" ? "text-[#77abed]" : ""
+                }`}
               onClick={() => handleMenuClick("keywords")}
             >
               Keywords
@@ -112,11 +133,10 @@ const AfterHeader = ({
               </span>
             </button>
           </div>
-          <div className="group relative text-[14px] ml-auto">
+          {/* <div className="group relative text-[14px] ml-auto">
             <button
-              className={`text-white bg-bordercolor border-none ${
-                isDrilldownPopupOpen ? "text-[#77abed]" : ""
-              }`}
+              className={`text-white bg-bordercolor border-none ${isDrilldownPopupOpen ? "text-[#77abed]" : ""
+                }`}
               onClick={toggleDrilldownPopup}
             >
               Drilldown
@@ -124,18 +144,18 @@ const AfterHeader = ({
                 ▼
               </span>
             </button>
-          </div>
+          </div> */}
           <div className="group text-[14px] ml-auto">
+            
             <button
-              className={`text-white bg-bordercolor border-none ${
-                isRankingPopupOpen ? "text-[#77abed]" : ""
-              }`}
+              className={`text-white bg-bordercolor border-none ${isRankingPopupOpen ? "text-[#77abed]" : ""
+                }`}
               onClick={toggleRankingPopup}
             >
               Ranking
               <span className="text-[14px]" style={{ color: "#77abed" }}>
                 ▼
-              </span> 
+              </span>
             </button>
           </div>
           {/* <div className="group text-[14px] ml-auto">
@@ -178,17 +198,38 @@ const AfterHeader = ({
           )}
         </div>
         <div className="group text-[14px] ml-auto">
-          <button
-            className={`text-white bg-bordercolor border-none mr-5 ${
-              isRowSettingsPopupOpen ? "text-[#77abed]" : "#77abed"
-            }`}
+          {/* <button
+            className={`text-white bg-bordercolor border-none mr-5 ${isRowSettingsPopupOpen ? "text-[#77abed]" : "#77abed"
+              }`}
             onClick={toggleRowSettingsPopup}
           >
-             Setting
+            Setting
             <span className="ml-2 text-[12px]" style={{ color: "#77abed" }}>
               ▼
             </span>
-          </button>
+          </button> */}
+          <div className="group relative text-[14px] ml-auto">
+            <button
+              className={`text-white bg-bordercolor border-none ${isDrilldownPopupOpen ? "text-[#77abed]" : ""
+                }`}
+              onClick={toggleDrilldownPopup}
+            >
+              Drilldown
+              <span className="ml text-[14px]" style={{ color: "#77abed" }}>
+                ▼
+              </span>
+            </button>
+            <button
+              className={`text-white bg-bordercolor border-none ml-[10px] ${isRankingPopupOpen ? "text-[#77abed]" : ""
+                }`}
+              onClick={toggleRankingPopup}
+            >
+              Ranking
+              <span className="text-[14px]" style={{ color: "#77abed" }}>
+                ▼
+              </span>
+            </button>
+          </div>
         </div>
       </div>
       {isRowSettingsPopupOpen && (
