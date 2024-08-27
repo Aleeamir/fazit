@@ -16,23 +16,24 @@ const CategoryButton = ({ title, label, count,icon, selected, OnClick }) => {
   className={`text-xs py-[10px]`}
   style={{
     fontSize: "14px",
+    textAlign: "center",
     textShadow: "0 1px 1px rgba(0, 0, 0, 0.2)",
     color: selected
       ? "#99063c"
       : title === "COUNTRY"
         ? (label === "All" ? "#c7ab6d" :
-           label === "UnitedStates" ? "#b75f7e" :
+           label === "United States" ? "#b75f7e" :
            label === "Germany" ? "#787876" :
-           label === "UnitedKingdom" ? "#6c7ca4" :
+           label === "United Kingdom" ? "#6c7ca4" :
            label === "Comoros" ? "#94bc8f" :
            label === "France" ? "#5b6cb1" :
            label === "More..." ? "#0066f5" :
            "") 
         : (title !== "COUNTRY"
             ? (label === "All" ? "#c7ab6d" :
-               label === "UnitedStates" ? "#b75f7e" :
+               label === "United States" ? "#b75f7e" :
                label === "Germany" ? "#787876" :
-               label === "UnitedKingdom" ? "#6c7ca4" :
+               label === "United Kingdom" ? "#6c7ca4" :
                label === "Comoros" ? "#94bc8f" :
                label === "France" ? "#5b6cb1" :
                label === "More..." ? "blue" :

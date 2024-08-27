@@ -42,7 +42,7 @@ const SearchBar = () => {
           height: '26px',
           userSelect:'none' ,outline:'none'
         }}
-        placeholder="Search..."
+        // placeholder="Search..."
       />
       <button className="fazit-button"
       style={{

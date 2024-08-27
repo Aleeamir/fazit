@@ -18,7 +18,7 @@ export const countryCategories = [
     selected: true,
   },
   {
-    label: "UnitedStates",
+    label: "United States",
     count: 173620,
     icon: c8,
     selected: false,
@@ -30,7 +30,7 @@ export const countryCategories = [
     selected: false,
   },
   {
-    label: "UnitedKingdom",
+    label: "United Kingdom",
     count: 173620,
     icon: c10,
     selected: false,

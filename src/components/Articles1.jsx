@@ -112,7 +112,7 @@ const Articles1 = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:underline"
-                style={{ fontFamily: "Arial", fontWeight: '400' }}
+                style={{ fontFamily: "Arial", fontWeight: '300' }}
               >
                 {article.title.length > 10
                   ? article.title.substring(0, 40) + "..."
