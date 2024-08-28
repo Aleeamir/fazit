@@ -65,10 +65,8 @@ const AfterHeader = ({
           // style={{ marginLeft: "10px" }}
           // style={{ marginLeft: "68px" }}
           // style={{ marginLeft: "349px" }}
-          style={{ marginLeft: "313px" }}
-
-
-
+          // style={{ marginLeft: "313px" }}
+          style={{ marginLeft: "268px" }}
         >
           <span>Page:</span>
           {[...Array(6)].map((_, i) => (
@@ -201,7 +199,8 @@ const AfterHeader = ({
             </div>
           )}
         </div>
-        <div className="group text-[14px] ml-[177px]">
+        {/* <div className="group text-[14px] ml-[177px]"> */}
+        <div className="group text-[14px] ml-[126px]">
           {/* <button
             className={`text-white bg-bordercolor border-none mr-5 ${isRowSettingsPopupOpen ? "text-[#77abed]" : "#77abed"
               }`}

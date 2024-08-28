@@ -10,11 +10,13 @@ import c9 from "../assets/country_icons/germany.png";
 import c10 from "../assets/country_icons/united_kingdom.png";
 import c11 from "../assets/country_icons/france.png";
 import c12 from "../assets/country_icons/comoros.png";
+import c13 from "../assets/country_icons/icon-all.png";
+
 export const countryCategories = [
   {
     label: "All",
     count: 401834,
-    icon: c1,
+    icon: c13,
     selected: true,
   },
   {
