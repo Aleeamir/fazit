@@ -138,11 +138,11 @@ const Articles = () => {
                   overflow: "hidden",
                   textOverflow: "ellipsis",
                   fontFamily: "Arial",
-                  width: '100%' // Ensure the link takes the full width
+                  width: '92%' // Ensure the link takes the full width
                 }}
               >
                 {article.url.length > 90
-                  ? article.url.substring(0, 43) + "..."
+                  ? article.url.substring(0, 42) + "..."
                   : article.url}
               </a>
               <p
