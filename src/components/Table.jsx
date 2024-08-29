@@ -157,7 +157,8 @@ const Table = () => {
       <table
         className="min-w-full border-2  p-0 rounded-lg overflow-hidden border-gray-200"
         style={{
-          borderRadius: "12px 12px 12px 12px",
+          // borderRadius: "12px 12px 12px 12px",
+          borderRadius: "16px 16px 16px 16px",
           borderCollapse: "separate",
           borderSpacing: "0px",
           marginTop: "15px",
@@ -275,7 +276,9 @@ const Table = () => {
                 color: "#A68036",
                 textAlign: "center",
                 fontFamily: "Arial",
-                fontSize: "14px",
+                // fontSize: "14px",
+                fontSize: "16px",
+
               }}
               onClick={() => requestSort("website")}
             >
