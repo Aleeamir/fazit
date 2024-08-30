@@ -64,9 +64,9 @@ const AfterHeader = ({
           className="flex flex-wrap space-x-2 text-[14px] ml-auto"
           // style={{ marginLeft: "10px" }}
           // style={{ marginLeft: "68px" }}
-          // style={{ marginLeft: "349px" }}
+          style={{ marginLeft: "357px" }}
           // style={{ marginLeft: "313px" }}
-          style={{ marginLeft: "268px" }}
+          // style={{ marginLeft: "268px" }}
         >
           <span>Page:</span>
           {[...Array(6)].map((_, i) => (
@@ -94,7 +94,7 @@ const AfterHeader = ({
           </button>
         </div>
         {/* <div className="flex flex-wrap space-x-4 text-[14px] ml-[72px]"> */}
-        <div className="flex flex-wrap space-x-4 text-[14px] ml-[47px]">
+        <div className="flex flex-wrap space-x-4 text-[14px] ml-[37px]">
           <a
             href="#"
             className={` ${activeTab === "categories" ? "text-[#77abed]" : ""}`}
@@ -161,7 +161,7 @@ const AfterHeader = ({
               </span>
             </button>
           </div> */}
-          {/* <div className="group text-[14px] ml-auto">
+           <div className="group text-[14px] ml-auto">
             <select
               name="advanced-options"
               className="text-white bg-bordercolor border-none"
@@ -181,10 +181,10 @@ const AfterHeader = ({
               <option value="">Advanced</option>
               <option value="csr">CSR</option>
               <option value="matrix">Matrix</option>
-              <option value="query-builder">Query Builder</option>
-              <option value="custom-keyword">Custom Keyword</option>
+              {/* <option value="query-builder">Query Builder</option> */}
+              {/* <option value="custom-keyword">Custom Keyword</option> */}
             </select>
-          </div> */}
+          </div>
           {/* Conditionally Rendered Context: News Button */}
           {(activeTab === "websites" || activeTab === "keywords") && (
             <div className="group text-[14px]">
@@ -201,7 +201,9 @@ const AfterHeader = ({
           )}
         </div>
         {/* <div className="group text-[14px] ml-[177px]"> */}
-        <div className="group text-[14px] ml-[126px]">
+        {/* <div className="group text-[14px] ml-[126px]"> */}
+        <div className="group text-[14px] ml-auto">
+
           {/* <button
             className={`text-white bg-bordercolor border-none mr-5 ${isRowSettingsPopupOpen ? "text-[#77abed]" : "#77abed"
               }`}
