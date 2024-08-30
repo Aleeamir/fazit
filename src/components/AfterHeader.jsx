@@ -161,11 +161,7 @@ const AfterHeader = ({
               </span>
             </button>
           </div> */}
-<<<<<<< HEAD
           <div className="group text-[14px] ml-auto">
-=======
-           <div className="group text-[14px] ml-auto">
->>>>>>> f761875e0483ad8a01153b16f5d48017ddb5d30e
             <select
               name="advanced-options"
               className="text-white bg-bordercolor border-none"
@@ -207,7 +203,6 @@ const AfterHeader = ({
         {/* <div className="group text-[14px] ml-[177px]"> */}
         {/* <div className="group text-[14px] ml-[126px]"> */}
         <div className="group text-[14px] ml-auto">
-
           {/* <button
             className={`text-white bg-bordercolor border-none mr-5 ${isRowSettingsPopupOpen ? "text-[#77abed]" : "#77abed"
               }`}
