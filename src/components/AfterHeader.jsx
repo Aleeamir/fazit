@@ -161,7 +161,7 @@ const AfterHeader = ({
               </span>
             </button>
           </div> */}
-          {/* <div className="group text-[14px] ml-auto">
+          <div className="group text-[14px] ml-auto">
             <select
               name="advanced-options"
               className="text-white bg-bordercolor border-none"
@@ -184,7 +184,7 @@ const AfterHeader = ({
               <option value="query-builder">Query Builder</option>
               <option value="custom-keyword">Custom Keyword</option>
             </select>
-          </div> */}
+          </div>
           {/* Conditionally Rendered Context: News Button */}
           {(activeTab === "websites" || activeTab === "keywords") && (
             <div className="group text-[14px]">
