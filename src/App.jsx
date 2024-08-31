@@ -22,6 +22,8 @@ function App() {
   const [matrixSearchBar, setMatrixSearchBar] = useState(false);
   const [querySearchBar, setquerySearchBar] = useState(false);
   const [selectCounty, setSelectCOuntry] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
+  const [isSearching, setIsSearching] = useState(false);
 
   function handleReturnData() {
     setShowNewSearchBar(!showNewSearchBar);
@@ -44,7 +46,7 @@ function App() {
 
   return (
     <div className="flex flex-col">
-      <Header />
+      <Header setSearchQuery={setSearchQuery} isSearching={isSearching} setIsSearching={setIsSearching} />
 
       <AfterHeader
         selectedTab={selectedTab}
@@ -56,7 +58,11 @@ function App() {
 
       <div className="flex " style={{ marginTop: "8px" }}>
         <div className="flex-1 basis-[60%] p-2" style={{ marginLeft: "21px" }}>
-          {selectCounty ? <Articles1 /> : <Articles />}
+          {selectCounty ? (
+            <Articles1 />
+          ) : (
+            <Articles searchQuery={searchQuery} isSearching={isSearching} setIsSearching={setIsSearching}/>
+          )}
         </div>
         <div
           className="flex-1 basis-[40%] p-2"
@@ -101,7 +107,7 @@ function App() {
                     borderTopRightRadius: "12px",
                   }}
                 >
-                  SEARCH 2
+                  SEARCH2
                 </h2>
                 <div
                   className="flex space-x-1 overflow-x-auto items-center pl-[40px]"
@@ -113,114 +119,26 @@ function App() {
 
               {showNewSearchBar && (
                 <>
-                  <div
-                    className="mb-4 rounded-lg px-"
-                    style={{
-                      backgroundColor: "#f5f5f5",
-                      display: "inline-block",
-                      width: "100%",
-                      height: "12%",
-                    }}
-                  >
-                    <h2
-                      className="text-sm text-categrycolor bg-gray-100 mb-2 px-2 py-1"
-                      style={{
-                        backgroundColor: "#e8e9e9",
-                        borderRadius: "12px 0 0 0",
-                        borderTopRightRadius: "12px",
-                      }}
-                    >
-                      CRS 3
-                    </h2>
-                    <div
-                      className="flex space-x-1 overflow-x-auto items-center pl-[40px]"
-                      style={{ width: "auto" }}
-                    >
-                      <SearchBar />
-                    </div>
+                  <div className="flex items-center mb-4">
+                    <span className="text-categrycolor py-3 mr-10">CRS3</span>
+                    <NewSearchBar />
                   </div>
-                  <div
-                    className="mb-4 rounded-lg px-"
-                    style={{
-                      backgroundColor: "#f5f5f5",
-                      display: "inline-block",
-                      width: "100%",
-                      height: "12%",
-                    }}
-                  >
-                    <h2
-                      className="text-sm text-categrycolor bg-gray-100 mb-2 px-2 py-1"
-                      style={{
-                        backgroundColor: "#e8e9e9",
-                        borderRadius: "12px 0 0 0",
-                        borderTopRightRadius: "12px",
-                      }}
-                    >
-                      SEARCH 4
-                    </h2>
-                    <div
-                      className="flex space-x-1 overflow-x-auto items-center pl-[40px]"
-                      style={{ width: "auto" }}
-                    >
-                      <SearchBar />
-                    </div>
+                  <div className="flex items-center mb-4">
+                    <span className="text-categrycolor py-3 mr-4">SEARCH4</span>
+                    <SearchBar />
                   </div>
                 </>
               )}
 
               {matrixSearchBar && (
                 <>
-                  <div
-                    className="mb-4 rounded-lg px-"
-                    style={{
-                      backgroundColor: "#f5f5f5",
-                      display: "inline-block",
-                      width: "100%",
-                      height: "12%",
-                    }}
-                  >
-                    <h2
-                      className="text-sm text-categrycolor bg-gray-100 mb-2 px-2 py-1"
-                      style={{
-                        backgroundColor: "#e8e9e9",
-                        borderRadius: "12px 0 0 0",
-                        borderTopRightRadius: "12px",
-                      }}
-                    >
-                      Martix 2
-                    </h2>
-                    <div
-                      className="flex space-x-1 overflow-x-auto items-center pl-[40px]"
-                      style={{ width: "auto" }}
-                    >
-                      <SearchBar />
-                    </div>
+                  <div className="flex items-center mb-4">
+                    <span className="text-categrycolor py-3 mr-4">Matrix2</span>
+                    <NewSearchBar />
                   </div>
-                  <div
-                    className="mb-4 rounded-lg px-"
-                    style={{
-                      backgroundColor: "#f5f5f5",
-                      display: "inline-block",
-                      width: "100%",
-                      height: "12%",
-                    }}
-                  >
-                    <h2
-                      className="text-sm text-categrycolor bg-gray-100 mb-2 px-2 py-1"
-                      style={{
-                        backgroundColor: "#e8e9e9",
-                        borderRadius: "12px 0 0 0",
-                        borderTopRightRadius: "12px",
-                      }}
-                    >
-                      Search 3
-                    </h2>
-                    <div
-                      className="flex space-x-1 overflow-x-auto items-center pl-[40px]"
-                      style={{ width: "auto" }}
-                    >
-                      <SearchBar />
-                    </div>
+                  <div className="flex items-center mb-4">
+                    <span className="text-categrycolor py-3 mr-4">Search3</span>
+                    <SearchBar />
                   </div>
                 </>
               )}

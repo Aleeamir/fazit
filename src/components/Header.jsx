@@ -2,11 +2,10 @@ import { React, useState, useEffect } from "react";
 import logo from "../assets/logo.png";
 import "./fazitButton.css";
 import "../css/DemoSearch2.css";
-const Header = () => {
-  const [inputValue, setInputValue] = useState("");
-  const [isSearching, setIsSearching] = useState(false);
+const Header = ({setSearchQuery,isSearching,setIsSearching}) => {
   const [elapsedTime, setElapsedTime] = useState(0);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [inputValue, setInputValue] = useState("");
 
   useEffect(() => {
     let timer;
@@ -24,7 +23,11 @@ const Header = () => {
 
   const handleSearch = () => {
     setIsSearching(true);
+    setSearchQuery(inputValue);
+    // console.log(inputValue);
   };
+  // console.log(inputValue);
+  
 
   const handleCancel = () => {
     setIsSearching(false);
@@ -164,7 +167,8 @@ const Header = () => {
               }}
               onClick={isSearching ? handleCancel : handleSearch}
             >
-              {isSearching ? "Cancel" : "FAZIT"}
+              {isSearching ? "Cancel" : "FAZIT" }
+              {}
             </button>
           </div>
           {isSearching && (
