@@ -2,7 +2,8 @@ import { React, useState, useEffect } from "react";
 import logo from "../assets/logo.png";
 import "./fazitButton.css";
 import "../css/DemoSearch2.css";
-const Header = ({setSearchQuery,isSearching,setIsSearching}) => {
+
+const Header = ({ setSearchQuery, isSearching, setIsSearching }) => {
   const [elapsedTime, setElapsedTime] = useState(0);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [inputValue, setInputValue] = useState("");
@@ -17,6 +18,14 @@ const Header = ({setSearchQuery,isSearching,setIsSearching}) => {
     return () => clearInterval(timer);
   }, [isSearching]);
 
+  const formatTime = (totalSeconds) => {
+    const minutes = Math.floor(totalSeconds / 60);
+    const seconds = totalSeconds % 60;
+    return `${minutes.toString().padStart(2, "0")}:${seconds
+      .toString()
+      .padStart(2, "0")}`;
+  };
+
   const handleInputChange = (e) => {
     setInputValue(e.target.value);
   };
@@ -26,8 +35,6 @@ const Header = ({setSearchQuery,isSearching,setIsSearching}) => {
     setSearchQuery(inputValue);
     // console.log(inputValue);
   };
-  // console.log(inputValue);
-  
 
   const handleCancel = () => {
     setIsSearching(false);
@@ -167,13 +174,12 @@ const Header = ({setSearchQuery,isSearching,setIsSearching}) => {
               }}
               onClick={isSearching ? handleCancel : handleSearch}
             >
-              {isSearching ? "Cancel" : "FAZIT" }
-              {}
+              {isSearching ? "Cancel" : "FAZIT"}
             </button>
           </div>
           {isSearching && (
             <span className="absolute right-0 top-[-20px] text-[12px] text-[#7c7c7c] font-arial">
-              Elapsed time: {elapsedTime.toString().padStart(2, "0")}:00
+              Elapsed time: {formatTime(elapsedTime)}
             </span>
           )}
         </div>
