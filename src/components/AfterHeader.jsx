@@ -181,7 +181,7 @@ const AfterHeader = ({
               <option value="">Advanced</option>
               <option value="csr">CSR</option>
               <option value="matrix">Matrix</option>
-              {/* <option value="query-builder">Query Builder</option> */}
+              <option value="query-builder">Query Builder</option>
               {/* <option value="custom-keyword">Custom Keyword</option> */}
             </select>
           </div>
