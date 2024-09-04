@@ -96,7 +96,7 @@ function App() {
                   backgroundColor: "#f5f5f5",
                   display: "inline-block",
                   width: "100%",
-                  height: "12%",
+                  height: "14%",
                 }}
               >
                 <h2
