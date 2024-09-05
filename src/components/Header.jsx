@@ -131,6 +131,7 @@ const Header = ({ setSearchQuery, isSearching, setIsSearching }) => {
                       width: "518px",
                       height: "26px",
                       paddingRight: isSearching ? "40px" : "30px",
+                      userSelect:'none' ,outline:'none'
                     }}
                     value={inputValue}
                     onChange={handleInputChange}
