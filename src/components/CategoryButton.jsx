@@ -145,49 +145,79 @@ const CategoryButton = ({ title, label, count, icon, selected, OnClick }) => {
         {count}
       </span> */}
       <span
-        className={` py-[10px] text-[16px] }`}
-        // className={` py-[10px] text-[16px] ${selected ? "underline" : ""}`}
-        // className={`py-[10px] text-[16px] ${hasSpace?"pt-[2px] mb-[7px]":""} ${selected ? "underline" : ""}`}
-        style={{
-          fontFamily: "Arial",
-          color: title === "COUNTRY"
-            ? label === "All"
-              ? "#c7ab6d"
-              : label === "United States"
-              ? "#b75f7e"
-              : label === "Germany"
-              ? "#787876"
-              : label === "United Kingdom"
-              ? "#6c7ca4"
-              : label === "Comoros"
-              ? "#94bc8f"
-              : label === "France"
-              ? "#5b6cb1"
-              : label === "More..."
-              ? "#0066f5"
-              : ""
-            : title !== "COUNTRY"
-            ? label === "All"
-              ? "#c7ab6d"
-              : label === "UnitedStates"
-              ? "#b75f7e"
-              : label === "Germany"
-              ? "#787876"
-              : label === "UnitedKingdom"
-              ? "#6c7ca4"
-              : label === "Comoros"
-              ? "#94bc8f"
-              : label === "France"
-              ? "#5b6cb1"
-              : label === "More..."
-              ? "rgb(0, 102, 245)"
-              : "#0066f5"
-            : "",
-        }}
-        
-      >
-        {count}
-      </span>
+  className={`py-[10px] text-[16px]`}
+  style={{
+    fontFamily: "Arial",
+    textDecoration: selected ? "underline" : "none", // Apply underline if selected
+    color: title === "COUNTRY" // Set the text color based on conditions
+      ? label === "All"
+        ? "#c7ab6d"
+        : label === "United States"
+        ? "#b75f7e"
+        : label === "Germany"
+        ? "#787876"
+        : label === "United Kingdom"
+        ? "#6c7ca4"
+        : label === "Comoros"
+        ? "#94bc8f"
+        : label === "France"
+        ? "#5b6cb1"
+        : label === "More..."
+        ? "#0066f5"
+        : ""
+      : label === "All"
+      ? "#c7ab6d"
+      : label === "United States"
+      ? "#b75f7e"
+      : label === "Germany"
+      ? "#787876"
+      : label === "United Kingdom"
+      ? "#6c7ca4"
+      : label === "Comoros"
+      ? "#94bc8f"
+      : label === "France"
+      ? "#5b6cb1"
+      : label === "More..."
+      ? "rgb(0, 102, 245)"
+      : "#0066f5",
+    textDecorationColor: selected // Match underline color to text color
+      ? title === "COUNTRY"
+        ? label === "All"
+          ? "#c7ab6d"
+          : label === "United States"
+          ? "#b75f7e"
+          : label === "Germany"
+          ? "#787876"
+          : label === "United Kingdom"
+          ? "#6c7ca4"
+          : label === "Comoros"
+          ? "#94bc8f"
+          : label === "France"
+          ? "#5b6cb1"
+          : label === "More..."
+          ? "#0066f5"
+          : ""
+        : label === "All"
+        ? "#c7ab6d"
+        : label === "United States"
+        ? "#b75f7e"
+        : label === "Germany"
+        ? "#787876"
+        : label === "United Kingdom"
+        ? "#6c7ca4"
+        : label === "Comoros"
+        ? "#94bc8f"
+        : label === "France"
+        ? "#5b6cb1"
+        : label === "More..."
+        ? "rgb(0, 102, 245)"
+        : "#0066f5"
+      : "none", // No underline if not selected
+  }}
+>
+  {count}
+</span>
+
     </div>
   );
 };
