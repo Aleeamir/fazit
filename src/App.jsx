@@ -167,12 +167,12 @@ function App() {
                 >
                   {/* Render Search 2 or Search 3 based on active tab */}
                   {activeTab === "Search 2" && (
-                    <div className="flex-1">
+                    <div className="w-[98%]">
                       <SearchBar placeholder="Search in Search 2" />
                     </div>
                   )}
                   {activeTab === "Search 3" && (
-                    <div className="flex-1">
+                    <div className="w-[98%]">
                       <SearchBar placeholder="Search in Search 3" />
                     </div>
                   )}

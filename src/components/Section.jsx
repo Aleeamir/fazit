@@ -41,8 +41,8 @@ const Section = ({ title, categories, OnSendCountry }) => {
           style={{
             //whitebar
             width: "35%",
-            // height: "6%",
-            height: "7%",
+            height: "6%",
+            // height: "7%",
             backgroundColor: "white",
             position: "absolute",
             margin: "0px 7px ",

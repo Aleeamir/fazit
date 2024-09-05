@@ -145,7 +145,7 @@ const CategoryButton = ({ title, label, count, icon, selected, OnClick }) => {
         {count}
       </span> */}
       <span
-  className={`py-[10px] text-[16px]`}
+  className={`pb-[10px] text-[16px]`}
   style={{
     fontFamily: "Arial",
     textDecoration: selected ? "underline" : "none", // Apply underline if selected
