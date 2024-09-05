@@ -20,8 +20,8 @@ function App() {
   const [showNewSearchBar, setShowNewSearchBar] = useState(false);
   const [isPopupVisible, setIsPopupVisible] = useState(true);
   const [matrixSearchBar, setMatrixSearchBar] = useState(false);
-  const [querySearchBar, setquerySearchBar] = useState(false);
-  const [selectCounty, setSelectCOuntry] = useState(false);
+  const [querySearchBar, setQuerySearchBar] = useState(false); // Fixed the case here
+  const [selectCountry, setSelectCountry] = useState(false); // Fixed the case here
   const [searchQuery, setSearchQuery] = useState("");
   const [isSearching, setIsSearching] = useState(false);
 
@@ -35,33 +35,48 @@ function App() {
     setIsPopupVisible(false);
   }
 
-  function handlequeryReturnData() {
-    setquerySearchBar(!querySearchBar);
+  function handleQueryReturnData() {
+    setQuerySearchBar(!querySearchBar); // Fixed function name
     setIsPopupVisible(false);
   }
 
   function handleCountyData() {
-    setSelectCOuntry(!selectCounty);
+    setSelectCountry(!selectCountry); // Fixed function and state name
   }
+
+  // Navigation bar between Search 2 and Search 3
+  const [activeTab, setActiveTab] = useState("Search 2");
+
+  const handleTabChange = (tabName) => {
+    setActiveTab(tabName);
+  };
 
   return (
     <div className="flex flex-col">
-      <Header setSearchQuery={setSearchQuery} isSearching={isSearching} setIsSearching={setIsSearching} />
+      <Header
+        setSearchQuery={setSearchQuery}
+        isSearching={isSearching}
+        setIsSearching={setIsSearching}
+      />
 
       <AfterHeader
         selectedTab={selectedTab}
         setSelectedTab={setSelectedTab}
         onRetrun={handleReturnData}
         onNewReturn={handleNewReturnData}
-        queryReturnData={handlequeryReturnData}
+        queryReturnData={handleQueryReturnData}
       />
 
       <div className="flex " style={{ marginTop: "8px" }}>
         <div className="flex-1 basis-[60%] p-2" style={{ marginLeft: "21px" }}>
-          {selectCounty ? (
+          {selectCountry ? (
             <Articles1 />
           ) : (
-            <Articles searchQuery={searchQuery} isSearching={isSearching} setIsSearching={setIsSearching}/>
+            <Articles
+              searchQuery={searchQuery}
+              isSearching={isSearching}
+              setIsSearching={setIsSearching}
+            />
           )}
         </div>
         <div
@@ -90,30 +105,77 @@ function App() {
                 OnSendCountry={handleCountyData}
               />
 
+              {/* Tabbed Navigation Header */}
               <div
-                className="mb-4 rounded-lg px-"
+                className="mb-4 rounded-lg"
                 style={{
-                  backgroundColor: "#f5f5f5",
+                  backgroundColor: "#e8e9e9",
                   display: "inline-block",
                   width: "100%",
                   height: "14%",
                 }}
               >
-                <h2
+                {/* Tabbed Navigation Header */}
+                <div
                   className="text-sm text-categrycolor bg-gray-100 mb-2 px-2 py-1"
                   style={{
                     backgroundColor: "#e8e9e9",
-                    borderRadius: "12px 0 0 0",
+                    borderRadius: "12px 12px 12px 12px",
                     borderTopRightRadius: "12px",
+                    display: "flex", // Flex layout for navigation
                   }}
                 >
-                  SEARCH2
-                </h2>
+                  {/* Tab: Search 2 */}
+                  <button
+                    className={`mr-2 px-3 py-1  ${
+                      activeTab === "Search 2" ? "bg-[#a8c4eb]" : ""
+                    }`}
+                    style={{
+                      border: "none",
+                      outline: "none",
+                      cursor: "pointer",
+                      borderTopLeftRadius: "15px",
+                      borderTopRightRadius: "15px"
+                    }}
+                    onClick={() => handleTabChange("Search 2")}
+                  >
+                    SEARCH 2 (73620)
+                  </button>
+
+                  {/* Tab: Search 3 */}
+                  <button
+                    className={`px-[45px] py-1  ${
+                      activeTab === "Search 3" ? "bg-[#a8c4eb]" : ""
+                    }`}
+                    style={{
+                      border: "none",
+                      outline: "none",
+                      cursor: "pointer",
+                      borderTopLeftRadius: "15px",
+                      borderTopRightRadius: "15px"
+                    }}
+                    onClick={() => handleTabChange("Search 3")}
+                  >
+                    SEARCH 3
+                  </button>
+                </div>
+
+                {/* Search Bar Area */}
                 <div
                   className="flex space-x-1 overflow-x-auto items-center pl-[40px]"
                   style={{ width: "auto" }}
                 >
-                  <SearchBar />
+                  {/* Render Search 2 or Search 3 based on active tab */}
+                  {activeTab === "Search 2" && (
+                    <div className="flex-1">
+                      <SearchBar placeholder="Search in Search 2" />
+                    </div>
+                  )}
+                  {activeTab === "Search 3" && (
+                    <div className="flex-1">
+                      <SearchBar placeholder="Search in Search 3" />
+                    </div>
+                  )}
                 </div>
               </div>
 

@@ -32,7 +32,8 @@
 //               content: `Generate an array of 10 JavaScript objects representing articles on the title ${searchQuery}. If the title is not meaningful, return just a number 0. Each object should have the following structure: title (a brief headline of the article), url (a valid URL to the article that is accessible), description (a short summary of the article), imageUrl (a valid URL to the article's image that is accessible), and category (the category the article belongs to, such as 'Sports', 'Technology', etc.). Ensure each object has a unique title and description. Provide just the array in your response, without any additional text.`,
 //             },
 //           ],
-//           model: "gpt-4",
+//           // model: "gpt-4",
+//           model: "gpt-4-turbo",
 //         });
 
 //         // Parse the response content
@@ -142,8 +143,9 @@
 
 // export default Articles;
 import React, { useEffect, useState } from "react";
+import { OpenAI } from "openai"; // Import the OpenAI SDK
 import img1 from "../assets/img-1.png";
-// ... import other images
+// Import other images...
 
 const Articles = ({ searchQuery, isSearching, setIsSearching }) => {
   const [isLoading, setIsLoading] = useState(0); // 0 = not loading, 1 = loading, 2 = error
@@ -160,46 +162,63 @@ const Articles = ({ searchQuery, isSearching, setIsSearching }) => {
       setIsSearching(true);
 
       try {
-        const response = await fetch("/api/fetch-articles", { // Use your backend endpoint
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({ query: searchQuery }),
+        // Initialize OpenAI with the API key
+        const openai = new OpenAI({
+          apiKey: import.meta.env.VITE_OPENAI_API_KEY, // Ensure your API key is loaded from environment variables
+          dangerouslyAllowBrowser: true, // Required when using OpenAI in the browser
         });
 
-        if (!response.ok) {
-          throw new Error(`Server error: ${response.status}`);
-        }
+        // Make the API call to OpenAI
+        const completion = await openai.chat.completions.create({
+          model: "gpt-4-turbo", // Model selection
+          messages: [
+            {
+              role: "system",
+              content: `Generate an array of 10 JavaScript objects representing articles on the title "${searchQuery}". Each object should have the structure: title (a brief headline of the article), url (a valid URL to the article), description (a short summary), imageUrl (a valid image URL), and category (e.g., 'Sports', 'Technology'). Provide just the array in your response.`,
+            },
+          ],
+        });
 
-        const data = await response.json();
+        // Parse the OpenAI response
+        const responseContent = completion.choices[0].message.content.trim();
 
-        if (data.status === "error") {
-          setIsLoading(2);
+        // Check if the response is a valid array
+        if (responseContent === "0") {
+          setIsLoading(2); // No matching articles found
           setArticles([]);
         } else {
-          setArticles(data.articles);
-          setIsLoading(0);
+          try {
+            // Try to parse the response as a JSON array
+            const jsonArray = JSON.parse(responseContent);
+            setArticles(jsonArray);
+            setIsLoading(0); // Data fetched successfully
+          } catch (error) {
+            setIsLoading(2); // Error parsing JSON
+            console.error("Error parsing JSON:", error);
+          }
         }
       } catch (error) {
-        console.error("Error fetching articles:", error);
-        setIsLoading(2);
+        console.error("Error fetching completion from OpenAI:", error);
+        setIsLoading(2); // Error state
         setArticles([]);
       } finally {
-        setIsSearching(false);
+        setIsSearching(false); // End searching state
       }
     };
 
-    fetchArticles();
+    // Fetch articles only if a search query exists
+    if (searchQuery) {
+      fetchArticles();
+    } else {
+      setArticles([]); // Clear articles if search query is empty
+    }
   }, [searchQuery, setIsSearching]);
 
+  // Array of images
   const images = [img1, /* ... other images */];
 
   return (
-    <div
-      className="w-full grid grid-cols-1 md:grid-cols-2 gap-x-2 gap-y-1"
-      style={{ marginBottom: "84px" }}
-    >
+    <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-x-2 gap-y-1" style={{ marginBottom: "84px" }}>
       {isLoading === 1 ? (
         <h1>Loading Articles...</h1>
       ) : isLoading === 2 ? (
@@ -208,11 +227,7 @@ const Articles = ({ searchQuery, isSearching, setIsSearching }) => {
         ""
       ) : (
         articles.slice(0, 8).map((article, index) => ( // Only take the first 8 articles
-          <div
-            key={article.id || index} // Prefer a unique identifier
-            className="bg-white overflow-hidden flex flex-col"
-            style={{ marginRight: "10px" }}
-          >
+          <div key={index} className="bg-white overflow-hidden flex flex-col" style={{ marginRight: "10px" }}>
             <div className="flex justify-between items-center">
               <h2 className="text-black whitespace-nowrap overflow-hidden text-ellipsis text-[24px]">
                 <a
@@ -222,9 +237,7 @@ const Articles = ({ searchQuery, isSearching, setIsSearching }) => {
                   className="hover:underline"
                   style={{ fontFamily: "Arial", fontWeight: "300" }}
                 >
-                  {article.title.length > 46
-                    ? `${article.title.substring(0, 46)}...`
-                    : article.title}
+                  {article.title.length > 46 ? `${article.title.substring(0, 46)}...` : article.title}
                 </a>
               </h2>
             </div>
@@ -241,32 +254,18 @@ const Articles = ({ searchQuery, isSearching, setIsSearching }) => {
                     width: "100%",
                   }}
                 >
-                  {article.url.length > 90
-                    ? `${article.url.substring(0, 43)}...`
-                    : article.url}
+                  {article.url.length > 90 ? `${article.url.substring(0, 43)}...` : article.url}
                 </a>
-                <p
-                  className="text-[12px] font-sans text-[#958e77] tracking-tight"
-                  style={{
-                    fontFamily: "Arial",
-                    color: "#695d38",
-                    lineHeight: "16px",
-                  }}
-                >
-                  {article.description.length > 300
-                    ? `${article.description.substring(0, 250)}...`
-                    : article.description}
+                <p className="text-[12px] font-sans text-[#958e77] tracking-tight" style={{ fontFamily: "Arial", color: "#695d38", lineHeight: "16px" }}>
+                  {article.description.length > 300 ? `${article.description.substring(0, 250)}...` : article.description}
                 </p>
-                <p
-                  className="text-[12px] italic"
-                  style={{ color: "#263b6f", fontFamily: "Arial" }}
-                >
+                <p className="text-[12px] italic" style={{ color: "#263b6f", fontFamily: "Arial" }}>
                   {article.category}
                 </p>
               </div>
               <div className="flex-shrink-0">
                 <img
-                  src={images[index % images.length]} // Prevent out-of-bounds
+                  src={images[index % images.length]} // Prevent out-of-bounds error
                   alt={article.title}
                   className="object-cover"
                   style={{ width: "174px", height: "115px" }}
@@ -278,6 +277,6 @@ const Articles = ({ searchQuery, isSearching, setIsSearching }) => {
       )}
     </div>
   );
-  };
+};
 
 export default Articles;

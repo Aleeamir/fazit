@@ -45,7 +45,7 @@ const RankingPopup = ({ togglePopup }) => {
     <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
       <div className="bg-white p-6 rounded border-popupcolor border-8 " style={{ width: '60%'}}>
         <div className="flex mb-6 text-stone-700">
-          <h2 className="text-xl text-popupcolor">Custom Ranking and Filtering of Your Search Results</h2>
+          <h2 className="text-xl text-popupcolor">Custom Rank and Filters</h2>
           <button
             className="px-4 py-2 text-base bg-[#C0A74F] text-white focus:outline-none border-0 rounded-[5px] ml-auto"
             onClick={togglePopup}

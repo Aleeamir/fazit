@@ -95,13 +95,13 @@ const AfterHeader = ({
         </div>
         {/* <div className="flex flex-wrap space-x-4 text-[14px] ml-[72px]"> */}
         <div className="flex flex-wrap space-x-4 text-[14px] ml-[37px]">
-          <a
+          {/* <a
             href="#"
             className={` ${activeTab === "categories" ? "text-[#77abed]" : ""}`}
             onClick={() => handleMenuClick("categories")}
           >
             Categories
-          </a>
+          </a> */}
           <a
             href="#"
             className={` ${activeTab === "Stories" ? "text-[#77abed]" : ""}`}
@@ -161,7 +161,7 @@ const AfterHeader = ({
               </span>
             </button>
           </div> */}
-          <div className="group text-[14px] ml-auto">
+          {/* <div className="group text-[14px] ml-auto">
             <select
               name="advanced-options"
               className="text-white bg-bordercolor border-none"
@@ -182,9 +182,9 @@ const AfterHeader = ({
               <option value="csr">CSR</option>
               <option value="matrix">Matrix</option>
               <option value="query-builder">Query Builder</option>
-              {/* <option value="custom-keyword">Custom Keyword</option> */}
+              <option value="custom-keyword">Custom Keyword</option>
             </select>
-          </div>
+          </div> */}
           {/* Conditionally Rendered Context: News Button */}
           {(activeTab === "websites" || activeTab === "keywords") && (
             <div className="group text-[14px]">
@@ -237,6 +237,30 @@ const AfterHeader = ({
                 ▼
               </span>
             </button>
+            
+            <select
+              name="advanced-options"
+              className="text-white bg-bordercolor border-none"
+              onChange={(event) => {
+                const value = event.target.value;
+                if (value === "csr") {
+                  toggleHeaderCustomRowPopup();
+                } else if (value === "matrix") {
+                  toggleHeaderMatrixPopup();
+                } else if (value === "query-builder") {
+                  toggleHeaderQuerySelectorRowPopup();
+                } else if (value === "custom-keyword") {
+                  toggleHeaderKywordPopUp();
+                }
+              }}
+            >
+              <option value="">Advanced</option>
+              <option value="csr">CSR</option>
+              <option value="matrix">Matrix</option>
+              <option value="query-builder">Query Builder</option>
+              {/* <option value="custom-keyword">Custom Keyword</option> */}
+            </select>
+          
           </div>
         </div>
       </div>

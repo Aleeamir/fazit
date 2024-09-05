@@ -24,15 +24,53 @@ const CategoryButton = ({ title, label, count, icon, selected, OnClick }) => {
       onClick={OnClick}
     >
       <span
-        className={`text-xs py-[10px] ${hasSpace?"py-[2px]":""}`}
+        className={`text-xs pt-[10px]   ${hasSpace?"pt-[2px]  ":""}`}
+        // style={{
+        //   fontSize: "16px",
+        //   // fontSize: "14px",
+        //   textAlign: "center",
+        //   textShadow: "0 1px 1px rgba(0, 0, 0, 0.2)",
+        //   color: selected
+        //     ? "#99063c"
+        //     : title === "COUNTRY"
+        //     ? label === "All"
+        //       ? "#c7ab6d"
+        //       : label === "United States"
+        //       ? "#b75f7e"
+        //       : label === "Germany"
+        //       ? "#787876"
+        //       : label === "United Kingdom"
+        //       ? "#6c7ca4"
+        //       : label === "Comoros"
+        //       ? "#94bc8f"
+        //       : label === "France"
+        //       ? "#5b6cb1"
+        //       : label === "More..."
+        //       ? "#0066f5"
+        //       : ""
+        //     : title !== "COUNTRY"
+        //     ? label === "All"
+        //       ? "#c7ab6d"
+        //       : label === "United States"
+        //       ? "#b75f7e"
+        //       : label === "Germany"
+        //       ? "#787876"
+        //       : label === "United Kingdom"
+        //       ? "#6c7ca4"
+        //       : label === "Comoros"
+        //       ? "#94bc8f"
+        //       : label === "France"
+        //       ? "#5b6cb1"
+        //       : label === "More..."
+        //       ? "rgb(0, 102, 245)"
+        //       : "#0066f5"
+        //     : "",
+        // }}
         style={{
           fontSize: "16px",
-          // fontSize: "14px",
           textAlign: "center",
           textShadow: "0 1px 1px rgba(0, 0, 0, 0.2)",
-          color: selected
-            ? "#99063c"
-            : title === "COUNTRY"
+          color: title === "COUNTRY"
             ? label === "All"
               ? "#c7ab6d"
               : label === "United States"
@@ -66,6 +104,7 @@ const CategoryButton = ({ title, label, count, icon, selected, OnClick }) => {
               : "#0066f5"
             : "",
         }}
+        
       >
         {label}
       </span>
@@ -106,12 +145,12 @@ const CategoryButton = ({ title, label, count, icon, selected, OnClick }) => {
         {count}
       </span> */}
       <span
-        className={` py-[10px] text-[16px] ${selected ? "underline" : ""}`}
+        className={` py-[10px] text-[16px] }`}
+        // className={` py-[10px] text-[16px] ${selected ? "underline" : ""}`}
+        // className={`py-[10px] text-[16px] ${hasSpace?"pt-[2px] mb-[7px]":""} ${selected ? "underline" : ""}`}
         style={{
           fontFamily: "Arial",
-          color: selected
-            ? "#99063c"
-            : title === "COUNTRY"
+          color: title === "COUNTRY"
             ? label === "All"
               ? "#c7ab6d"
               : label === "United States"
@@ -145,6 +184,7 @@ const CategoryButton = ({ title, label, count, icon, selected, OnClick }) => {
               : "#0066f5"
             : "",
         }}
+        
       >
         {count}
       </span>
