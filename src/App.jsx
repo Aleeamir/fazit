@@ -14,6 +14,7 @@ import {
   dataCategories,
   industryCategories,
 } from "./components/categories.js";
+import RankingPopup from "./components/RankingPopup.jsx";
 
 function App() {
   const [selectedTab, setSelectedTab] = useState("categories");
@@ -214,6 +215,8 @@ function App() {
             </>
           )}
           {selectedTab === "websites" && <Table />}
+          {selectedTab === "rank_info" && <RankingPopup />}
+          {selectedTab === "rank_info" && <RankingPopup/>}
           {selectedTab === "keywords" && (
             <div className="">
               <KeywordTable />

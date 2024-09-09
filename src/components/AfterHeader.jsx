@@ -35,8 +35,8 @@ const AfterHeader = ({
   const toggleRankingPopup = () => setIsRankingPopupOpen(!isRankingPopupOpen);
   const toggleHeaderKywordPopUp = () => setIsHeaderKeyword(!isHeaderKeyword);
 
-  const handleMenuClick = (tab) => {
-    setActiveTab(tab);
+  const handleMenuClick = (tab) => { //website
+    setActiveTab(tab); //website
     setSelectedTab(tab); // Update selectedTab if needed
   };
 
@@ -252,12 +252,17 @@ const AfterHeader = ({
                 } else if (value === "custom-keyword") {
                   toggleHeaderKywordPopUp();
                 }
+                else if(value=="rank_info"){
+                  toggleRankingPopup();
+                  
+                }
               }}
             >
               <option value="">Advanced</option>
               <option value="csr">CSR</option>
               <option value="matrix">Matrix</option>
               <option value="query-builder">Query Builder</option>
+              <option  value="rank_info">Rank Info</option>
               {/* <option value="custom-keyword">Custom Keyword</option> */}
             </select>
           
@@ -289,10 +294,11 @@ const AfterHeader = ({
         />
       )}
       {isHeaderKeyword && (
-        <KeywordApp togglePopup={toggleHeaderKywordPopUp} onRetrun={onRetrun} />
+        <KeywordApp togglePopup={toggleHeaderKywordPopUp} onRetrun={onRetrun}/>
       )}
-      {isRankingPopupOpen && <RankingPopup togglePopup={toggleRankingPopup} />}
-    </div>
+      {isRankingPopupOpen && ( 
+        <RankingPopup togglePopup={toggleRankingPopup}/>)}
+    </div> 
   );
 };
 
